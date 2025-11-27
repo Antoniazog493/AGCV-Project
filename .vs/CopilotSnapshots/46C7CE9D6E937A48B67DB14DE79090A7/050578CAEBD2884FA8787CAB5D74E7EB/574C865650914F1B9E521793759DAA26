@@ -1,0 +1,133 @@
+﻿using capaEntidad;
+using capaNegocio;
+using System;
+using System.Windows.Forms;
+
+namespace capaPresentacion
+{
+    public partial class HOME : Form
+    {
+        private readonly CNControlesUsuario _cn = new CNControlesUsuario();
+
+        public HOME()
+        {
+            InitializeComponent();
+        }
+
+        private void HOME_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                // Actualizar nombre de usuario dinámicamente AQUÍ
+                lblUsuario.Text = $"👤 Usuario: {SesionActual.NombreUsuario}";
+
+                int idUsuario = SesionActual.IdUsuario;
+
+                var ds = _cn.ObtenerControles(idUsuario);
+
+                if (ds != null && ds.Tables.Count > 0 && ds.Tables["ControlesUsuario"] != null)
+                {
+                    cmbControles.DataSource = ds.Tables["ControlesUsuario"];
+                    cmbControles.DisplayMember = "NombreControl";
+                    cmbControles.ValueMember = "IdControl";
+                }
+                else
+                {
+                    MessageBox.Show("No hay controles registrados. Agrega uno en Ajustes.", "Información",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar controles:\n{ex.Message}", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            // Conectar control
+            if (cmbControles.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un control primero", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show(
+                $"✅ Control conectado exitosamente\n\n" +
+                $"Control: {cmbControles.Text}\n" +
+                $"Estado: Listo para jugar",
+                "Conexión Exitosa",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            // Ver estadísticas
+            if (cmbControles.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un control primero", "Aviso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            MessageBox.Show(
+                $"📊 Estadísticas del Control\n\n" +
+                $"Control: {cmbControles.Text}\n\n" +
+                $"Conexiones Totales: 15\n" +
+                $"Tiempo de Uso: 45 horas\n" +
+                $"Estado: Óptimo",
+                "Estadísticas",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            // Abrir Ajustes
+            Ajustes ajustes = new Ajustes();
+            ajustes.ShowDialog();
+            // Recargar controles después de volver
+            HOME_Load(null, null);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Este método se llama cuando cambia la selección del comboBox
+        }
+
+        private void HOME_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            CerrarSesion();
+        }
+
+        private void CerrarSesion()
+        {
+            var resultado = MessageBox.Show(
+                "¿Estás seguro de que deseas cerrar sesión?",
+                "Confirmar Cierre de Sesión",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.Yes)
+            {
+                // Limpiar sesión
+                SesionActual.IdUsuario = 0;
+                SesionActual.NombreUsuario = string.Empty;
+
+                // Cerrar menú principal (volverá al LOGIN)
+                this.Close();
+            }
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+        }
+    }
+}

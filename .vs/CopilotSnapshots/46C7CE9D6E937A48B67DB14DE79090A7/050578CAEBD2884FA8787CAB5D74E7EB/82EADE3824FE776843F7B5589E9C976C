@@ -1,0 +1,221 @@
+﻿namespace AGCV
+{
+    partial class Historial
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panelHeader = new Panel();
+            lblBienvenida = new Label();
+            lblTituloText = new Label();
+            panelToolbar = new Panel();
+            lblRegistros = new Label();
+            btnLimpiar = new Button();
+            btnExportar = new Button();
+            dataGridView1 = new DataGridView();
+            panelFooter = new Panel();
+            btnCerrar = new Button();
+            panelHeader.SuspendLayout();
+            panelToolbar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panelFooter.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.Controls.Add(lblBienvenida);
+            panelHeader.Controls.Add(lblTituloText);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Padding = new Padding(30, 20, 30, 20);
+            panelHeader.Size = new Size(900, 110);
+            panelHeader.TabIndex = 0;
+            // 
+            // lblBienvenida
+            // 
+            lblBienvenida.AutoSize = true;
+            lblBienvenida.Font = new Font("Segoe UI", 11F);
+            lblBienvenida.ForeColor = Color.FromArgb(189, 195, 199);
+            lblBienvenida.Location = new Point(33, 70);
+            lblBienvenida.Name = "lblBienvenida";
+            lblBienvenida.Size = new Size(180, 25);
+            lblBienvenida.TabIndex = 1;
+            lblBienvenida.Text = "Bienvenido, Usuario";
+            // 
+            // lblTituloText
+            // 
+            lblTituloText.AutoSize = true;
+            lblTituloText.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
+            lblTituloText.ForeColor = Color.White;
+            lblTituloText.Location = new Point(30, 20);
+            lblTituloText.Name = "lblTituloText";
+            lblTituloText.Size = new Size(496, 50);
+            lblTituloText.TabIndex = 0;
+            lblTituloText.Text = "📊 Historial de Conexiones Joy-Con";
+            // 
+            // panelToolbar
+            // 
+            panelToolbar.BackColor = Color.FromArgb(236, 240, 241);
+            panelToolbar.Controls.Add(lblRegistros);
+            panelToolbar.Controls.Add(btnLimpiar);
+            panelToolbar.Controls.Add(btnExportar);
+            panelToolbar.Dock = DockStyle.Top;
+            panelToolbar.Location = new Point(0, 110);
+            panelToolbar.Name = "panelToolbar";
+            panelToolbar.Padding = new Padding(30, 15, 30, 15);
+            panelToolbar.Size = new Size(900, 60);
+            panelToolbar.TabIndex = 1;
+            // 
+            // lblRegistros
+            // 
+            lblRegistros.AutoSize = true;
+            lblRegistros.Font = new Font("Segoe UI", 10F);
+            lblRegistros.ForeColor = Color.FromArgb(127, 140, 141);
+            lblRegistros.Location = new Point(30, 18);
+            lblRegistros.Name = "lblRegistros";
+            lblRegistros.Size = new Size(116, 23);
+            lblRegistros.TabIndex = 0;
+            lblRegistros.Text = "📋 Registros: ";
+            // 
+            // btnLimpiar
+            // 
+            btnLimpiar.BackColor = Color.FromArgb(231, 76, 60);
+            btnLimpiar.Cursor = Cursors.Hand;
+            btnLimpiar.FlatAppearance.BorderSize = 0;
+            btnLimpiar.FlatStyle = FlatStyle.Flat;
+            btnLimpiar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnLimpiar.ForeColor = Color.White;
+            btnLimpiar.Location = new Point(770, 12);
+            btnLimpiar.Name = "btnLimpiar";
+            btnLimpiar.Size = new Size(100, 35);
+            btnLimpiar.TabIndex = 2;
+            btnLimpiar.Text = "🗑️ Limpiar";
+            btnLimpiar.UseVisualStyleBackColor = false;
+            btnLimpiar.Click += btnLimpiar_Click;
+            // 
+            // btnExportar
+            // 
+            btnExportar.BackColor = Color.FromArgb(52, 152, 219);
+            btnExportar.Cursor = Cursors.Hand;
+            btnExportar.FlatAppearance.BorderSize = 0;
+            btnExportar.FlatStyle = FlatStyle.Flat;
+            btnExportar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnExportar.ForeColor = Color.White;
+            btnExportar.Location = new Point(650, 12);
+            btnExportar.Name = "btnExportar";
+            btnExportar.Size = new Size(110, 35);
+            btnExportar.TabIndex = 1;
+            btnExportar.Text = "📥 Exportar";
+            btnExportar.UseVisualStyleBackColor = false;
+            btnExportar.Click += btnExportar_Click;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.BorderStyle = BorderStyle.None;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.Location = new Point(0, 170);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersVisible = false;
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.Size = new Size(900, 300);
+            dataGridView1.TabIndex = 1;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            // 
+            // panelFooter
+            // 
+            panelFooter.BackColor = Color.FromArgb(236, 240, 241);
+            panelFooter.Controls.Add(btnCerrar);
+            panelFooter.Dock = DockStyle.Bottom;
+            panelFooter.Location = new Point(0, 470);
+            panelFooter.Name = "panelFooter";
+            panelFooter.Padding = new Padding(30, 15, 30, 15);
+            panelFooter.Size = new Size(900, 60);
+            panelFooter.TabIndex = 2;
+            // 
+            // btnCerrar
+            // 
+            btnCerrar.BackColor = Color.FromArgb(127, 140, 141);
+            btnCerrar.Cursor = Cursors.Hand;
+            btnCerrar.FlatAppearance.BorderSize = 0;
+            btnCerrar.FlatStyle = FlatStyle.Flat;
+            btnCerrar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCerrar.ForeColor = Color.White;
+            btnCerrar.Location = new Point(770, 12);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(100, 35);
+            btnCerrar.TabIndex = 0;
+            btnCerrar.Text = "✖️ Cerrar";
+            btnCerrar.UseVisualStyleBackColor = false;
+            btnCerrar.Click += btnCerrar_Click;
+            // 
+            // Historial
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(900, 530);
+            Controls.Add(dataGridView1);
+            Controls.Add(panelFooter);
+            Controls.Add(panelToolbar);
+            Controls.Add(panelHeader);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "Historial";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AGCV - Historial de Conexiones";
+            Load += Historial_Load;
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelToolbar.ResumeLayout(false);
+            panelToolbar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panelFooter.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panelHeader;
+        private Label lblTituloText;
+        private Label lblBienvenida;
+        private Panel panelToolbar;
+        private Label lblRegistros;
+        private Button btnExportar;
+        private Button btnLimpiar;
+        private DataGridView dataGridView1;
+        private Panel panelFooter;
+        private Button btnCerrar;
+    }
+}

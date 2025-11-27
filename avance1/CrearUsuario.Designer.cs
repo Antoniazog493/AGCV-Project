@@ -1,0 +1,242 @@
+﻿namespace AGCV
+{
+    partial class CrearUsuario
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panelHeader = new Panel();
+            lblTituloText = new Label();
+            panelForm = new Panel();
+            lblContraseña = new Label();
+            txtContraseña = new TextBox();
+            lblCorreo = new Label();
+            txtCorreo = new TextBox();
+            lblNombre = new Label();
+            txtNombre = new TextBox();
+            panelFooter = new Panel();
+            btnCancelar = new Button();
+            btnGuardar = new Button();
+            panelHeader.SuspendLayout();
+            panelForm.SuspendLayout();
+            panelFooter.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.Controls.Add(lblTituloText);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Margin = new Padding(3, 4, 3, 4);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Padding = new Padding(34, 33, 34, 33);
+            panelHeader.Size = new Size(743, 133);
+            panelHeader.TabIndex = 0;
+            // 
+            // lblTituloText
+            // 
+            lblTituloText.AutoSize = true;
+            lblTituloText.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
+            lblTituloText.ForeColor = Color.White;
+            lblTituloText.Location = new Point(37, 33);
+            lblTituloText.Name = "lblTituloText";
+            lblTituloText.Size = new Size(366, 50);
+            lblTituloText.TabIndex = 0;
+            lblTituloText.Text = "Crear Nueva Cuenta";
+            lblTituloText.Click += lblTituloText_Click;
+            // 
+            // panelForm
+            // 
+            panelForm.BackColor = Color.White;
+            panelForm.Controls.Add(lblContraseña);
+            panelForm.Controls.Add(txtContraseña);
+            panelForm.Controls.Add(lblCorreo);
+            panelForm.Controls.Add(txtCorreo);
+            panelForm.Controls.Add(lblNombre);
+            panelForm.Controls.Add(txtNombre);
+            panelForm.Dock = DockStyle.Fill;
+            panelForm.Location = new Point(0, 133);
+            panelForm.Margin = new Padding(3, 4, 3, 4);
+            panelForm.Name = "panelForm";
+            panelForm.Padding = new Padding(46, 53, 46, 53);
+            panelForm.Size = new Size(743, 360);
+            panelForm.TabIndex = 1;
+            // 
+            // lblContraseña
+            // 
+            lblContraseña.AutoSize = true;
+            lblContraseña.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblContraseña.ForeColor = Color.FromArgb(52, 73, 94);
+            lblContraseña.Location = new Point(46, 253);
+            lblContraseña.Name = "lblContraseña";
+            lblContraseña.Size = new Size(132, 25);
+            lblContraseña.TabIndex = 5;
+            lblContraseña.Text = "Contraseña: *";
+            // 
+            // txtContraseña
+            // 
+            txtContraseña.Font = new Font("Segoe UI", 11F);
+            txtContraseña.Location = new Point(46, 287);
+            txtContraseña.Margin = new Padding(3, 4, 3, 4);
+            txtContraseña.Name = "txtContraseña";
+            txtContraseña.PasswordChar = '●';
+            txtContraseña.PlaceholderText = "Mínimo 6 caracteres";
+            txtContraseña.Size = new Size(651, 32);
+            txtContraseña.TabIndex = 2;
+            txtContraseña.TextChanged += textBox3_TextChanged;
+            // 
+            // lblCorreo
+            // 
+            lblCorreo.AutoSize = true;
+            lblCorreo.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblCorreo.ForeColor = Color.FromArgb(52, 73, 94);
+            lblCorreo.Location = new Point(46, 153);
+            lblCorreo.Name = "lblCorreo";
+            lblCorreo.Size = new Size(93, 25);
+            lblCorreo.TabIndex = 3;
+            lblCorreo.Text = "Correo: *";
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.Font = new Font("Segoe UI", 11F);
+            txtCorreo.Location = new Point(46, 187);
+            txtCorreo.Margin = new Padding(3, 4, 3, 4);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.PlaceholderText = "ejemplo@correo.com";
+            txtCorreo.Size = new Size(651, 32);
+            txtCorreo.TabIndex = 1;
+            txtCorreo.TextChanged += textBox2_TextChanged;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            lblNombre.ForeColor = Color.FromArgb(52, 73, 94);
+            lblNombre.Location = new Point(46, 53);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(206, 25);
+            lblNombre.TabIndex = 1;
+            lblNombre.Text = "Nombre de Usuario: *";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Font = new Font("Segoe UI", 11F);
+            txtNombre.Location = new Point(46, 87);
+            txtNombre.Margin = new Padding(3, 4, 3, 4);
+            txtNombre.Name = "txtNombre";
+            txtNombre.PlaceholderText = "Ingresa un nombre único";
+            txtNombre.Size = new Size(651, 32);
+            txtNombre.TabIndex = 0;
+            txtNombre.TextChanged += textBox1_TextChanged;
+            // 
+            // panelFooter
+            // 
+            panelFooter.BackColor = Color.FromArgb(236, 240, 241);
+            panelFooter.Controls.Add(btnCancelar);
+            panelFooter.Controls.Add(btnGuardar);
+            panelFooter.Dock = DockStyle.Bottom;
+            panelFooter.Location = new Point(0, 493);
+            panelFooter.Margin = new Padding(3, 4, 3, 4);
+            panelFooter.Name = "panelFooter";
+            panelFooter.Padding = new Padding(23, 20, 23, 20);
+            panelFooter.Size = new Size(743, 93);
+            panelFooter.TabIndex = 2;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.FromArgb(231, 76, 60);
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(371, 39);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(149, 34);
+            btnCancelar.TabIndex = 3;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.FromArgb(46, 204, 113);
+            btnGuardar.Cursor = Cursors.Hand;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(549, 39);
+            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(149, 34);
+            btnGuardar.TabIndex = 3;
+            btnGuardar.Text = "Crear Cuenta";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += button1_Click;
+            // 
+            // CrearUsuario
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(743, 586);
+            Controls.Add(panelForm);
+            Controls.Add(panelFooter);
+            Controls.Add(panelHeader);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "CrearUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AGCV - Crear Nueva Cuenta";
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelForm.ResumeLayout(false);
+            panelForm.PerformLayout();
+            panelFooter.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panelHeader;
+        private Label lblTituloText;
+        private Panel panelForm;
+        private Label lblNombre;
+        private TextBox txtNombre;
+        private Label lblCorreo;
+        private TextBox txtCorreo;
+        private Label lblContraseña;
+        private TextBox txtContraseña;
+        private Panel panelFooter;
+        private Button btnGuardar;
+        private Button btnCancelar;
+    }
+}

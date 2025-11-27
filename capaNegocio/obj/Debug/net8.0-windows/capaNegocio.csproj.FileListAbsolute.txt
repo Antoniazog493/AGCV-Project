@@ -1,0 +1,68 @@
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.deps.json
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaDatos.dll
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.dll
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaDatos.pdb
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.pdb
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.AssemblyReference.cache
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfoInputs.cache
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfo.cs
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNego.836DF9B9.Up2Date
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\refint\capaNegocio.dll
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Usuario\OneDrive\Documentos\Segundo semestre 2025\HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\ref\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.deps.json
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaDatos.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaDatos.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.AssemblyReference.cache
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfoInputs.cache
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfo.cs
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNego.836DF9B9.Up2Date
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\refint\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\avance1\capaNegocio\obj\Debug\net8.0-windows\ref\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.deps.json
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaDatos.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaDatos.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.AssemblyReference.cache
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfoInputs.cache
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfo.cs
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNego.836DF9B9.Up2Date
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\refint\capaNegocio.dll
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Anton\Downloads\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\ref\capaNegocio.dll
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.deps.json
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaDatos.dll
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.dll
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaDatos.pdb
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\bin\Debug\net8.0-windows\capaEntidad.pdb
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.AssemblyReference.cache
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfoInputs.cache
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.AssemblyInfo.cs
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNego.836DF9B9.Up2Date
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.dll
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\refint\capaNegocio.dll
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\capaNegocio.pdb
+C:\Users\Anton\OneDrive\Proyecto de HPA\AGCV 0.80\capaNegocio\obj\Debug\net8.0-windows\ref\capaNegocio.dll

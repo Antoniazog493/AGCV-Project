@@ -1,0 +1,17 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace AGCV
+{
+    /// <summary>
+    /// Clase estática que mantiene la información de la sesión activa del usuario
+    /// </summary>
+    public static class SesionActual
+    {
+        public static int IdUsuario { get; set; }
+        public static string NombreUsuario { get; set; }    
+    }
+}

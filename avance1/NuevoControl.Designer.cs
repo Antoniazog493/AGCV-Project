@@ -1,0 +1,246 @@
+﻿namespace AGCV
+{
+    partial class NuevoControl
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            panelHeader = new Panel();
+            lblTituloText = new Label();
+            panelForm = new Panel();
+            lblVersion = new Label();
+            cmbVersion = new ComboBox();
+            lblModelo = new Label();
+            cmbModelo = new ComboBox();
+            lblNombre = new Label();
+            txtNombreControl = new TextBox();
+            panelFooter = new Panel();
+            btnCancelar = new Button();
+            btnGuardar = new Button();
+            panelHeader.SuspendLayout();
+            panelForm.SuspendLayout();
+            panelFooter.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.Controls.Add(lblTituloText);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Margin = new Padding(3, 4, 3, 4);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Padding = new Padding(34, 33, 34, 33);
+            panelHeader.Size = new Size(686, 120);
+            panelHeader.TabIndex = 0;
+            // 
+            // lblTituloText
+            // 
+            lblTituloText.AutoSize = true;
+            lblTituloText.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTituloText.ForeColor = Color.White;
+            lblTituloText.Location = new Point(46, 33);
+            lblTituloText.Name = "lblTituloText";
+            lblTituloText.Size = new Size(395, 54);
+            lblTituloText.TabIndex = 0;
+            lblTituloText.Text = "🎮 Agregar Joy-Con";
+            lblTituloText.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // panelForm
+            // 
+            panelForm.BackColor = Color.White;
+            panelForm.Controls.Add(lblVersion);
+            panelForm.Controls.Add(cmbVersion);
+            panelForm.Controls.Add(lblModelo);
+            panelForm.Controls.Add(cmbModelo);
+            panelForm.Controls.Add(lblNombre);
+            panelForm.Controls.Add(txtNombreControl);
+            panelForm.Dock = DockStyle.Fill;
+            panelForm.Location = new Point(0, 120);
+            panelForm.Margin = new Padding(3, 4, 3, 4);
+            panelForm.Name = "panelForm";
+            panelForm.Padding = new Padding(46, 53, 46, 53);
+            panelForm.Size = new Size(686, 387);
+            panelForm.TabIndex = 1;
+            // 
+            // lblVersion
+            // 
+            lblVersion.AutoSize = true;
+            lblVersion.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblVersion.ForeColor = Color.FromArgb(52, 73, 94);
+            lblVersion.Location = new Point(46, 253);
+            lblVersion.Name = "lblVersion";
+            lblVersion.Size = new Size(200, 28);
+            lblVersion.TabIndex = 5;
+            lblVersion.Text = "Versión de Switch: *";
+            // 
+            // cmbVersion
+            // 
+            cmbVersion.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbVersion.Font = new Font("Segoe UI", 12F);
+            cmbVersion.FormattingEnabled = true;
+            cmbVersion.Items.AddRange(new object[] { "Nintendo Switch", "Nintendo Switch 2" });
+            cmbVersion.Location = new Point(46, 287);
+            cmbVersion.Margin = new Padding(3, 4, 3, 4);
+            cmbVersion.Name = "cmbVersion";
+            cmbVersion.Size = new Size(594, 36);
+            cmbVersion.TabIndex = 2;
+            cmbVersion.SelectedIndexChanged += Modelo_SelectedIndexChanged;
+            // 
+            // lblModelo
+            // 
+            lblModelo.AutoSize = true;
+            lblModelo.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblModelo.ForeColor = Color.FromArgb(52, 73, 94);
+            lblModelo.Location = new Point(46, 153);
+            lblModelo.Name = "lblModelo";
+            lblModelo.Size = new Size(179, 28);
+            lblModelo.TabIndex = 3;
+            lblModelo.Text = "Tipo de Joy-Con: *";
+            // 
+            // cmbModelo
+            // 
+            cmbModelo.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbModelo.Font = new Font("Segoe UI", 12F);
+            cmbModelo.FormattingEnabled = true;
+            cmbModelo.Items.AddRange(new object[] { "Joy-Con Izquierdo (L)", "Joy-Con Derecho (R)", "Pro Controller", "Joy-Con Izquierdo (L) (Switch 2)", "Joy-Con Derecho (R) (Switch 2)" });
+            cmbModelo.Location = new Point(46, 187);
+            cmbModelo.Margin = new Padding(3, 4, 3, 4);
+            cmbModelo.Name = "cmbModelo";
+            cmbModelo.Size = new Size(594, 36);
+            cmbModelo.TabIndex = 1;
+            cmbModelo.SelectedIndexChanged += Modelo_SelectedIndexChanged;
+            // 
+            // lblNombre
+            // 
+            lblNombre.AutoSize = true;
+            lblNombre.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblNombre.ForeColor = Color.FromArgb(52, 73, 94);
+            lblNombre.Location = new Point(46, 53);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(205, 28);
+            lblNombre.TabIndex = 1;
+            lblNombre.Text = "Nombre del Joy-Con:";
+            // 
+            // txtNombreControl
+            // 
+            txtNombreControl.Font = new Font("Segoe UI", 12F);
+            txtNombreControl.Location = new Point(46, 87);
+            txtNombreControl.Margin = new Padding(3, 4, 3, 4);
+            txtNombreControl.Name = "txtNombreControl";
+            txtNombreControl.PlaceholderText = "Ej: Joy-Con L Rojo, Joy-Con R Azul";
+            txtNombreControl.Size = new Size(594, 34);
+            txtNombreControl.TabIndex = 0;
+            txtNombreControl.TextChanged += NombreControl_TextChanged;
+            // 
+            // panelFooter
+            // 
+            panelFooter.BackColor = Color.FromArgb(236, 240, 241);
+            panelFooter.Controls.Add(btnCancelar);
+            panelFooter.Controls.Add(btnGuardar);
+            panelFooter.Dock = DockStyle.Bottom;
+            panelFooter.Location = new Point(0, 507);
+            panelFooter.Margin = new Padding(3, 4, 3, 4);
+            panelFooter.Name = "panelFooter";
+            panelFooter.Padding = new Padding(23, 27, 23, 27);
+            panelFooter.Size = new Size(686, 93);
+            panelFooter.TabIndex = 2;
+            // 
+            // btnCancelar
+            // 
+            btnCancelar.BackColor = Color.FromArgb(231, 76, 60);
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(366, 20);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(137, 53);
+            btnCancelar.TabIndex = 4;
+            btnCancelar.Text = "❌ Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += button2_Click;
+            // 
+            // btnGuardar
+            // 
+            btnGuardar.BackColor = Color.FromArgb(46, 204, 113);
+            btnGuardar.Cursor = Cursors.Hand;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(523, 20);
+            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(137, 53);
+            btnGuardar.TabIndex = 3;
+            btnGuardar.Text = "✅ Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += button1_Click;
+            // 
+            // NuevoControl
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(686, 600);
+            Controls.Add(panelForm);
+            Controls.Add(panelFooter);
+            Controls.Add(panelHeader);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "NuevoControl";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "AGCV - Agregar Joy-Con";
+            Load += NuevoControl_Load;
+            panelHeader.ResumeLayout(false);
+            panelHeader.PerformLayout();
+            panelForm.ResumeLayout(false);
+            panelForm.PerformLayout();
+            panelFooter.ResumeLayout(false);
+            ResumeLayout(false);
+        }
+
+        #endregion
+
+        private Panel panelHeader;
+        private Label lblTituloText;
+        private Panel panelForm;
+        private Label lblNombre;
+        private TextBox txtNombreControl;
+        private Label lblModelo;
+        private ComboBox cmbModelo;
+        private Label lblVersion;
+        private ComboBox cmbVersion;
+        private Panel panelFooter;
+        private Button btnGuardar;
+        private Button btnCancelar;
+    }
+}

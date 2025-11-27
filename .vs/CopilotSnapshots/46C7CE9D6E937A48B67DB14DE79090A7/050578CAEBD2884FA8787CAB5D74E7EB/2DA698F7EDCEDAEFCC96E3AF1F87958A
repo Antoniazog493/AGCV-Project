@@ -1,0 +1,51 @@
+﻿namespace capaEntidad
+{
+    public class Class1
+    {
+    }
+    public class CEControl
+    {
+        public int IdControl { get; set; }
+
+        public string NombreControl { get; set; }
+        public string Marca { get; set; }       // Ej: Nintendo, Sony, Microsoft
+        public string Modelo { get; set; }      // Ej: Pro Controller, DualShock, etc.
+         
+        
+    }
+
+    public class CEConsola
+    {
+        public int IdConsola { get; set; }
+        public string Nombre { get; set; }       // Ej: PS5, Switch, Xbox Series X
+        public string Fabricante { get; set; }   // Sony, Nintendo, Microsoft
+        
+    }
+
+    public class CEConexion
+    {
+        public int IdConexion { get; set; }
+        public int IdControl { get; set; }
+        public int IdConsola { get; set; }
+        public DateTime FechaConexion { get; set; }
+        public string Estado { get; set; } // Ej: Activa, Fallida, En prueba
+    }
+    public class CEUsuario
+    {
+        public int IdUsuario { get; set; }        // Identificador único
+        public string NombreUsuario { get; set; } // Alias o username
+        public string Correo { get; set; }        // Email de registro
+        public string ClaveHash { get; set; }     // Contraseña encriptada
+                
+         
+    }
+    public class CEHistorial
+    {
+        public int IdHistorial { get; set; }
+        public int IdUsuario { get; set; }
+        public int IdConexion { get; set; }
+        public DateTime FechaRegistro { get; set; }
+    }
+
+}
+
