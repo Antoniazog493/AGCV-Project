@@ -1,41 +1,41 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\",
+  "WorkspaceRootPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|c:\\users\\anton\\onedrive\\proyecto de hpa\\agcv 0.80\\avance1\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|c:\\users\\anton\\onedrive\\proyecto de hpa\\agcv 0.80\\avance1\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|c:\\users\\anton\\onedrive\\proyecto de hpa\\agcv 0.80\\avance1\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|c:\\users\\anton\\onedrive\\proyecto de hpa\\agcv 0.80\\avance1\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\nuevocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|avance1\\capaPresentacion.csproj|solutionrelative:avance1\\nuevocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\MenuPrincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\MenuPrincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-a64269e0-5aa1-4aed-9ee1-03cf822b64c8.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\Historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\Historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\InicioSesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\InicioSesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\nuevocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:avance1\\nuevocontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,40 +51,40 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MenuPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\MenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "avance1\\MenuPrincipal.cs",
-              "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\MenuPrincipal.cs",
               "RelativeToolTip": "avance1\\MenuPrincipal.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAawBIAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T16:21:52.855Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "CrearUsuario.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\CrearUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\CrearUsuario.cs",
               "RelativeDocumentMoniker": "avance1\\CrearUsuario.cs",
               "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\CrearUsuario.cs [Design]",
-              "RelativeToolTip": "avance1\\CrearUsuario.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\CrearUsuario.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T14:31:58.944Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InicioSesion.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\InicioSesion.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\InicioSesion.cs",
               "RelativeDocumentMoniker": "avance1\\InicioSesion.cs",
               "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\InicioSesion.cs [Design]",
-              "RelativeToolTip": "avance1\\InicioSesion.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\InicioSesion.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T14:31:44.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "plan-a64269e0-5aa1-4aed-9ee1-03cf822b64c8.md",
               "DocumentMoniker": "C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-a64269e0-5aa1-4aed-9ee1-03cf822b64c8.md",
               "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-a64269e0-5aa1-4aed-9ee1-03cf822b64c8.md",
@@ -97,24 +97,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "MenuPrincipal.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\MenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "avance1\\MenuPrincipal.cs",
               "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\MenuPrincipal.cs [Design]",
-              "RelativeToolTip": "avance1\\MenuPrincipal.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\MenuPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-26T15:45:51.171Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-11-26T15:45:51.171Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Historial.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\Historial.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\Historial.cs",
               "RelativeDocumentMoniker": "avance1\\Historial.cs",
               "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\Historial.cs [Design]",
-              "RelativeToolTip": "avance1\\Historial.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\Historial.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-27T14:32:35.361Z"
             },
@@ -122,9 +121,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Historial.cs",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\Historial.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\Historial.cs",
               "RelativeDocumentMoniker": "avance1\\Historial.cs",
-              "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\Historial.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\Historial.cs",
               "RelativeToolTip": "avance1\\Historial.cs",
               "ViewState": "AgIAAKYAAAAAAAAAAAAIwLUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -132,11 +131,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "InicioSesion.cs",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\InicioSesion.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\InicioSesion.cs",
               "RelativeDocumentMoniker": "avance1\\InicioSesion.cs",
-              "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\InicioSesion.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\InicioSesion.cs",
               "RelativeToolTip": "avance1\\InicioSesion.cs",
               "ViewState": "AgIAAIUAAAAAAAAAAAAIwJQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -144,12 +143,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "NuevoControl.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\NuevoControl.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\avance1\\NuevoControl.cs",
               "RelativeDocumentMoniker": "avance1\\NuevoControl.cs",
               "ToolTip": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\NuevoControl.cs [Design]",
-              "RelativeToolTip": "avance1\\NuevoControl.cs [Design]",
+              "RelativeToolTip": "..\\..\\..\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\avance1\\NuevoControl.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-26T15:45:51.269Z"
             }

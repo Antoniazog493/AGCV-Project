@@ -1646,11 +1646,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaNegocio\\capaNegocio.csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\capaNegocio.csproj",
       "projectName": "capaNegocio",
-      "projectPath": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaNegocio\\capaNegocio.csproj",
+      "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\capaNegocio.csproj",
       "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaNegocio\\obj\\",
+      "outputPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1672,11 +1672,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaDatos\\capaDatos.csproj": {
-              "projectPath": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaDatos\\capaDatos.csproj"
+            "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj": {
+              "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj"
             },
-            "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaEntidad\\capaEntidad.csproj": {
-              "projectPath": "C:\\Users\\Anton\\OneDrive\\Proyecto de HPA\\AGCV 0.80\\capaEntidad\\capaEntidad.csproj"
+            "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
+              "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj"
             }
           }
         }
