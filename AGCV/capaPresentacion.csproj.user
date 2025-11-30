@@ -4,6 +4,9 @@
     <Compile Update="Ajustes.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="ButtonTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Historial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -13,18 +16,12 @@
     <Compile Update="MenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="NuevoControl.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="CrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="InicioSesion.resx">
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Update="NuevoControl.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>

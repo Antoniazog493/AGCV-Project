@@ -44,9 +44,6 @@
             btnConectar = new Button();
             lblDesc1 = new Label();
             lblOpcion1 = new Label();
-            pnlSeleccionar = new Panel();
-            cmbControles = new ComboBox();
-            lblSeleccionar = new Label();
             panelFooter = new Panel();
             btnCerrarSesion = new Button();
             lblVersion = new Label();
@@ -55,7 +52,6 @@
             pnlOpcion3.SuspendLayout();
             pnlOpcion2.SuspendLayout();
             pnlOpcion1.SuspendLayout();
-            pnlSeleccionar.SuspendLayout();
             panelFooter.SuspendLayout();
             SuspendLayout();
             // 
@@ -92,6 +88,7 @@
             lblTitulo.Size = new Size(169, 46);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "🎮 AGCV";
+            lblTitulo.Click += lblTitulo_Click_1;
             // 
             // panelMain
             // 
@@ -99,12 +96,11 @@
             panelMain.Controls.Add(pnlOpcion3);
             panelMain.Controls.Add(pnlOpcion2);
             panelMain.Controls.Add(pnlOpcion1);
-            panelMain.Controls.Add(pnlSeleccionar);
             panelMain.Dock = DockStyle.Fill;
             panelMain.Location = new Point(0, 90);
             panelMain.Name = "panelMain";
             panelMain.Padding = new Padding(30);
-            panelMain.Size = new Size(900, 380);
+            panelMain.Size = new Size(900, 297);
             panelMain.TabIndex = 1;
             // 
             // pnlOpcion3
@@ -114,7 +110,7 @@
             pnlOpcion3.Controls.Add(btnAjustesMain);
             pnlOpcion3.Controls.Add(lblDesc3);
             pnlOpcion3.Controls.Add(lblOpcion3);
-            pnlOpcion3.Location = new Point(610, 120);
+            pnlOpcion3.Location = new Point(610, 33);
             pnlOpcion3.Name = "pnlOpcion3";
             pnlOpcion3.Padding = new Padding(20);
             pnlOpcion3.Size = new Size(260, 230);
@@ -144,7 +140,7 @@
             lblDesc3.Name = "lblDesc3";
             lblDesc3.Size = new Size(220, 100);
             lblDesc3.TabIndex = 1;
-            lblDesc3.Text = "Agrega nuevos controles, accede al historial y más opciones.";
+            lblDesc3.Text = "Accede al historial de conexiones y otras opciones avanzadas.";
             // 
             // lblOpcion3
             // 
@@ -164,7 +160,7 @@
             pnlOpcion2.Controls.Add(btnEstadisticas);
             pnlOpcion2.Controls.Add(lblDesc2);
             pnlOpcion2.Controls.Add(lblOpcion2);
-            pnlOpcion2.Location = new Point(320, 120);
+            pnlOpcion2.Location = new Point(320, 33);
             pnlOpcion2.Name = "pnlOpcion2";
             pnlOpcion2.Padding = new Padding(20);
             pnlOpcion2.Size = new Size(260, 230);
@@ -194,7 +190,7 @@
             lblDesc2.Name = "lblDesc2";
             lblDesc2.Size = new Size(220, 100);
             lblDesc2.TabIndex = 1;
-            lblDesc2.Text = "Visualiza el uso, conexiones y rendimiento del control seleccionado.";
+            lblDesc2.Text = "Visualiza el historial de uso y conexiones de tus Joy-Cons.";
             // 
             // lblOpcion2
             // 
@@ -214,7 +210,7 @@
             pnlOpcion1.Controls.Add(btnConectar);
             pnlOpcion1.Controls.Add(lblDesc1);
             pnlOpcion1.Controls.Add(lblOpcion1);
-            pnlOpcion1.Location = new Point(30, 120);
+            pnlOpcion1.Location = new Point(30, 33);
             pnlOpcion1.Name = "pnlOpcion1";
             pnlOpcion1.Padding = new Padding(20);
             pnlOpcion1.Size = new Size(260, 230);
@@ -232,7 +228,7 @@
             btnConectar.Name = "btnConectar";
             btnConectar.Size = new Size(220, 35);
             btnConectar.TabIndex = 2;
-            btnConectar.Text = "✅ Conectar";
+            btnConectar.Text = "✅ Conectar Joy-Con";
             btnConectar.UseVisualStyleBackColor = false;
             btnConectar.Click += pictureBox1_Click;
             // 
@@ -244,7 +240,7 @@
             lblDesc1.Name = "lblDesc1";
             lblDesc1.Size = new Size(220, 100);
             lblDesc1.TabIndex = 1;
-            lblDesc1.Text = "Conecta tu Joy-Con y prepárate para usarlo en Windows sin problemas de reconocimiento.";
+            lblDesc1.Text = "Abre BetterJoy para conectar tus Joy-Cons y usarlos en Windows como controles Xbox.";
             // 
             // lblOpcion1
             // 
@@ -253,43 +249,9 @@
             lblOpcion1.ForeColor = Color.FromArgb(52, 73, 94);
             lblOpcion1.Location = new Point(20, 15);
             lblOpcion1.Name = "lblOpcion1";
-            lblOpcion1.Size = new Size(130, 28);
+            lblOpcion1.Size = new Size(212, 28);
             lblOpcion1.TabIndex = 0;
-            lblOpcion1.Text = "🕹️ Conectar";
-            // 
-            // pnlSeleccionar
-            // 
-            pnlSeleccionar.BackColor = Color.FromArgb(236, 240, 241);
-            pnlSeleccionar.BorderStyle = BorderStyle.FixedSingle;
-            pnlSeleccionar.Controls.Add(cmbControles);
-            pnlSeleccionar.Controls.Add(lblSeleccionar);
-            pnlSeleccionar.Location = new Point(30, 20);
-            pnlSeleccionar.Name = "pnlSeleccionar";
-            pnlSeleccionar.Padding = new Padding(20);
-            pnlSeleccionar.Size = new Size(840, 80);
-            pnlSeleccionar.TabIndex = 0;
-            // 
-            // cmbControles
-            // 
-            cmbControles.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbControles.Font = new Font("Segoe UI", 11F);
-            cmbControles.FormattingEnabled = true;
-            cmbControles.Location = new Point(20, 37);
-            cmbControles.Name = "cmbControles";
-            cmbControles.Size = new Size(800, 33);
-            cmbControles.TabIndex = 0;
-            cmbControles.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
-            // 
-            // lblSeleccionar
-            // 
-            lblSeleccionar.AutoSize = true;
-            lblSeleccionar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblSeleccionar.ForeColor = Color.FromArgb(52, 73, 94);
-            lblSeleccionar.Location = new Point(20, 9);
-            lblSeleccionar.Name = "lblSeleccionar";
-            lblSeleccionar.Size = new Size(313, 25);
-            lblSeleccionar.TabIndex = 0;
-            lblSeleccionar.Text = "📋 Selecciona un Joy-Con";
+            lblOpcion1.Text = "🕹️ Conectar Joy-Con";
             // 
             // panelFooter
             // 
@@ -297,7 +259,7 @@
             panelFooter.Controls.Add(btnCerrarSesion);
             panelFooter.Controls.Add(lblVersion);
             panelFooter.Dock = DockStyle.Bottom;
-            panelFooter.Location = new Point(0, 470);
+            panelFooter.Location = new Point(0, 387);
             panelFooter.Name = "panelFooter";
             panelFooter.Padding = new Padding(30, 12, 30, 12);
             panelFooter.Size = new Size(900, 60);
@@ -327,16 +289,16 @@
             lblVersion.ForeColor = Color.FromArgb(127, 140, 141);
             lblVersion.Location = new Point(30, 22);
             lblVersion.Name = "lblVersion";
-            lblVersion.Size = new Size(259, 20);
+            lblVersion.Size = new Size(372, 20);
             lblVersion.TabIndex = 0;
-            lblVersion.Text = "AGCV v0.80 - Gestión de Joy-Cons para Switch";
+            lblVersion.Text = "AGCV v1.0 - Launcher para BetterJoy (Nintendo Switch)";
             // 
             // HOME
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(900, 530);
+            ClientSize = new Size(900, 447);
             Controls.Add(panelMain);
             Controls.Add(panelFooter);
             Controls.Add(panelHeader);
@@ -345,7 +307,7 @@
             MinimizeBox = false;
             Name = "HOME";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "AGCV - Gestión de Joy-Cons Nintendo Switch";
+            Text = "AGCV - Launcher para BetterJoy";
             Load += HOME_Load;
             Click += HOME_Click;
             panelHeader.ResumeLayout(false);
@@ -357,8 +319,6 @@
             pnlOpcion2.PerformLayout();
             pnlOpcion1.ResumeLayout(false);
             pnlOpcion1.PerformLayout();
-            pnlSeleccionar.ResumeLayout(false);
-            pnlSeleccionar.PerformLayout();
             panelFooter.ResumeLayout(false);
             panelFooter.PerformLayout();
             ResumeLayout(false);
@@ -369,11 +329,7 @@
         private Panel panelHeader;
         private Label lblTitulo;
         private Label lblUsuario;
-        private Button btnAjustes;
         private Panel panelMain;
-        private Panel pnlSeleccionar;
-        private Label lblSeleccionar;
-        private ComboBox cmbControles;
         private Panel pnlOpcion1;
         private Label lblOpcion1;
         private Label lblDesc1;

@@ -36,15 +36,9 @@
             btnHistorial = new Button();
             lblHistorialDescripcion = new Label();
             lblHistorialTitulo = new Label();
-            pnlAgregarControles = new Panel();
-            iconAgregar = new Label();
-            btnAgregar = new Button();
-            lblAgregarDescripcion = new Label();
-            lblAgregarTitulo = new Label();
             panelHeader.SuspendLayout();
             panelContent.SuspendLayout();
             pnlHistorial.SuspendLayout();
-            pnlAgregarControles.SuspendLayout();
             SuspendLayout();
             // 
             // panelHeader
@@ -73,7 +67,6 @@
             // 
             panelContent.BackColor = Color.White;
             panelContent.Controls.Add(pnlHistorial);
-            panelContent.Controls.Add(pnlAgregarControles);
             panelContent.Dock = DockStyle.Fill;
             panelContent.Location = new Point(0, 100);
             panelContent.Name = "panelContent";
@@ -83,13 +76,14 @@
             // 
             // pnlHistorial
             // 
+            pnlHistorial.Anchor = AnchorStyles.None;
             pnlHistorial.BackColor = Color.FromArgb(236, 240, 241);
             pnlHistorial.BorderStyle = BorderStyle.FixedSingle;
             pnlHistorial.Controls.Add(iconHistorial);
             pnlHistorial.Controls.Add(btnHistorial);
             pnlHistorial.Controls.Add(lblHistorialDescripcion);
             pnlHistorial.Controls.Add(lblHistorialTitulo);
-            pnlHistorial.Location = new Point(430, 30);
+            pnlHistorial.Location = new Point(230, 35);
             pnlHistorial.Name = "pnlHistorial";
             pnlHistorial.Padding = new Padding(20);
             pnlHistorial.Size = new Size(340, 280);
@@ -143,67 +137,6 @@
             lblHistorialTitulo.Text = "📊 Historial de Conexiones";
             lblHistorialTitulo.Click += lblHistorialTitulo_Click;
             // 
-            // pnlAgregarControles
-            // 
-            pnlAgregarControles.BackColor = Color.FromArgb(236, 240, 241);
-            pnlAgregarControles.BorderStyle = BorderStyle.FixedSingle;
-            pnlAgregarControles.Controls.Add(iconAgregar);
-            pnlAgregarControles.Controls.Add(btnAgregar);
-            pnlAgregarControles.Controls.Add(lblAgregarDescripcion);
-            pnlAgregarControles.Controls.Add(lblAgregarTitulo);
-            pnlAgregarControles.Location = new Point(30, 30);
-            pnlAgregarControles.Name = "pnlAgregarControles";
-            pnlAgregarControles.Padding = new Padding(20);
-            pnlAgregarControles.Size = new Size(340, 280);
-            pnlAgregarControles.TabIndex = 0;
-            // 
-            // iconAgregar
-            // 
-            iconAgregar.AutoSize = true;
-            iconAgregar.Font = new Font("Segoe UI", 30F);
-            iconAgregar.Location = new Point(222, 120);
-            iconAgregar.Name = "iconAgregar";
-            iconAgregar.Size = new Size(98, 67);
-            iconAgregar.TabIndex = 3;
-            iconAgregar.Text = "➕";
-            // 
-            // btnAgregar
-            // 
-            btnAgregar.BackColor = Color.FromArgb(46, 204, 113);
-            btnAgregar.Cursor = Cursors.Hand;
-            btnAgregar.FlatAppearance.BorderSize = 0;
-            btnAgregar.FlatStyle = FlatStyle.Flat;
-            btnAgregar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            btnAgregar.ForeColor = Color.White;
-            btnAgregar.Location = new Point(20, 225);
-            btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(300, 40);
-            btnAgregar.TabIndex = 2;
-            btnAgregar.Text = "✨ Agregar Control";
-            btnAgregar.UseVisualStyleBackColor = false;
-            btnAgregar.Click += button1_Click;
-            // 
-            // lblAgregarDescripcion
-            // 
-            lblAgregarDescripcion.Font = new Font("Segoe UI", 11F);
-            lblAgregarDescripcion.ForeColor = Color.FromArgb(127, 140, 141);
-            lblAgregarDescripcion.Location = new Point(20, 60);
-            lblAgregarDescripcion.Name = "lblAgregarDescripcion";
-            lblAgregarDescripcion.Size = new Size(300, 100);
-            lblAgregarDescripcion.TabIndex = 1;
-            lblAgregarDescripcion.Text = "Agrega nuevos Joy-Cons de Nintendo Switch a tu lista de dispositivos.\r\n\r\nRegistra cada Joy-Con con un nombre único y especifica si es para Switch v1 o v2.";
-            // 
-            // lblAgregarTitulo
-            // 
-            lblAgregarTitulo.AutoSize = true;
-            lblAgregarTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblAgregarTitulo.ForeColor = Color.FromArgb(52, 73, 94);
-            lblAgregarTitulo.Location = new Point(20, 20);
-            lblAgregarTitulo.Name = "lblAgregarTitulo";
-            lblAgregarTitulo.Size = new Size(265, 32);
-            lblAgregarTitulo.TabIndex = 0;
-            lblAgregarTitulo.Text = "🎮 Agregar Joy-Cons";
-            // 
             // Ajustes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -223,8 +156,6 @@
             panelContent.ResumeLayout(false);
             pnlHistorial.ResumeLayout(false);
             pnlHistorial.PerformLayout();
-            pnlAgregarControles.ResumeLayout(false);
-            pnlAgregarControles.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -233,11 +164,6 @@
         private Panel panelHeader;
         private Label lblTituloText;
         private Panel panelContent;
-        private Panel pnlAgregarControles;
-        private Label lblAgregarTitulo;
-        private Label lblAgregarDescripcion;
-        private Button btnAgregar;
-        private Label iconAgregar;
         private Panel pnlHistorial;
         private Label lblHistorialTitulo;
         private Label lblHistorialDescripcion;

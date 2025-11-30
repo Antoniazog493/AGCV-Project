@@ -1,13 +1,10 @@
-﻿using capaNegocio;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace AGCV
 {
     public partial class Historial : Form
     {
-        private readonly CNHistorial _cnHistorial = new CNHistorial();
-
         public Historial()
         {
             InitializeComponent();
@@ -15,67 +12,23 @@ namespace AGCV
 
         private void Historial_Load(object sender, EventArgs e)
         {
-            try
-            {
-                // Personalizar bienvenida
-                lblBienvenida.Text = $"Bienvenido, {SesionActual.NombreUsuario}";
-
-                int idUsuario = SesionActual.IdUsuario;
-
-                // Cargar datos del historial
-                var datos = _cnHistorial.ObtenerHistorial(idUsuario);
-
-                if (datos != null && datos.Tables.Count > 0 && datos.Tables["Historial"] != null)
-                {
-                    var tabla = datos.Tables["Historial"];
-                    dataGridView1.DataSource = tabla;
-
-                    // Actualizar contador de registros
-                    lblRegistros.Text = $"Registros: {tabla.Rows.Count}";
-
-                    // Aplicar estilos al DataGridView
-                    EstilizarDataGridView();
-                }
-                else
-                {
-                    lblRegistros.Text = "Registros: 0";
-                    MessageBox.Show("No hay registros en el historial", "Información",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al cargar el historial:\n{ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void EstilizarDataGridView()
-        {
-            try
-            {
-                // Configurar apariencia
-                dataGridView1.EnableHeadersVisualStyles = false;
-                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(52, 73, 94);
-                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 11, System.Drawing.FontStyle.Bold);
-                dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
-                // Alternar colores de filas
-                dataGridView1.RowsDefaultCellStyle.BackColor = Color.White;
-                dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = Color.FromArgb(236, 240, 241);
-                dataGridView1.RowsDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10);
-
-                // Altura de filas
-                dataGridView1.RowTemplate.Height = 30;
-
-                // Alineación
-                dataGridView1.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            }
-            catch (Exception ex)
-            {
-                System.Diagnostics.Debug.WriteLine($"Error al estilizar DataGridView: {ex.Message}");
-            }
+            // Mostrar mensaje informativo
+            lblBienvenida.Text = $"Bienvenido, {SesionActual.NombreUsuario}";
+            lblRegistros.Text = "Registros: 0";
+            
+            MessageBox.Show(
+                "📊 HISTORIAL DE CONEXIONES\n\n" +
+                "Esta funcionalidad mostrará el historial de\n" +
+                "conexiones de Joy-Cons una vez implementada\n" +
+                "con AGCV.\n\n" +
+                "Próximamente:\n" +
+                "• Registro de conexiones\n" +
+                "• Tiempo de uso por sesión\n" +
+                "• Estadísticas de batería\n" +
+                "• Errores de conexión",
+                "Información",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -85,91 +38,29 @@ namespace AGCV
 
         private void btnExportar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (dataGridView1.Rows.Count == 0)
-                {
-                    MessageBox.Show("No hay datos para exportar", "Información",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
-                }
-
-                using (SaveFileDialog sfd = new SaveFileDialog())
-                {
-                    sfd.Filter = "Excel Files (*.xlsx)|*.xlsx|CSV Files (*.csv)|*.csv";
-                    sfd.FileName = $"Historial_{DateTime.Now:yyyyMMdd_HHmmss}";
-
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                        // Exportar a CSV (implementación simple)
-                        ExportarACSV(sfd.FileName);
-
-                        MessageBox.Show("EXITOSO: Archivo exportado exitosamente", "Éxito",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"ERROR: Error al exportar:\n{ex.Message}", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void ExportarACSV(string ruta)
-        {
-            using (var writer = new System.IO.StreamWriter(ruta))
-            {
-                // Escribir encabezados
-                for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                {
-                    writer.Write(dataGridView1.Columns[i].HeaderText);
-                    if (i < dataGridView1.Columns.Count - 1)
-                        writer.Write(",");
-                }
-                writer.WriteLine();
-
-                // Escribir filas
-                foreach (DataGridViewRow row in dataGridView1.Rows)
-                {
-                    for (int i = 0; i < dataGridView1.Columns.Count; i++)
-                    {
-                        writer.Write(row.Cells[i].Value ?? "");
-                        if (i < dataGridView1.Columns.Count - 1)
-                            writer.Write(",");
-                    }
-                    writer.WriteLine();
-                }
-            }
+            MessageBox.Show(
+                "ℹ️ EXPORTAR HISTORIAL\n\n" +
+                "La función de exportar estará disponible\n" +
+                "una vez se implemente el historial completo.\n\n" +
+                "Podrás exportar a:\n" +
+                "• CSV\n" +
+                "• Excel\n" +
+                "• PDF",
+                "Próximamente",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            var resultado = MessageBox.Show(
-                "AVISO: ¿Estás seguro de que deseas limpiar todo el historial?\n\n" +
-                "Esta acción no se puede deshacer.",
-                "Confirmar eliminación",
-                MessageBoxButtons.YesNo,
-                MessageBoxIcon.Warning);
-
-            if (resultado == DialogResult.Yes)
-            {
-                try
-                {
-                    // Aquí iría la lógica para limpiar el historial en BD
-                    // Por ahora solo mostramos un mensaje
-                    MessageBox.Show("EXITOSO: Historial limpiado exitosamente", "Éxito",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                    dataGridView1.DataSource = null;
-                    lblRegistros.Text = "Registros: 0";
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"ERROR: Error al limpiar el historial:\n{ex.Message}", "Error",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
+            MessageBox.Show(
+                "ℹ️ LIMPIAR HISTORIAL\n\n" +
+                "La función de limpiar historial estará\n" +
+                "disponible una vez se implemente el\n" +
+                "registro de conexiones.",
+                "Próximamente",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -179,7 +70,6 @@ namespace AGCV
 
         private void lblTituloText_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

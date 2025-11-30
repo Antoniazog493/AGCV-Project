@@ -10,17 +10,6 @@ namespace AGCV
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            // Abrir formulario de Nuevo Control
-            using (var ventana = new NuevoControl(this))
-            {
-                this.Hide();
-                ventana.ShowDialog();
-                this.Show();
-            }
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             // Abrir formulario de Historial

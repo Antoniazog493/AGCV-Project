@@ -365,7 +365,6 @@ C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AG
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.Historial.resources
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.LogIn.resources
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.HOME.resources
-C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.NuevoControl.resources
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.Properties.Resources.resources
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.csproj.GenerateResource.cache
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.GeneratedMSBuildEditorConfig.editorconfig
