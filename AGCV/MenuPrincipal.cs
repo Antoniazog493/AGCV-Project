@@ -9,16 +9,16 @@ namespace AGCV
 {
     public partial class HOME : Form
     {
-        private const string MensajeMotorNoEncontrado = 
+        private const string MensajeMotorNoEncontrado =
             "ERROR: No se encontró el motor de AGCV\n\n" +
             "¿Deseas seleccionar manualmente la ubicación del motor AGCV?";
 
-        private const string MensajeAGCVEnEjecucion = 
+        private const string MensajeAGCVEnEjecucion =
             "ℹ️ AGCV ya está en ejecución\n\n" +
             "El motor de AGCV ya está activo.\n" +
             "Si no ves la ventana, búscala en la barra de tareas.";
 
-        private const string MensajeInstrucciones = 
+        private const string MensajeInstrucciones =
             "✅ EXITOSO: AGCV iniciado correctamente\n\n" +
             "INSTRUCCIONES PARA CONECTAR TU JOY-CON:\n\n" +
             "1. Presiona los botones de sincronización en tu Joy-Con:\n" +
@@ -29,7 +29,7 @@ namespace AGCV
             "   como un control Xbox compatible\n\n" +
             "NOTA: Mantén AGCV abierto mientras usas el Joy-Con";
 
-        private const string MensajeConfirmarCierreSesion = 
+        private const string MensajeConfirmarCierreSesion =
             "¿Estás seguro de que deseas cerrar sesión?";
 
         private string _agcvPathCache;
@@ -37,7 +37,7 @@ namespace AGCV
         public HOME()
         {
             InitializeComponent();
-            
+
             // Registrar evento de cierre del formulario
             this.FormClosing += HOME_FormClosing;
         }
@@ -118,9 +118,12 @@ namespace AGCV
                 };
 
                 Process procesoIniciado = Process.Start(startInfo);
-                
+
                 // Guardar referencia al proceso en la sesión actual
                 SesionActual.ProcesoBetterJoy = procesoIniciado;
+
+                // Registrar inicio del motor AGCV en el historial
+                SesionActual.RegistrarInicioAGCV();
 
                 MessageBox.Show(
                     MensajeInstrucciones,
@@ -130,6 +133,9 @@ namespace AGCV
             }
             catch (Exception ex)
             {
+                // Registrar error en el historial
+                SesionActual.RegistrarError($"No se pudo iniciar AGCV: {ex.Message}");
+
                 MessageBox.Show(
                     $"ERROR: No se pudo iniciar AGCV:\n\n{ex.Message}\n\n" +
                     "Verifica que el motor de AGCV esté instalado correctamente.",
@@ -207,7 +213,7 @@ namespace AGCV
                 {
                     return File.ReadAllText(configFile).Trim();
                 }
-                
+
                 // Intentar leer configuración antigua de BetterJoy (compatibilidad)
                 string oldConfigFile = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "betterjoy_config.txt");
                 if (File.Exists(oldConfigFile))
@@ -271,5 +277,15 @@ namespace AGCV
         private void HOME_Click(object sender, EventArgs e) { }
 
         private void lblTitulo_Click_1(object sender, EventArgs e) { }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void lblUsuario_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

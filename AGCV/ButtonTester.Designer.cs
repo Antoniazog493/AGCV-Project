@@ -18,6 +18,8 @@ namespace AGCV
         private void InitializeComponent()
         {
             panelHeader = new Panel();
+            cmbControllers = new ComboBox();
+            lblControllerSelector = new Label();
             lblTitulo = new Label();
             lblStatus = new Label();
             lblEventCount = new Label();
@@ -35,15 +37,38 @@ namespace AGCV
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.BackColor = Color.FromArgb(230, 0, 18); // Rojo Nintendo Switch
+            panelHeader.Controls.Add(cmbControllers);
+            panelHeader.Controls.Add(lblControllerSelector);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Controls.Add(lblStatus);
             panelHeader.Controls.Add(lblEventCount);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Size = new Size(1200, 80);
+            panelHeader.Size = new Size(1200, 100);
             panelHeader.TabIndex = 0;
+            // 
+            // cmbControllers
+            // 
+            cmbControllers.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbControllers.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            cmbControllers.FormattingEnabled = true;
+            cmbControllers.Location = new Point(880, 15);
+            cmbControllers.Name = "cmbControllers";
+            cmbControllers.Size = new Size(300, 31);
+            cmbControllers.TabIndex = 4;
+            // 
+            // lblControllerSelector
+            // 
+            lblControllerSelector.AutoSize = true;
+            lblControllerSelector.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblControllerSelector.ForeColor = Color.White; // Texto blanco sobre fondo rojo
+            lblControllerSelector.Location = new Point(720, 18);
+            lblControllerSelector.Name = "lblControllerSelector";
+            lblControllerSelector.Size = new Size(154, 23);
+            lblControllerSelector.TabIndex = 3;
+            lblControllerSelector.Text = "Select Controller:";
             // 
             // lblTitulo
             // 
@@ -62,8 +87,8 @@ namespace AGCV
             // 
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblStatus.ForeColor = Color.LightGray;
-            lblStatus.Location = new Point(20, 50);
+            lblStatus.ForeColor = Color.White; // Texto blanco sobre fondo rojo
+            lblStatus.Location = new Point(20, 60);
             lblStatus.Name = "lblStatus";
             lblStatus.Size = new Size(152, 25);
             lblStatus.TabIndex = 1;
@@ -73,8 +98,8 @@ namespace AGCV
             // 
             lblEventCount.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblEventCount.Font = new Font("Consolas", 11F, FontStyle.Bold);
-            lblEventCount.ForeColor = Color.FromArgb(52, 152, 219);
-            lblEventCount.Location = new Point(1000, 30);
+            lblEventCount.ForeColor = Color.White; // Texto blanco sobre fondo rojo
+            lblEventCount.Location = new Point(1000, 65);
             lblEventCount.Name = "lblEventCount";
             lblEventCount.Size = new Size(180, 25);
             lblEventCount.TabIndex = 2;
@@ -86,10 +111,10 @@ namespace AGCV
             panelMain.BackColor = Color.FromArgb(30, 30, 30);
             panelMain.Controls.Add(txtLog);
             panelMain.Dock = DockStyle.Fill;
-            panelMain.Location = new Point(0, 80);
+            panelMain.Location = new Point(0, 100);
             panelMain.Name = "panelMain";
             panelMain.Padding = new Padding(10);
-            panelMain.Size = new Size(1200, 500);
+            panelMain.Size = new Size(1200, 480);
             panelMain.TabIndex = 0;
             // 
             // txtLog
@@ -102,7 +127,7 @@ namespace AGCV
             txtLog.Location = new Point(10, 10);
             txtLog.Name = "txtLog";
             txtLog.ReadOnly = true;
-            txtLog.Size = new Size(1180, 480);
+            txtLog.Size = new Size(1180, 460);
             txtLog.TabIndex = 0;
             txtLog.Text = "";
             txtLog.WordWrap = false;
@@ -123,7 +148,7 @@ namespace AGCV
             // 
             // btnClear
             // 
-            btnClear.BackColor = Color.FromArgb(231, 76, 60);
+            btnClear.BackColor = Color.FromArgb(230, 0, 18); // Rojo Nintendo Switch
             btnClear.Cursor = Cursors.Hand;
             btnClear.FlatAppearance.BorderSize = 0;
             btnClear.FlatStyle = FlatStyle.Flat;
@@ -139,7 +164,7 @@ namespace AGCV
             // 
             // btnExport
             // 
-            btnExport.BackColor = Color.FromArgb(52, 152, 219);
+            btnExport.BackColor = Color.FromArgb(0, 150, 215); // Azul Nintendo Switch
             btnExport.Cursor = Cursors.Hand;
             btnExport.FlatAppearance.BorderSize = 0;
             btnExport.FlatStyle = FlatStyle.Flat;
@@ -155,7 +180,7 @@ namespace AGCV
             // 
             // btnGetInfo
             // 
-            btnGetInfo.BackColor = Color.FromArgb(155, 89, 182);
+            btnGetInfo.BackColor = Color.FromArgb(0, 150, 215); // Azul Nintendo Switch
             btnGetInfo.Cursor = Cursors.Hand;
             btnGetInfo.FlatAppearance.BorderSize = 0;
             btnGetInfo.FlatStyle = FlatStyle.Flat;
@@ -220,5 +245,7 @@ namespace AGCV
         private Button btnExport;
         private Button btnGetInfo;
         private Button btnClose;
+        private ComboBox cmbControllers;
+        private Label lblControllerSelector;
     }
 }

@@ -9,12 +9,11 @@ namespace AGCV
         private readonly CNUsuarios _cnUsuarios = new CNUsuarios();
 
         private const string MensajeCredencialesIncorrectas = "ERROR: Usuario o contraseña incorrectos";
-        private const string MensajeRecuperarContraseña = 
+        private const string MensajeRecuperarContraseña =
             "🔒 Recuperación de Contraseña\n\n" +
             "Para cambiar tu contraseña, debes contactar a un administrador del sistema.\n\n" +
             "Los administradores pueden cambiar contraseñas desde:\n" +
-            "Ajustes → Administrar Usuarios\n\n" +
-            "Si no conoces a ningún administrador, contacta al soporte técnico.";
+            "Ajustes → Administrar Usuarios\n\n";
 
         public LogIn()
         {
@@ -47,7 +46,7 @@ namespace AGCV
             {
                 MessageBox.Show(validacion.Mensaje, validacion.Titulo,
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                
+
                 if (validacion.Mensaje.Contains("nombre"))
                 {
                     txtUsuario.Focus();
@@ -75,6 +74,9 @@ namespace AGCV
                 SesionActual.IdUsuario = datosUsuario.IdUsuario;
                 SesionActual.NombreUsuario = datosUsuario.NombreUsuario;
                 SesionActual.Rol = datosUsuario.Rol;
+
+                // Registrar inicio de sesión en el historial
+                SesionActual.RegistrarInicioSesion();
 
                 string rolTexto = datosUsuario.EsAdministrador() ? "⭐ Administrador" : "👤 Usuario";
                 string mensajeBienvenida = $"EXITOSO: ¡Bienvenido a AGCV, {datosUsuario.NombreUsuario}!\n\n" +
@@ -127,5 +129,10 @@ namespace AGCV
 
         private void lblDescripcion_Click(object sender, EventArgs e) { }
         private void lblTitulo_Click(object sender, EventArgs e) { }
+
+        private void panelIzquierdo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

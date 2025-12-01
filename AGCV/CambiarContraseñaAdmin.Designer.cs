@@ -17,133 +17,168 @@ namespace AGCV
 
         private void InitializeComponent()
         {
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.lblNuevaContraseña = new System.Windows.Forms.Label();
-            this.txtNuevaContraseña = new System.Windows.Forms.TextBox();
-            this.lblConfirmarContraseña = new System.Windows.Forms.Label();
-            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
-            this.chkMostrarContraseña = new System.Windows.Forms.CheckBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblTitulo = new Label();
+            lblUsuario = new Label();
+            lblNuevaContraseña = new Label();
+            txtNuevaContraseña = new TextBox();
+            lblConfirmarContraseña = new Label();
+            txtConfirmarContraseña = new TextBox();
+            chkMostrarContraseña = new CheckBox();
+            btnGuardar = new Button();
+            btnCancelar = new Button();
+            panelHeader = new Panel();
+            panelHeader.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitulo
             // 
-            this.lblTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitulo.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
-            this.lblTitulo.Location = new System.Drawing.Point(0, 0);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(450, 50);
-            this.lblTitulo.TabIndex = 0;
-            this.lblTitulo.Text = "Cambiar Contraseña";
-            this.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            lblTitulo.Dock = DockStyle.Fill;
+            lblTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblTitulo.ForeColor = Color.White;
+            lblTitulo.Location = new Point(0, 0);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(450, 62);
+            lblTitulo.TabIndex = 0;
+            lblTitulo.Text = "Cambiar Contraseña";
+            lblTitulo.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblUsuario
             // 
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblUsuario.Location = new System.Drawing.Point(30, 60);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(390, 30);
-            this.lblUsuario.TabIndex = 1;
-            this.lblUsuario.Text = "Cambiar contraseña de:";
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblUsuario.Font = new Font("Segoe UI", 10F);
+            lblUsuario.ForeColor = Color.FromArgb(44, 62, 80);
+            lblUsuario.Location = new Point(30, 88);
+            lblUsuario.Name = "lblUsuario";
+            lblUsuario.Size = new Size(390, 38);
+            lblUsuario.TabIndex = 1;
+            lblUsuario.Text = "Cambiar contraseña de:";
+            lblUsuario.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblNuevaContraseña
             // 
-            this.lblNuevaContraseña.AutoSize = true;
-            this.lblNuevaContraseña.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblNuevaContraseña.Location = new System.Drawing.Point(30, 110);
-            this.lblNuevaContraseña.Name = "lblNuevaContraseña";
-            this.lblNuevaContraseña.Size = new System.Drawing.Size(149, 23);
-            this.lblNuevaContraseña.TabIndex = 2;
-            this.lblNuevaContraseña.Text = "Nueva Contraseña:";
+            lblNuevaContraseña.AutoSize = true;
+            lblNuevaContraseña.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblNuevaContraseña.ForeColor = Color.FromArgb(44, 62, 80);
+            lblNuevaContraseña.Location = new Point(30, 138);
+            lblNuevaContraseña.Name = "lblNuevaContraseña";
+            lblNuevaContraseña.Size = new Size(159, 23);
+            lblNuevaContraseña.TabIndex = 2;
+            lblNuevaContraseña.Text = "Nueva Contraseña:";
             // 
             // txtNuevaContraseña
             // 
-            this.txtNuevaContraseña.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtNuevaContraseña.Location = new System.Drawing.Point(30, 140);
-            this.txtNuevaContraseña.Name = "txtNuevaContraseña";
-            this.txtNuevaContraseña.Size = new System.Drawing.Size(390, 30);
-            this.txtNuevaContraseña.TabIndex = 3;
-            this.txtNuevaContraseña.UseSystemPasswordChar = true;
+            txtNuevaContraseña.Font = new Font("Segoe UI", 10F);
+            txtNuevaContraseña.Location = new Point(30, 175);
+            txtNuevaContraseña.Margin = new Padding(3, 4, 3, 4);
+            txtNuevaContraseña.Name = "txtNuevaContraseña";
+            txtNuevaContraseña.Size = new Size(390, 30);
+            txtNuevaContraseña.TabIndex = 3;
+            txtNuevaContraseña.UseSystemPasswordChar = true;
             // 
             // lblConfirmarContraseña
             // 
-            this.lblConfirmarContraseña.AutoSize = true;
-            this.lblConfirmarContraseña.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblConfirmarContraseña.Location = new System.Drawing.Point(30, 190);
-            this.lblConfirmarContraseña.Name = "lblConfirmarContraseña";
-            this.lblConfirmarContraseña.Size = new System.Drawing.Size(181, 23);
-            this.lblConfirmarContraseña.TabIndex = 4;
-            this.lblConfirmarContraseña.Text = "Confirmar Contraseña:";
+            lblConfirmarContraseña.AutoSize = true;
+            lblConfirmarContraseña.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblConfirmarContraseña.ForeColor = Color.FromArgb(44, 62, 80);
+            lblConfirmarContraseña.Location = new Point(30, 238);
+            lblConfirmarContraseña.Name = "lblConfirmarContraseña";
+            lblConfirmarContraseña.Size = new Size(191, 23);
+            lblConfirmarContraseña.TabIndex = 4;
+            lblConfirmarContraseña.Text = "Confirmar Contraseña:";
             // 
             // txtConfirmarContraseña
             // 
-            this.txtConfirmarContraseña.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.txtConfirmarContraseña.Location = new System.Drawing.Point(30, 220);
-            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(390, 30);
-            this.txtConfirmarContraseña.TabIndex = 5;
-            this.txtConfirmarContraseña.UseSystemPasswordChar = true;
+            txtConfirmarContraseña.Font = new Font("Segoe UI", 10F);
+            txtConfirmarContraseña.Location = new Point(30, 275);
+            txtConfirmarContraseña.Margin = new Padding(3, 4, 3, 4);
+            txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            txtConfirmarContraseña.Size = new Size(390, 30);
+            txtConfirmarContraseña.TabIndex = 5;
+            txtConfirmarContraseña.UseSystemPasswordChar = true;
             // 
             // chkMostrarContraseña
             // 
-            this.chkMostrarContraseña.AutoSize = true;
-            this.chkMostrarContraseña.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.chkMostrarContraseña.Location = new System.Drawing.Point(30, 270);
-            this.chkMostrarContraseña.Name = "chkMostrarContraseña";
-            this.chkMostrarContraseña.Size = new System.Drawing.Size(163, 24);
-            this.chkMostrarContraseña.TabIndex = 6;
-            this.chkMostrarContraseña.Text = "Mostrar contraseñas";
-            this.chkMostrarContraseña.UseVisualStyleBackColor = true;
-            this.chkMostrarContraseña.CheckedChanged += new System.EventHandler(this.chkMostrarContraseña_CheckedChanged);
+            chkMostrarContraseña.AutoSize = true;
+            chkMostrarContraseña.Font = new Font("Segoe UI", 9F);
+            chkMostrarContraseña.Location = new Point(30, 338);
+            chkMostrarContraseña.Margin = new Padding(3, 4, 3, 4);
+            chkMostrarContraseña.Name = "chkMostrarContraseña";
+            chkMostrarContraseña.Size = new Size(158, 24);
+            chkMostrarContraseña.TabIndex = 6;
+            chkMostrarContraseña.Text = "Mostrar contraseña";
+            chkMostrarContraseña.UseVisualStyleBackColor = true;
+            chkMostrarContraseña.CheckedChanged += chkMostrarContraseña_CheckedChanged;
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnGuardar.Location = new System.Drawing.Point(220, 320);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(100, 40);
-            this.btnGuardar.TabIndex = 7;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            btnGuardar.BackColor = Color.FromArgb(0, 150, 215);
+            btnGuardar.Cursor = Cursors.Hand;
+            btnGuardar.FlatAppearance.BorderSize = 0;
+            btnGuardar.FlatStyle = FlatStyle.Flat;
+            btnGuardar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(220, 400);
+            btnGuardar.Margin = new Padding(3, 4, 3, 4);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(100, 50);
+            btnGuardar.TabIndex = 7;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnCancelar.Location = new System.Drawing.Point(330, 320);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(100, 40);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            btnCancelar.BackColor = Color.FromArgb(230, 0, 18);
+            btnCancelar.Cursor = Cursors.Hand;
+            btnCancelar.FlatAppearance.BorderSize = 0;
+            btnCancelar.FlatStyle = FlatStyle.Flat;
+            btnCancelar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnCancelar.ForeColor = Color.White;
+            btnCancelar.Location = new Point(330, 400);
+            btnCancelar.Margin = new Padding(3, 4, 3, 4);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(100, 50);
+            btnCancelar.TabIndex = 8;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = false;
+            btnCancelar.Click += btnCancelar_Click;
+            // 
+            // panelHeader
+            // 
+            panelHeader.BackColor = Color.FromArgb(230, 0, 18);
+            panelHeader.Controls.Add(lblTitulo);
+            panelHeader.Dock = DockStyle.Top;
+            panelHeader.Location = new Point(0, 0);
+            panelHeader.Margin = new Padding(3, 4, 3, 4);
+            panelHeader.Name = "panelHeader";
+            panelHeader.Size = new Size(450, 62);
+            panelHeader.TabIndex = 9;
             // 
             // CambiarContraseñaAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(450, 380);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.chkMostrarContraseña);
-            this.Controls.Add(this.txtConfirmarContraseña);
-            this.Controls.Add(this.lblConfirmarContraseña);
-            this.Controls.Add(this.txtNuevaContraseña);
-            this.Controls.Add(this.lblNuevaContraseña);
-            this.Controls.Add(this.lblUsuario);
-            this.Controls.Add(this.lblTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "CambiarContraseñaAdmin";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Cambiar Contraseña - AGCV";
-            this.Load += new System.EventHandler(this.CambiarContraseñaAdmin_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(450, 475);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnGuardar);
+            Controls.Add(chkMostrarContraseña);
+            Controls.Add(txtConfirmarContraseña);
+            Controls.Add(lblConfirmarContraseña);
+            Controls.Add(txtNuevaContraseña);
+            Controls.Add(lblNuevaContraseña);
+            Controls.Add(lblUsuario);
+            Controls.Add(panelHeader);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "CambiarContraseñaAdmin";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Cambiar Contraseña - AGCV";
+            Load += CambiarContraseñaAdmin_Load;
+            panelHeader.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -157,5 +192,6 @@ namespace AGCV
         private System.Windows.Forms.CheckBox chkMostrarContraseña;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Panel panelHeader;
     }
 }

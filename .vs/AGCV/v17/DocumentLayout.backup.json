@@ -1,7 +1,71 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\AGCV-Project\\Database\\01_Crear_Tabla_Historial.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Database\\01_Crear_Tabla_Historial.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|c:\\users\\anton\\downloads\\agcv-project\\betterjoyforcemu\\joycon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|solutionrelative:betterjoyforcemu\\joycon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|c:\\users\\anton\\downloads\\agcv-project\\betterjoyforcemu\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|solutionrelative:betterjoyforcemu\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{456E70F6-8474-4B2B-9C70-E2D45AD6FC90}|capaDatos\\capaDatos.csproj|c:\\users\\anton\\downloads\\agcv-project\\capadatos\\cdhistorial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{456E70F6-8474-4B2B-9C70-E2D45AD6FC90}|capaDatos\\capaDatos.csproj|solutionrelative:capadatos\\cdhistorial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B19A831C-EF92-44DF-8A11-0139575BA8D4}|capaNegocio\\capaNegocio.csproj|c:\\users\\anton\\downloads\\agcv-project\\capanegocio\\cnhistorial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B19A831C-EF92-44DF-8A11-0139575BA8D4}|capaNegocio\\capaNegocio.csproj|solutionrelative:capanegocio\\cnhistorial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\sesionactual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\sesionactual.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\historial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\AGCV-Project\\Database\\01_Crear_Tabla_Historial.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Database\\01_Crear_Tabla_Historial.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\AGCV-Project\\HISTORIAL_README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HISTORIAL_README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\AGCV-Project\\Database\\INSTRUCCIONES_ACTUALIZACION.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Database\\INSTRUCCIONES_ACTUALIZACION.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +73,204 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "INSTRUCCIONES_ACTUALIZACION.md",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\Database\\INSTRUCCIONES_ACTUALIZACION.md",
+              "RelativeDocumentMoniker": "Database\\INSTRUCCIONES_ACTUALIZACION.md",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\Database\\INSTRUCCIONES_ACTUALIZACION.md",
+              "RelativeToolTip": "Database\\INSTRUCCIONES_ACTUALIZACION.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-01T16:21:34.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HISTORIAL_README.md",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\HISTORIAL_README.md",
+              "RelativeDocumentMoniker": "HISTORIAL_README.md",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\HISTORIAL_README.md",
+              "RelativeToolTip": "HISTORIAL_README.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-01T16:17:03.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "01_Crear_Tabla_Historial.sql ",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\Database\\01_Crear_Tabla_Historial.sql",
+              "RelativeDocumentMoniker": "Database\\01_Crear_Tabla_Historial.sql",
+              "ToolTip": "01_Crear_Tabla_Historial.sql ",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-12-01T16:15:53.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "InicioSesion.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs",
+              "RelativeDocumentMoniker": "AGCV\\InicioSesion.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs",
+              "RelativeToolTip": "AGCV\\InicioSesion.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:15:28.325Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InicioSesion.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs",
+              "RelativeDocumentMoniker": "AGCV\\InicioSesion.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs [Design]",
+              "RelativeToolTip": "AGCV\\InicioSesion.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:15:28.199Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "AGCV\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
+              "RelativeToolTip": "AGCV\\MenuPrincipal.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:15:03.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MenuPrincipal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "AGCV\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs [Design]",
+              "RelativeToolTip": "AGCV\\MenuPrincipal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:15:03.36Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Historial.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Historial.cs",
+              "RelativeDocumentMoniker": "AGCV\\Historial.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Historial.cs",
+              "RelativeToolTip": "AGCV\\Historial.cs",
+              "ViewState": "AgIAAFIBAAAAAAAAAABZwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:14:24.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Historial.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Historial.cs",
+              "RelativeDocumentMoniker": "AGCV\\Historial.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Historial.cs [Design]",
+              "RelativeToolTip": "AGCV\\Historial.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:14:23.92Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SesionActual.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\SesionActual.cs",
+              "RelativeDocumentMoniker": "AGCV\\SesionActual.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\SesionActual.cs",
+              "RelativeToolTip": "AGCV\\SesionActual.cs",
+              "ViewState": "AgIAAIcAAAAAAAAAAEBVwDIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:13:35.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CNHistorial.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\CNHistorial.cs",
+              "RelativeDocumentMoniker": "capaNegocio\\CNHistorial.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\CNHistorial.cs",
+              "RelativeToolTip": "capaNegocio\\CNHistorial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:13:03.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CDHistorial.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\CDHistorial.cs",
+              "RelativeDocumentMoniker": "capaDatos\\CDHistorial.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\CDHistorial.cs",
+              "RelativeToolTip": "capaDatos\\CDHistorial.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAANcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:12:30.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "plan-e71b81c7-6315-4db5-b501-aace63a3d468.md",
+              "DocumentMoniker": "C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md",
+              "ToolTip": "C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md [Read Only]",
+              "RelativeToolTip": "..\\..\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md [Read Only]",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-01T16:11:57.605Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\App.config",
+              "RelativeDocumentMoniker": "BetterJoyForCemu\\App.config",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\App.config",
+              "RelativeToolTip": "BetterJoyForCemu\\App.config",
+              "ViewState": "AgIAAIUAAAAAAAAAAABBwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2025-12-01T15:51:31.024Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Joycon.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\Joycon.cs",
+              "RelativeDocumentMoniker": "BetterJoyForCemu\\Joycon.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\Joycon.cs",
+              "RelativeToolTip": "BetterJoyForCemu\\Joycon.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T15:49:43.956Z",
+              "EditorCaption": ""
             }
           ]
         }

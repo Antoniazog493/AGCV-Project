@@ -46,7 +46,7 @@
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.BackColor = Color.FromArgb(230, 0, 18); // Rojo Nintendo Switch
             panelHeader.Controls.Add(lblBienvenida);
             panelHeader.Controls.Add(lblTituloText);
             panelHeader.Dock = DockStyle.Top;
@@ -60,7 +60,7 @@
             // 
             lblBienvenida.AutoSize = true;
             lblBienvenida.Font = new Font("Segoe UI", 11F);
-            lblBienvenida.ForeColor = Color.FromArgb(189, 195, 199);
+            lblBienvenida.ForeColor = Color.White; // Texto blanco sobre fondo rojo
             lblBienvenida.Location = new Point(33, 70);
             lblBienvenida.Name = "lblBienvenida";
             lblBienvenida.Size = new Size(180, 25);
@@ -105,7 +105,7 @@
             // 
             // btnLimpiar
             // 
-            btnLimpiar.BackColor = Color.FromArgb(231, 76, 60);
+            btnLimpiar.BackColor = Color.FromArgb(230, 0, 18); // Rojo Nintendo Switch
             btnLimpiar.Cursor = Cursors.Hand;
             btnLimpiar.FlatAppearance.BorderSize = 0;
             btnLimpiar.FlatStyle = FlatStyle.Flat;
@@ -121,7 +121,7 @@
             // 
             // btnExportar
             // 
-            btnExportar.BackColor = Color.FromArgb(52, 152, 219);
+            btnExportar.BackColor = Color.FromArgb(0, 150, 215); // Azul Nintendo Switch
             btnExportar.Cursor = Cursors.Hand;
             btnExportar.FlatAppearance.BorderSize = 0;
             btnExportar.FlatStyle = FlatStyle.Flat;

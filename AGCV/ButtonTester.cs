@@ -61,99 +61,264 @@ namespace AGCV
         private const ushort XINPUT_GAMEPAD_Y = 0x8000;
 
         private System.Windows.Forms.Timer updateTimer;
+        private System.Windows.Forms.Timer scanTimer;
         private int controllerIndex = -1;
-        private ushort previousButtons = 0;
-        private byte previousLeftTrigger = 0;
-        private byte previousRightTrigger = 0;
+        
+        // Estado por controlador para evitar mensajes duplicados
+        private Dictionary<int, ushort> previousButtons = new Dictionary<int, ushort>();
+        private Dictionary<int, byte> previousLeftTrigger = new Dictionary<int, byte>();
+        private Dictionary<int, byte> previousRightTrigger = new Dictionary<int, byte>();
+        private Dictionary<int, bool> wasConnected = new Dictionary<int, bool>();
+        
         private Stopwatch globalStopwatch;
         private Dictionary<string, Stopwatch> buttonPressTimers;
         private int eventCounter = 0;
         private const int MAX_LOG_LINES = 1000;
 
         // Estados para evitar mensajes repetidos
-        private bool wasConnected = false;
-        private bool hasLoggedDisconnection = false;
         private bool hasLoggedNoController = false;
+        private HashSet<int> availableControllers = new HashSet<int>();
 
         public ButtonTester()
         {
             InitializeComponent();
             globalStopwatch = Stopwatch.StartNew();
             buttonPressTimers = new Dictionary<string, Stopwatch>();
-            FindController();
-            SetupUpdateTimer();
-            LogMessage("?? AGCV Joy-Con Event Monitor iniciado", "SYSTEM", Color.Blue);
+            
+            // Inicializar estados para 4 controladores
+            for (int i = 0; i < 4; i++)
+            {
+                previousButtons[i] = 0;
+                previousLeftTrigger[i] = 0;
+                previousRightTrigger[i] = 0;
+                wasConnected[i] = false;
+            }
+            
+            // Configurar ComboBox de controladores
+            SetupControllerSelector();
+            
+            // Escanear controladores disponibles
+            ScanAvailableControllers();
+            
+            // Auto-seleccionar primer controlador disponible
+            if (availableControllers.Count > 0)
+            {
+                int firstAvailable = availableControllers.Min();
+                controllerIndex = firstAvailable;
+                cmbControllers.SelectedIndex = firstAvailable + 1; // +1 porque index 0 es "Auto-detect"
+            }
+            
+            SetupTimers();
+            LogMessage("AGCV Joy-Con Event Monitor iniciado", "SYSTEM", Color.Blue);
         }
 
-        private void FindController()
+        private void SetupControllerSelector()
         {
+            cmbControllers.Items.Clear();
+            cmbControllers.Items.Add("Auto-detect");
+            cmbControllers.Items.Add("Controller 1");
+            cmbControllers.Items.Add("Controller 2");
+            cmbControllers.Items.Add("Controller 3");
+            cmbControllers.Items.Add("Controller 4");
+            cmbControllers.SelectedIndex = 0;
+            cmbControllers.SelectedIndexChanged += CmbControllers_SelectedIndexChanged;
+        }
+
+        private void ScanAvailableControllers()
+        {
+            availableControllers.Clear();
             for (int i = 0; i < 4; i++)
             {
                 XINPUT_STATE state = new XINPUT_STATE();
                 if (XInputGetState(i, ref state) == 0)
                 {
-                    controllerIndex = i;
-                    wasConnected = true;
-                    hasLoggedDisconnection = false;
-                    hasLoggedNoController = false;
-                    LogMessage($"? Controlador encontrado en slot {i + 1}", "SYSTEM", Color.Green);
-                    LogMessage("Esperando input del Joy-Con...", "SYSTEM", Color.Gray);
+                    availableControllers.Add(i);
+                }
+            }
+            
+            // Actualizar ComboBox con indicadores de disponibilidad
+            UpdateControllerList();
+        }
+
+        private void UpdateControllerList()
+        {
+            // Guardar selección actual
+            int currentSelection = cmbControllers.SelectedIndex;
+            
+            cmbControllers.Items.Clear();
+            cmbControllers.Items.Add("Auto-detect");
+            
+            for (int i = 0; i < 4; i++)
+            {
+                string status = availableControllers.Contains(i) ? " [Conectado]" : " [Desconectado]";
+                cmbControllers.Items.Add($"Controller {i + 1}{status}");
+            }
+            
+            // Restaurar selección si es válida
+            if (currentSelection >= 0 && currentSelection < cmbControllers.Items.Count)
+            {
+                cmbControllers.SelectedIndex = currentSelection;
+            }
+            else
+            {
+                cmbControllers.SelectedIndex = 0;
+            }
+        }
+
+        private void CmbControllers_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbControllers.SelectedIndex == 0)
+            {
+                // Auto-detect - seleccionar primer controlador disponible
+                controllerIndex = -1;
+                LogMessage("Modo auto-detect activado", "SYSTEM", Color.Blue);
+                FindController();
+            }
+            else
+            {
+                // Manual selection
+                int newIndex = cmbControllers.SelectedIndex - 1;
+                XINPUT_STATE state = new XINPUT_STATE();
+                if (XInputGetState(newIndex, ref state) == 0)
+                {
+                    if (controllerIndex != newIndex)
+                    {
+                        controllerIndex = newIndex;
+                        wasConnected[newIndex] = true;
+                        LogMessage($"Cambiado manualmente a Controller {newIndex + 1}", "SYSTEM", Color.Green);
+                    }
+                }
+                else
+                {
+                    LogMessage($"Controller {newIndex + 1} no esta conectado", "WARNING", Color.Orange);
+                    // NO buscar automáticamente otro - dejar que el usuario elija
+                }
+            }
+        }
+
+        private void FindController()
+        {
+            // SOLO buscar automáticamente si estamos en modo auto-detect
+            if (cmbControllers.SelectedIndex != 0)
+            {
+                // Modo manual - no hacer nada
+                return;
+            }
+
+            // Si hay selección manual válida, no hacer auto-detect
+            if (cmbControllers.SelectedIndex > 0 && controllerIndex >= 0)
+            {
+                XINPUT_STATE testState = new XINPUT_STATE();
+                if (XInputGetState(controllerIndex, ref testState) == 0)
+                {
+                    return; // Controlador actual está bien
+                }
+            }
+
+            // Buscar primer controlador disponible
+            for (int i = 0; i < 4; i++)
+            {
+                XINPUT_STATE state = new XINPUT_STATE();
+                if (XInputGetState(i, ref state) == 0)
+                {
+                    if (controllerIndex != i)
+                    {
+                        controllerIndex = i;
+                        wasConnected[i] = true;
+                        hasLoggedNoController = false;
+                        LogMessage($"Controlador encontrado en slot {i + 1} (auto-detect)", "SYSTEM", Color.Green);
+                        LogMessage("Esperando input del Joy-Con...", "SYSTEM", Color.Gray);
+                    }
                     return;
                 }
             }
 
-            // Solo loguear si es la primera vez que no se encuentra
+            // No se encontró ningún controlador
             if (!hasLoggedNoController)
             {
-                LogMessage("? No se detectó ningún controlador. Conecta tu Joy-Con con AGCV.", "WARNING", Color.Orange);
+                LogMessage("No se detecto ningun controlador. Conecta tu Joy-Con con AGCV.", "WARNING", Color.Orange);
                 hasLoggedNoController = true;
             }
+            controllerIndex = -1;
         }
 
-        private void SetupUpdateTimer()
+        private void SetupTimers()
         {
+            // Timer principal de actualización - más rápido para baja latencia
             updateTimer = new System.Windows.Forms.Timer();
-            updateTimer.Interval = 8; // ~120 Hz para mejor precisión
+            updateTimer.Interval = 5; // ~200 Hz para respuesta inmediata
             updateTimer.Tick += UpdateTimer_Tick;
             updateTimer.Start();
+            
+            // Timer de escaneo de controladores - solo cada 2 segundos
+            scanTimer = new System.Windows.Forms.Timer();
+            scanTimer.Interval = 2000;
+            scanTimer.Tick += ScanTimer_Tick;
+            scanTimer.Start();
+        }
+
+        private void ScanTimer_Tick(object sender, EventArgs e)
+        {
+            // Escanear controladores disponibles periódicamente
+            ScanAvailableControllers();
+            
+            // FIX: Solo buscar otro controlador si el actual se desconectó Y estamos en modo auto-detect
+            if (controllerIndex >= 0)
+            {
+                XINPUT_STATE state = new XINPUT_STATE();
+                if (XInputGetState(controllerIndex, ref state) != 0)
+                {
+                    // El controlador actual se desconectó
+                    LogMessage($"Controller {controllerIndex + 1} desconectado. Buscando otro...", "WARNING", Color.Orange);
+                    
+                    // Solo auto-cambiar si estamos en modo auto-detect
+                    if (cmbControllers.SelectedIndex == 0)
+                    {
+                        FindController();
+                    }
+                }
+            }
+            else if (cmbControllers.SelectedIndex == 0)
+            {
+                // En modo auto-detect sin controlador, intentar encontrar uno
+                FindController();
+            }
         }
 
         private void UpdateTimer_Tick(object sender, EventArgs e)
         {
+            if (controllerIndex < 0)
+            {
+                lblStatus.Text = "Joy-Con desconectado";
+                lblStatus.ForeColor = Color.Red;
+                return;
+            }
+
             XINPUT_STATE state = new XINPUT_STATE();
             int result = XInputGetState(controllerIndex, ref state);
 
             if (result != 0)
             {
-                lblStatus.Text = "? Joy-Con desconectado";
+                lblStatus.Text = $"Controller {controllerIndex + 1} desconectado";
                 lblStatus.ForeColor = Color.Red;
 
-                // Solo loguear desconexión una vez
-                if (wasConnected && !hasLoggedDisconnection)
+                // Solo loguear desconexion una vez
+                if (wasConnected[controllerIndex])
                 {
-                    LogMessage("? Conexión perdida. Reconectando...", "ERROR", Color.Red);
-                    hasLoggedDisconnection = true;
-                    wasConnected = false;
+                    LogMessage($"Controller {controllerIndex + 1} desconectado", "ERROR", Color.Red);
+                    wasConnected[controllerIndex] = false;
                 }
-
-                // Intentar reconectar silenciosamente
-                if (controllerIndex != -1)
-                {
-                    controllerIndex = -1;
-                }
-
-                FindController();
                 return;
             }
 
             // Controlador conectado
-            if (!wasConnected)
+            if (!wasConnected[controllerIndex])
             {
-                wasConnected = true;
-                hasLoggedDisconnection = false;
+                wasConnected[controllerIndex] = true;
+                LogMessage($"Controller {controllerIndex + 1} reconectado", "SYSTEM", Color.Green);
             }
 
-            lblStatus.Text = $"? Joy-Con conectado (Controller {controllerIndex + 1})";
+            lblStatus.Text = $"Joy-Con conectado (Controller {controllerIndex + 1})";
             lblStatus.ForeColor = Color.Green;
 
             var gamepad = state.Gamepad;
@@ -162,24 +327,24 @@ namespace AGCV
             // Detectar cambios en botones
             DetectButtonChanges(gamepad, latency);
 
-            // Actualizar información de triggers (solo si cambió significativamente)
-            if (Math.Abs(gamepad.bLeftTrigger - previousLeftTrigger) > 10)
+            // Actualizar informacion de triggers (solo si cambio significativamente)
+            if (Math.Abs(gamepad.bLeftTrigger - previousLeftTrigger[controllerIndex]) > 10)
             {
                 LogTriggerEvent("LT", gamepad.bLeftTrigger, latency);
-                previousLeftTrigger = gamepad.bLeftTrigger;
+                previousLeftTrigger[controllerIndex] = gamepad.bLeftTrigger;
             }
 
-            if (Math.Abs(gamepad.bRightTrigger - previousRightTrigger) > 10)
+            if (Math.Abs(gamepad.bRightTrigger - previousRightTrigger[controllerIndex]) > 10)
             {
                 LogTriggerEvent("RT", gamepad.bRightTrigger, latency);
-                previousRightTrigger = gamepad.bRightTrigger;
+                previousRightTrigger[controllerIndex] = gamepad.bRightTrigger;
             }
         }
 
         private void DetectButtonChanges(XINPUT_GAMEPAD gamepad, long latency)
         {
             ushort currentButtons = gamepad.wButtons;
-            ushort changed = (ushort)(currentButtons ^ previousButtons);
+            ushort changed = (ushort)(currentButtons ^ previousButtons[controllerIndex]);
 
             if (changed == 0) return;
 
@@ -196,10 +361,10 @@ namespace AGCV
                 { XINPUT_GAMEPAD_BACK, "BACK (-)" },
                 { XINPUT_GAMEPAD_LEFT_THUMB, "L-STICK" },
                 { XINPUT_GAMEPAD_RIGHT_THUMB, "R-STICK" },
-                { XINPUT_GAMEPAD_DPAD_UP, "D-PAD ?" },
-                { XINPUT_GAMEPAD_DPAD_DOWN, "D-PAD ?" },
-                { XINPUT_GAMEPAD_DPAD_LEFT, "D-PAD ?" },
-                { XINPUT_GAMEPAD_DPAD_RIGHT, "D-PAD ?" }
+                { XINPUT_GAMEPAD_DPAD_UP, "D-PAD UP" },
+                { XINPUT_GAMEPAD_DPAD_DOWN, "D-PAD DOWN" },
+                { XINPUT_GAMEPAD_DPAD_LEFT, "D-PAD LEFT" },
+                { XINPUT_GAMEPAD_DPAD_RIGHT, "D-PAD RIGHT" }
             };
 
             foreach (var button in buttonMap)
@@ -211,7 +376,7 @@ namespace AGCV
                 }
             }
 
-            previousButtons = currentButtons;
+            previousButtons[controllerIndex] = currentButtons;
         }
 
         private void LogButtonEvent(string buttonName, bool isPressed, long latency)
@@ -219,32 +384,35 @@ namespace AGCV
             string action = isPressed ? "PRESSED" : "RELEASED";
             Color color = isPressed ? Color.FromArgb(46, 204, 113) : Color.FromArgb(231, 76, 60);
 
+            string timerKey = $"C{controllerIndex}_{buttonName}";
             long pressDuration = 0;
+            
             if (isPressed)
             {
-                if (!buttonPressTimers.ContainsKey(buttonName))
+                if (!buttonPressTimers.ContainsKey(timerKey))
                 {
-                    buttonPressTimers[buttonName] = Stopwatch.StartNew();
+                    buttonPressTimers[timerKey] = Stopwatch.StartNew();
                 }
                 else
                 {
-                    buttonPressTimers[buttonName].Restart();
+                    buttonPressTimers[timerKey].Restart();
                 }
             }
             else
             {
-                if (buttonPressTimers.ContainsKey(buttonName) && buttonPressTimers[buttonName].IsRunning)
+                if (buttonPressTimers.ContainsKey(timerKey) && buttonPressTimers[timerKey].IsRunning)
                 {
-                    pressDuration = buttonPressTimers[buttonName].ElapsedMilliseconds;
-                    buttonPressTimers[buttonName].Stop();
+                    pressDuration = buttonPressTimers[timerKey].ElapsedMilliseconds;
+                    buttonPressTimers[timerKey].Stop();
                 }
             }
 
             string joyConType = DetermineJoyConType(buttonName);
             string durationInfo = pressDuration > 0 ? $" | Duration: {pressDuration}ms" : "";
+            string controllerInfo = $"[Ctrl {controllerIndex + 1}]";
 
             LogMessage(
-                $"[{joyConType}] {buttonName,-12} {action,-9} @ {latency}ms{durationInfo}",
+                $"{controllerInfo} [{joyConType}] {buttonName,-12} {action,-9} @ {latency}ms{durationInfo}",
                 "INPUT",
                 color
             );
@@ -255,8 +423,10 @@ namespace AGCV
             if (value > 128)
             {
                 string joyConType = triggerName == "LT" ? "Joy-Con L" : "Joy-Con R";
+                string controllerInfo = $"[Ctrl {controllerIndex + 1}]";
+                
                 LogMessage(
-                    $"[{joyConType}] {triggerName,-12} VALUE: {value}/255 ({(value * 100 / 255)}%) @ {latency}ms",
+                    $"{controllerInfo} [{joyConType}] {triggerName,-12} VALUE: {value}/255 ({(value * 100 / 255)}%) @ {latency}ms",
                     "TRIGGER",
                     Color.FromArgb(52, 152, 219)
                 );
@@ -266,8 +436,8 @@ namespace AGCV
         private string DetermineJoyConType(string buttonName)
         {
             // Botones del Joy-Con Left
-            if (buttonName.Contains("?") || buttonName.Contains("?") ||
-                buttonName.Contains("?") || buttonName.Contains("?") ||
+            if (buttonName.Contains("UP") || buttonName.Contains("DOWN") ||
+                buttonName.Contains("LEFT") || buttonName.Contains("RIGHT") ||
                 buttonName == "LB" || buttonName == "L-STICK" ||
                 buttonName == "BACK (-)")
             {
@@ -287,6 +457,12 @@ namespace AGCV
 
         private void LogMessage(string message, string category, Color color)
         {
+            if (InvokeRequired)
+            {
+                Invoke(new Action<string, string, Color>(LogMessage), message, category, color);
+                return;
+            }
+
             eventCounter++;
             string timestamp = DateTime.Now.ToString("HH:mm:ss.fff");
             string formattedMessage = $"[{timestamp}] [{category}] {message}";
@@ -304,7 +480,7 @@ namespace AGCV
             // Actualizar contador
             lblEventCount.Text = $"Events: {eventCounter}";
 
-            // Limitar líneas del log
+            // Limitar lineas del log
             if (txtLog.Lines.Length > MAX_LOG_LINES)
             {
                 var lines = txtLog.Lines.Skip(txtLog.Lines.Length - MAX_LOG_LINES).ToArray();
@@ -317,7 +493,7 @@ namespace AGCV
             txtLog.Clear();
             eventCounter = 0;
             lblEventCount.Text = "Events: 0";
-            LogMessage("??? Log limpiado", "SYSTEM", Color.Blue);
+            LogMessage("Log limpiado", "SYSTEM", Color.Blue);
         }
 
         private void btnExport_Click(object sender, EventArgs e)
@@ -332,11 +508,11 @@ namespace AGCV
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
                         System.IO.File.WriteAllText(sfd.FileName, txtLog.Text);
-                        LogMessage($"?? Log exportado a: {sfd.FileName}", "SYSTEM", Color.Green);
+                        LogMessage($"Log exportado a: {sfd.FileName}", "SYSTEM", Color.Green);
 
                         MessageBox.Show(
-                            $"? Log exportado exitosamente\n\n{sfd.FileName}",
-                            "Exportación Exitosa",
+                            $"Log exportado exitosamente\n\n{sfd.FileName}",
+                            "Exportacion Exitosa",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Information);
                     }
@@ -344,7 +520,7 @@ namespace AGCV
             }
             catch (Exception ex)
             {
-                LogMessage($"? Error al exportar: {ex.Message}", "ERROR", Color.Red);
+                LogMessage($"Error al exportar: {ex.Message}", "ERROR", Color.Red);
             }
         }
 
@@ -352,15 +528,15 @@ namespace AGCV
         {
             if (controllerIndex == -1)
             {
-                LogMessage("? No hay controlador conectado para obtener información", "WARNING", Color.Orange);
+                LogMessage("No hay controlador conectado para obtener informacion", "WARNING", Color.Orange);
                 return;
             }
 
-            LogMessage("???????????????????????????????????????????????????", "INFO", Color.Blue);
-            LogMessage($"?? Información del Controlador #{controllerIndex + 1}", "INFO", Color.Blue);
-            LogMessage("???????????????????????????????????????????????????", "INFO", Color.Blue);
+            LogMessage("========================================", "INFO", Color.Blue);
+            LogMessage($"Informacion del Controlador #{controllerIndex + 1}", "INFO", Color.Blue);
+            LogMessage("========================================", "INFO", Color.Blue);
 
-            // Obtener información de batería
+            // Obtener informacion de bateria
             XINPUT_BATTERY_INFORMATION batteryInfo = new XINPUT_BATTERY_INFORMATION();
             XInputGetBatteryInformation(controllerIndex, 0, ref batteryInfo);
 
@@ -375,20 +551,28 @@ namespace AGCV
 
             string batteryLevel = batteryInfo.BatteryLevel switch
             {
-                0 => "Vacía",
+                0 => "Vacia",
                 1 => "Baja (25%)",
                 2 => "Media (50%)",
                 3 => "Alta (75%)",
                 _ => "Completa (100%)"
             };
 
-            LogMessage($"?? Tipo de batería: {batteryType}", "INFO", Color.DarkCyan);
-            LogMessage($"?? Nivel de batería: {batteryLevel}", "INFO", Color.DarkCyan);
-            LogMessage($"?? Latencia promedio: ~{updateTimer.Interval}ms", "INFO", Color.DarkCyan);
-            LogMessage($"?? Frecuencia de polling: ~{1000 / updateTimer.Interval}Hz", "INFO", Color.DarkCyan);
-            LogMessage($"? Tiempo activo: {globalStopwatch.Elapsed:hh\\:mm\\:ss}", "INFO", Color.DarkCyan);
-            LogMessage($"?? Total de eventos: {eventCounter}", "INFO", Color.DarkCyan);
-            LogMessage("???????????????????????????????????????????????????", "INFO", Color.Blue);
+            LogMessage($"Tipo de bateria: {batteryType}", "INFO", Color.DarkCyan);
+            LogMessage($"Nivel de bateria: {batteryLevel}", "INFO", Color.DarkCyan);
+            LogMessage($"Latencia promedio: ~{updateTimer.Interval}ms", "INFO", Color.DarkCyan);
+            LogMessage($"Frecuencia de polling: ~{1000 / updateTimer.Interval}Hz", "INFO", Color.DarkCyan);
+            LogMessage($"Tiempo activo: {globalStopwatch.Elapsed:hh\\:mm\\:ss}", "INFO", Color.DarkCyan);
+            LogMessage($"Total de eventos: {eventCounter}", "INFO", Color.DarkCyan);
+            
+            // Información de controladores disponibles
+            LogMessage($"Controladores disponibles: {availableControllers.Count}/4", "INFO", Color.DarkCyan);
+            foreach (int idx in availableControllers.OrderBy(x => x))
+            {
+                LogMessage($"  - Controller {idx + 1}", "INFO", Color.DarkCyan);
+            }
+            
+            LogMessage("========================================", "INFO", Color.Blue);
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -400,8 +584,10 @@ namespace AGCV
         {
             updateTimer?.Stop();
             updateTimer?.Dispose();
+            scanTimer?.Stop();
+            scanTimer?.Dispose();
             globalStopwatch?.Stop();
-            LogMessage("?? Joy-Con Event Monitor cerrado", "SYSTEM", Color.Blue);
+            LogMessage("Joy-Con Event Monitor cerrado", "SYSTEM", Color.Blue);
             base.OnFormClosing(e);
         }
 

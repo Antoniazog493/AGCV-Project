@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogIn));
             panelIzquierdo = new Panel();
+            pictureBox1 = new PictureBox();
             lblDescripcion = new Label();
             panelDerecho = new Panel();
             linkCrearCuenta = new LinkLabel();
@@ -41,29 +42,41 @@
             txtUsuario = new TextBox();
             lblUsuario = new Label();
             lblTitulo = new Label();
-            pictureBox1 = new PictureBox();
             panelIzquierdo.SuspendLayout();
-            panelDerecho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelDerecho.SuspendLayout();
             SuspendLayout();
             // 
             // panelIzquierdo
             // 
-            panelIzquierdo.BackColor = Color.FromArgb(52, 73, 94);
+            panelIzquierdo.BackColor = Color.FromArgb(230, 0, 18);
             panelIzquierdo.Controls.Add(pictureBox1);
             panelIzquierdo.Controls.Add(lblDescripcion);
             panelIzquierdo.Dock = DockStyle.Left;
             panelIzquierdo.Location = new Point(0, 0);
             panelIzquierdo.Name = "panelIzquierdo";
-            panelIzquierdo.Padding = new Padding(30);
-            panelIzquierdo.Size = new Size(380, 500);
+            panelIzquierdo.Padding = new Padding(30, 29, 30, 29);
+            panelIzquierdo.Size = new Size(379, 500);
             panelIzquierdo.TabIndex = 0;
+            panelIzquierdo.Paint += panelIzquierdo_Paint;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
+            pictureBox1.Location = new Point(59, 33);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(242, 237);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
             // lblDescripcion
             // 
             lblDescripcion.Font = new Font("Segoe UI", 11F);
-            lblDescripcion.ForeColor = Color.FromArgb(189, 195, 199);
-            lblDescripcion.Location = new Point(27, 294);
+            lblDescripcion.ForeColor = Color.White;
+            lblDescripcion.Location = new Point(27, 293);
             lblDescripcion.Name = "lblDescripcion";
             lblDescripcion.Size = new Size(320, 139);
             lblDescripcion.TabIndex = 2;
@@ -83,18 +96,18 @@
             panelDerecho.Controls.Add(lblUsuario);
             panelDerecho.Controls.Add(lblTitulo);
             panelDerecho.Dock = DockStyle.Fill;
-            panelDerecho.Location = new Point(380, 0);
+            panelDerecho.Location = new Point(379, 0);
             panelDerecho.Name = "panelDerecho";
             panelDerecho.Padding = new Padding(40, 60, 40, 40);
-            panelDerecho.Size = new Size(420, 500);
+            panelDerecho.Size = new Size(421, 500);
             panelDerecho.TabIndex = 1;
             // 
             // linkCrearCuenta
             // 
             linkCrearCuenta.AutoSize = true;
             linkCrearCuenta.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            linkCrearCuenta.LinkColor = Color.FromArgb(46, 204, 113);
-            linkCrearCuenta.Location = new Point(236, 410);
+            linkCrearCuenta.LinkColor = Color.FromArgb(0, 150, 215);
+            linkCrearCuenta.Location = new Point(235, 411);
             linkCrearCuenta.Name = "linkCrearCuenta";
             linkCrearCuenta.Size = new Size(127, 23);
             linkCrearCuenta.TabIndex = 4;
@@ -107,7 +120,7 @@
             lblNuevaCuenta.AutoSize = true;
             lblNuevaCuenta.Font = new Font("Segoe UI", 10F);
             lblNuevaCuenta.ForeColor = Color.FromArgb(127, 140, 141);
-            lblNuevaCuenta.Location = new Point(40, 410);
+            lblNuevaCuenta.Location = new Point(40, 411);
             lblNuevaCuenta.Name = "lblNuevaCuenta";
             lblNuevaCuenta.Size = new Size(190, 23);
             lblNuevaCuenta.TabIndex = 5;
@@ -115,7 +128,7 @@
             // 
             // btnIniciar
             // 
-            btnIniciar.BackColor = Color.FromArgb(46, 204, 113);
+            btnIniciar.BackColor = Color.FromArgb(0, 150, 215);
             btnIniciar.Cursor = Cursors.Hand;
             btnIniciar.FlatAppearance.BorderSize = 0;
             btnIniciar.FlatStyle = FlatStyle.Flat;
@@ -123,7 +136,7 @@
             btnIniciar.ForeColor = Color.White;
             btnIniciar.Location = new Point(40, 313);
             btnIniciar.Name = "btnIniciar";
-            btnIniciar.Size = new Size(340, 45);
+            btnIniciar.Size = new Size(341, 45);
             btnIniciar.TabIndex = 3;
             btnIniciar.Text = "Iniciar Sesión";
             btnIniciar.UseVisualStyleBackColor = false;
@@ -133,8 +146,8 @@
             // 
             lblOlvidaste.AutoSize = true;
             lblOlvidaste.Font = new Font("Segoe UI", 10F);
-            lblOlvidaste.LinkColor = Color.FromArgb(52, 152, 219);
-            lblOlvidaste.Location = new Point(40, 278);
+            lblOlvidaste.LinkColor = Color.FromArgb(230, 0, 18);
+            lblOlvidaste.Location = new Point(40, 277);
             lblOlvidaste.Name = "lblOlvidaste";
             lblOlvidaste.Size = new Size(206, 23);
             lblOlvidaste.TabIndex = 2;
@@ -147,7 +160,7 @@
             txtContraseña.BackColor = Color.FromArgb(236, 240, 241);
             txtContraseña.BorderStyle = BorderStyle.FixedSingle;
             txtContraseña.Font = new Font("Segoe UI", 11F);
-            txtContraseña.Location = new Point(40, 238);
+            txtContraseña.Location = new Point(40, 237);
             txtContraseña.Name = "txtContraseña";
             txtContraseña.PasswordChar = '●';
             txtContraseña.PlaceholderText = "Ingresa tu contraseña";
@@ -159,8 +172,8 @@
             // 
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblContraseña.ForeColor = Color.FromArgb(52, 73, 94);
-            lblContraseña.Location = new Point(40, 210);
+            lblContraseña.ForeColor = Color.FromArgb(44, 62, 80);
+            lblContraseña.Location = new Point(40, 209);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(132, 25);
             lblContraseña.TabIndex = 3;
@@ -182,7 +195,7 @@
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblUsuario.ForeColor = Color.FromArgb(52, 73, 94);
+            lblUsuario.ForeColor = Color.FromArgb(44, 62, 80);
             lblUsuario.Location = new Point(40, 127);
             lblUsuario.Name = "lblUsuario";
             lblUsuario.Size = new Size(100, 25);
@@ -193,24 +206,13 @@
             // 
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-            lblTitulo.ForeColor = Color.FromArgb(52, 73, 94);
+            lblTitulo.ForeColor = Color.FromArgb(230, 0, 18);
             lblTitulo.Location = new Point(40, 60);
             lblTitulo.Name = "lblTitulo";
             lblTitulo.Size = new Size(233, 46);
             lblTitulo.TabIndex = 0;
             lblTitulo.Text = "Iniciar Sesión";
             lblTitulo.Click += lblTitulo_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(59, 33);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(242, 237);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
             // 
             // LogIn
             // 
@@ -228,9 +230,9 @@
             Text = "AGCV - Aplicación de Gestión de Controles de Videojuegos";
             Load += LogIn_Load;
             panelIzquierdo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panelDerecho.ResumeLayout(false);
             panelDerecho.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 

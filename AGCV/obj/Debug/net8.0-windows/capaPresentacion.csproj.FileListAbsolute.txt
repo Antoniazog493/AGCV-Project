@@ -379,6 +379,8 @@ C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\ca
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.genruntimeconfig.cache
 C:\Users\Anton\Downloads\BetterJoy\AGCV-Project\AGCV\obj\Debug\net8.0-windows\ref\capaPresentacion.dll
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaPresentacion.exe
+C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\Icons\AGCV-NT.ico
+C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\Icons\AGCV.ico
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaPresentacion.deps.json
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaPresentacion.runtimeconfig.json
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaPresentacion.dll
@@ -436,7 +438,10 @@ C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaEntidad.
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaNegocio.pdb
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\capaDatos.pdb
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.csproj.AssemblyReference.cache
+C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.AdministrarUsuarios.resources
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.Ajustes.resources
+C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.ButtonTester.resources
+C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.CambiarContraseñaAdmin.resources
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.CrearUsuario.resources
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.Historial.resources
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.LogIn.resources
@@ -454,6 +459,3 @@ C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\refint\capaP
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.pdb
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\capaPresentacion.genruntimeconfig.cache
 C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\ref\capaPresentacion.dll
-C:\Users\Anton\Downloads\AGCV-Project\AGCV\obj\Debug\net8.0-windows\AGCV.ButtonTester.resources
-C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\Icons\AGCV-NT.ico
-C:\Users\Anton\Downloads\AGCV-Project\AGCV\bin\Debug\net8.0-windows\Icons\AGCV.ico

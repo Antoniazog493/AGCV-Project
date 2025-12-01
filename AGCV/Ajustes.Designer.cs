@@ -32,12 +32,10 @@
             lblTituloText = new Label();
             panelContent = new Panel();
             pnlAdministrarUsuarios = new Panel();
-            iconAdministrarUsuarios = new Label();
             btnAdministrarUsuarios = new Button();
             lblAdministrarUsuariosDescripcion = new Label();
             lblAdministrarUsuariosTitulo = new Label();
             pnlHistorial = new Panel();
-            iconHistorial = new Label();
             btnHistorial = new Button();
             lblHistorialDescripcion = new Label();
             lblHistorialTitulo = new Label();
@@ -49,75 +47,61 @@
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.BackColor = Color.FromArgb(230, 0, 18); // Rojo Nintendo Switch
             panelHeader.Controls.Add(lblTituloText);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
             panelHeader.Name = "panelHeader";
-            panelHeader.Padding = new Padding(30, 25, 30, 25);
             panelHeader.Size = new Size(800, 100);
             panelHeader.TabIndex = 0;
             // 
             // lblTituloText
             // 
             lblTituloText.AutoSize = true;
-            lblTituloText.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
-            lblTituloText.ForeColor = Color.White;
-            lblTituloText.Location = new Point(30, 25);
+            lblTituloText.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
+            lblTituloText.ForeColor = Color.White; // Texto blanco sobre fondo rojo
+            lblTituloText.Location = new Point(30, 30);
             lblTituloText.Name = "lblTituloText";
-            lblTituloText.Size = new Size(209, 50);
+            lblTituloText.Size = new Size(137, 45);
             lblTituloText.TabIndex = 0;
             lblTituloText.Text = "Ajustes";
             // 
             // panelContent
             // 
-            panelContent.BackColor = Color.White;
+            panelContent.BackColor = Color.FromArgb(245, 245, 245);
             panelContent.Controls.Add(pnlAdministrarUsuarios);
             panelContent.Controls.Add(pnlHistorial);
             panelContent.Dock = DockStyle.Fill;
             panelContent.Location = new Point(0, 100);
             panelContent.Name = "panelContent";
-            panelContent.Padding = new Padding(30);
+            panelContent.Padding = new Padding(40, 30, 40, 30);
             panelContent.Size = new Size(800, 350);
             panelContent.TabIndex = 1;
             // 
             // pnlAdministrarUsuarios
             // 
-            pnlAdministrarUsuarios.Anchor = AnchorStyles.None;
-            pnlAdministrarUsuarios.BackColor = Color.FromArgb(236, 240, 241);
+            pnlAdministrarUsuarios.BackColor = Color.White;
             pnlAdministrarUsuarios.BorderStyle = BorderStyle.FixedSingle;
-            pnlAdministrarUsuarios.Controls.Add(iconAdministrarUsuarios);
             pnlAdministrarUsuarios.Controls.Add(btnAdministrarUsuarios);
             pnlAdministrarUsuarios.Controls.Add(lblAdministrarUsuariosDescripcion);
             pnlAdministrarUsuarios.Controls.Add(lblAdministrarUsuariosTitulo);
-            pnlAdministrarUsuarios.Location = new Point(430, 35);
+            pnlAdministrarUsuarios.Location = new Point(420, 50);
             pnlAdministrarUsuarios.Name = "pnlAdministrarUsuarios";
-            pnlAdministrarUsuarios.Padding = new Padding(20);
-            pnlAdministrarUsuarios.Size = new Size(340, 280);
+            pnlAdministrarUsuarios.Size = new Size(340, 250);
             pnlAdministrarUsuarios.TabIndex = 2;
             pnlAdministrarUsuarios.Visible = false;
             // 
-            // iconAdministrarUsuarios
-            // 
-            iconAdministrarUsuarios.AutoSize = true;
-            iconAdministrarUsuarios.Font = new Font("Segoe UI", 30F);
-            iconAdministrarUsuarios.Location = new Point(222, 120);
-            iconAdministrarUsuarios.Name = "iconAdministrarUsuarios";
-            iconAdministrarUsuarios.Size = new Size(98, 67);
-            iconAdministrarUsuarios.TabIndex = 3;
-            iconAdministrarUsuarios.Text = "";
-            // 
             // btnAdministrarUsuarios
             // 
-            btnAdministrarUsuarios.BackColor = Color.FromArgb(41, 128, 185);
+            btnAdministrarUsuarios.BackColor = Color.FromArgb(230, 0, 18); // Rojo Nintendo Switch
             btnAdministrarUsuarios.Cursor = Cursors.Hand;
             btnAdministrarUsuarios.FlatAppearance.BorderSize = 0;
             btnAdministrarUsuarios.FlatStyle = FlatStyle.Flat;
             btnAdministrarUsuarios.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnAdministrarUsuarios.ForeColor = Color.White;
-            btnAdministrarUsuarios.Location = new Point(20, 225);
+            btnAdministrarUsuarios.Location = new Point(20, 195);
             btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
-            btnAdministrarUsuarios.Size = new Size(300, 40);
+            btnAdministrarUsuarios.Size = new Size(298, 40);
             btnAdministrarUsuarios.TabIndex = 2;
             btnAdministrarUsuarios.Text = "Gestionar Usuarios";
             btnAdministrarUsuarios.UseVisualStyleBackColor = false;
@@ -125,11 +109,11 @@
             // 
             // lblAdministrarUsuariosDescripcion
             // 
-            lblAdministrarUsuariosDescripcion.Font = new Font("Segoe UI", 11F);
+            lblAdministrarUsuariosDescripcion.Font = new Font("Segoe UI", 10F);
             lblAdministrarUsuariosDescripcion.ForeColor = Color.FromArgb(127, 140, 141);
-            lblAdministrarUsuariosDescripcion.Location = new Point(20, 60);
+            lblAdministrarUsuariosDescripcion.Location = new Point(20, 65);
             lblAdministrarUsuariosDescripcion.Name = "lblAdministrarUsuariosDescripcion";
-            lblAdministrarUsuariosDescripcion.Size = new Size(300, 100);
+            lblAdministrarUsuariosDescripcion.Size = new Size(298, 115);
             lblAdministrarUsuariosDescripcion.TabIndex = 1;
             lblAdministrarUsuariosDescripcion.Text = "Gestiona usuarios del sistema.\r\n\r\nCambia contraseñas, roles y permisos de acceso.";
             // 
@@ -137,49 +121,36 @@
             // 
             lblAdministrarUsuariosTitulo.AutoSize = true;
             lblAdministrarUsuariosTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblAdministrarUsuariosTitulo.ForeColor = Color.FromArgb(52, 73, 94);
-            lblAdministrarUsuariosTitulo.Location = new Point(10, 20);
+            lblAdministrarUsuariosTitulo.ForeColor = Color.FromArgb(44, 62, 80); // Gris oscuro legible
+            lblAdministrarUsuariosTitulo.Location = new Point(20, 20);
             lblAdministrarUsuariosTitulo.Name = "lblAdministrarUsuariosTitulo";
-            lblAdministrarUsuariosTitulo.Size = new Size(289, 32);
+            lblAdministrarUsuariosTitulo.Size = new Size(226, 25);
             lblAdministrarUsuariosTitulo.TabIndex = 0;
             lblAdministrarUsuariosTitulo.Text = "Administrar Usuarios";
             // 
             // pnlHistorial
             // 
-            pnlHistorial.Anchor = AnchorStyles.None;
-            pnlHistorial.BackColor = Color.FromArgb(236, 240, 241);
+            pnlHistorial.BackColor = Color.White;
             pnlHistorial.BorderStyle = BorderStyle.FixedSingle;
-            pnlHistorial.Controls.Add(iconHistorial);
             pnlHistorial.Controls.Add(btnHistorial);
             pnlHistorial.Controls.Add(lblHistorialDescripcion);
             pnlHistorial.Controls.Add(lblHistorialTitulo);
-            pnlHistorial.Location = new Point(70, 35);
+            pnlHistorial.Location = new Point(40, 50);
             pnlHistorial.Name = "pnlHistorial";
-            pnlHistorial.Padding = new Padding(20);
-            pnlHistorial.Size = new Size(340, 280);
+            pnlHistorial.Size = new Size(340, 250);
             pnlHistorial.TabIndex = 1;
-            // 
-            // iconHistorial
-            // 
-            iconHistorial.AutoSize = true;
-            iconHistorial.Font = new Font("Segoe UI", 30F);
-            iconHistorial.Location = new Point(222, 120);
-            iconHistorial.Name = "iconHistorial";
-            iconHistorial.Size = new Size(98, 67);
-            iconHistorial.TabIndex = 3;
-            iconHistorial.Text = "";
             // 
             // btnHistorial
             // 
-            btnHistorial.BackColor = Color.FromArgb(52, 152, 219);
+            btnHistorial.BackColor = Color.FromArgb(0, 150, 215); // Azul Nintendo Switch
             btnHistorial.Cursor = Cursors.Hand;
             btnHistorial.FlatAppearance.BorderSize = 0;
             btnHistorial.FlatStyle = FlatStyle.Flat;
             btnHistorial.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnHistorial.ForeColor = Color.White;
-            btnHistorial.Location = new Point(20, 225);
+            btnHistorial.Location = new Point(20, 195);
             btnHistorial.Name = "btnHistorial";
-            btnHistorial.Size = new Size(300, 40);
+            btnHistorial.Size = new Size(298, 40);
             btnHistorial.TabIndex = 2;
             btnHistorial.Text = "Ver Historial";
             btnHistorial.UseVisualStyleBackColor = false;
@@ -187,11 +158,11 @@
             // 
             // lblHistorialDescripcion
             // 
-            lblHistorialDescripcion.Font = new Font("Segoe UI", 11F);
+            lblHistorialDescripcion.Font = new Font("Segoe UI", 10F);
             lblHistorialDescripcion.ForeColor = Color.FromArgb(127, 140, 141);
-            lblHistorialDescripcion.Location = new Point(20, 60);
+            lblHistorialDescripcion.Location = new Point(20, 65);
             lblHistorialDescripcion.Name = "lblHistorialDescripcion";
-            lblHistorialDescripcion.Size = new Size(300, 100);
+            lblHistorialDescripcion.Size = new Size(298, 115);
             lblHistorialDescripcion.TabIndex = 1;
             lblHistorialDescripcion.Text = "Visualiza el registro completo de todas tus conexiones de Joy-Cons.\r\n\r\nConsulta fechas, controles conectados y estado de cada sesión.";
             // 
@@ -199,17 +170,17 @@
             // 
             lblHistorialTitulo.AutoSize = true;
             lblHistorialTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            lblHistorialTitulo.ForeColor = Color.FromArgb(52, 73, 94);
-            lblHistorialTitulo.Location = new Point(10, 20);
+            lblHistorialTitulo.ForeColor = Color.FromArgb(44, 62, 80); // Gris oscuro legible
+            lblHistorialTitulo.Location = new Point(20, 20);
             lblHistorialTitulo.Name = "lblHistorialTitulo";
-            lblHistorialTitulo.Size = new Size(326, 32);
+            lblHistorialTitulo.Size = new Size(227, 25);
             lblHistorialTitulo.TabIndex = 0;
             lblHistorialTitulo.Text = "Historial de Conexiones";
             lblHistorialTitulo.Click += lblHistorialTitulo_Click;
             // 
             // Ajustes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
@@ -240,9 +211,7 @@
         private Label lblHistorialTitulo;
         private Label lblHistorialDescripcion;
         private Button btnHistorial;
-        private Label iconHistorial;
         private Panel pnlAdministrarUsuarios;
-        private Label iconAdministrarUsuarios;
         private Button btnAdministrarUsuarios;
         private Label lblAdministrarUsuariosDescripcion;
         private Label lblAdministrarUsuariosTitulo;

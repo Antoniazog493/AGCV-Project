@@ -47,7 +47,7 @@
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.BackColor = Color.FromArgb(230, 0, 18);
             panelHeader.Controls.Add(lblTituloText);
             panelHeader.Dock = DockStyle.Top;
             panelHeader.Location = new Point(0, 0);
@@ -90,7 +90,7 @@
             // 
             lblContraseña.AutoSize = true;
             lblContraseña.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblContraseña.ForeColor = Color.FromArgb(52, 73, 94);
+            lblContraseña.ForeColor = Color.FromArgb(44, 62, 80);
             lblContraseña.Location = new Point(46, 253);
             lblContraseña.Name = "lblContraseña";
             lblContraseña.Size = new Size(132, 25);
@@ -113,7 +113,7 @@
             // 
             lblCorreo.AutoSize = true;
             lblCorreo.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblCorreo.ForeColor = Color.FromArgb(52, 73, 94);
+            lblCorreo.ForeColor = Color.FromArgb(44, 62, 80);
             lblCorreo.Location = new Point(46, 153);
             lblCorreo.Name = "lblCorreo";
             lblCorreo.Size = new Size(93, 25);
@@ -135,7 +135,7 @@
             // 
             lblNombre.AutoSize = true;
             lblNombre.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            lblNombre.ForeColor = Color.FromArgb(52, 73, 94);
+            lblNombre.ForeColor = Color.FromArgb(44, 62, 80);
             lblNombre.Location = new Point(46, 53);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(206, 25);
@@ -168,7 +168,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(231, 76, 60);
+            btnCancelar.BackColor = Color.FromArgb(230, 0, 18);
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
@@ -185,7 +185,7 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.BackColor = Color.FromArgb(46, 204, 113);
+            btnGuardar.BackColor = Color.FromArgb(0, 150, 215);
             btnGuardar.Cursor = Cursors.Hand;
             btnGuardar.FlatAppearance.BorderSize = 0;
             btnGuardar.FlatStyle = FlatStyle.Flat;

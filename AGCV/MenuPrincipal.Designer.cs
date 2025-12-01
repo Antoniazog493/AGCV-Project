@@ -57,7 +57,7 @@
             // 
             // panelHeader
             // 
-            panelHeader.BackColor = Color.FromArgb(52, 73, 94);
+            panelHeader.BackColor = Color.FromArgb(230, 0, 18);
             panelHeader.Controls.Add(lblUsuario);
             panelHeader.Controls.Add(lblTitulo);
             panelHeader.Dock = DockStyle.Top;
@@ -66,17 +66,19 @@
             panelHeader.Padding = new Padding(30, 15, 30, 15);
             panelHeader.Size = new Size(900, 90);
             panelHeader.TabIndex = 0;
+            panelHeader.Paint += panelHeader_Paint;
             // 
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
             lblUsuario.Font = new Font("Segoe UI", 10F);
-            lblUsuario.ForeColor = Color.FromArgb(189, 195, 199);
+            lblUsuario.ForeColor = Color.White;
             lblUsuario.Location = new Point(33, 55);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(188, 23);
+            lblUsuario.Size = new Size(179, 23);
             lblUsuario.TabIndex = 1;
-            lblUsuario.Text = "👤 Usuario: Conectado";
+            lblUsuario.Text = "👤Usuario Conectado";
+            lblUsuario.Click += lblUsuario_Click;
             // 
             // lblTitulo
             // 
@@ -85,9 +87,9 @@
             lblTitulo.ForeColor = Color.White;
             lblTitulo.Location = new Point(30, 9);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(169, 46);
+            lblTitulo.Size = new Size(112, 46);
             lblTitulo.TabIndex = 0;
-            lblTitulo.Text = "🎮 AGCV";
+            lblTitulo.Text = "AGCV";
             lblTitulo.Click += lblTitulo_Click_1;
             // 
             // panelMain
@@ -118,7 +120,7 @@
             // 
             // btnAjustesMain
             // 
-            btnAjustesMain.BackColor = Color.FromArgb(231, 76, 60);
+            btnAjustesMain.BackColor = Color.FromArgb(0, 150, 215);
             btnAjustesMain.Cursor = Cursors.Hand;
             btnAjustesMain.FlatAppearance.BorderSize = 0;
             btnAjustesMain.FlatStyle = FlatStyle.Flat;
@@ -146,7 +148,7 @@
             // 
             lblOpcion3.AutoSize = true;
             lblOpcion3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblOpcion3.ForeColor = Color.FromArgb(52, 73, 94);
+            lblOpcion3.ForeColor = Color.FromArgb(44, 62, 80);
             lblOpcion3.Location = new Point(20, 15);
             lblOpcion3.Name = "lblOpcion3";
             lblOpcion3.Size = new Size(115, 28);
@@ -168,7 +170,7 @@
             // 
             // btnEstadisticas
             // 
-            btnEstadisticas.BackColor = Color.FromArgb(52, 152, 219);
+            btnEstadisticas.BackColor = Color.FromArgb(230, 0, 18);
             btnEstadisticas.Cursor = Cursors.Hand;
             btnEstadisticas.FlatAppearance.BorderSize = 0;
             btnEstadisticas.FlatStyle = FlatStyle.Flat;
@@ -196,7 +198,7 @@
             // 
             lblOpcion2.AutoSize = true;
             lblOpcion2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblOpcion2.ForeColor = Color.FromArgb(52, 73, 94);
+            lblOpcion2.ForeColor = Color.FromArgb(44, 62, 80);
             lblOpcion2.Location = new Point(20, 15);
             lblOpcion2.Name = "lblOpcion2";
             lblOpcion2.Size = new Size(156, 28);
@@ -218,7 +220,7 @@
             // 
             // btnConectar
             // 
-            btnConectar.BackColor = Color.FromArgb(46, 204, 113);
+            btnConectar.BackColor = Color.FromArgb(0, 150, 215);
             btnConectar.Cursor = Cursors.Hand;
             btnConectar.FlatAppearance.BorderSize = 0;
             btnConectar.FlatStyle = FlatStyle.Flat;
@@ -246,7 +248,7 @@
             // 
             lblOpcion1.AutoSize = true;
             lblOpcion1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblOpcion1.ForeColor = Color.FromArgb(52, 73, 94);
+            lblOpcion1.ForeColor = Color.FromArgb(44, 62, 80);
             lblOpcion1.Location = new Point(20, 15);
             lblOpcion1.Name = "lblOpcion1";
             lblOpcion1.Size = new Size(212, 28);

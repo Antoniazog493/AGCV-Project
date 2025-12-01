@@ -18,15 +18,16 @@ namespace AGCV
             if (SesionActual.EsAdministrador())
             {
                 pnlAdministrarUsuarios.Visible = true;
-                // Ajustar posición de los paneles
-                pnlHistorial.Location = new System.Drawing.Point(70, 35);
-                pnlAdministrarUsuarios.Location = new System.Drawing.Point(430, 35);
+                // Ambos paneles visibles lado a lado
+                pnlHistorial.Location = new System.Drawing.Point(40, 50);
+                pnlAdministrarUsuarios.Location = new System.Drawing.Point(420, 50);
             }
             else
             {
                 pnlAdministrarUsuarios.Visible = false;
-                // Centrar el panel de historial
-                pnlHistorial.Location = new System.Drawing.Point(230, 35);
+                // Centrar el panel de historial cuando está solo
+                int centerX = (this.ClientSize.Width - pnlHistorial.Width) / 2;
+                pnlHistorial.Location = new System.Drawing.Point(centerX, 50);
             }
         }
 

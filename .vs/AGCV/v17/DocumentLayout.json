@@ -1,7 +1,44 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\buttontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\buttontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +46,126 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdministrarUsuarios.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs",
+              "RelativeDocumentMoniker": "AGCV\\AdministrarUsuarios.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs",
+              "RelativeToolTip": "AGCV\\AdministrarUsuarios.cs",
+              "ViewState": "AgIAABsBAAAAAAAAAAAWwCsBAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:35:42.533Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdministrarUsuarios.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs",
+              "RelativeDocumentMoniker": "AGCV\\AdministrarUsuarios.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs [Design]",
+              "RelativeToolTip": "AGCV\\AdministrarUsuarios.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:35:28.908Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ButtonTester.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\ButtonTester.cs",
+              "RelativeDocumentMoniker": "AGCV\\ButtonTester.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\ButtonTester.cs [Design]",
+              "RelativeToolTip": "AGCV\\ButtonTester.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:35:25.062Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CambiarContrase\u00F1aAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs",
+              "RelativeDocumentMoniker": "AGCV\\CambiarContrase\u00F1aAdmin.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs*",
+              "RelativeToolTip": "AGCV\\CambiarContrase\u00F1aAdmin.cs*",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAWwFwAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:35:11.545Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CambiarContrase\u00F1aAdmin.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs",
+              "RelativeDocumentMoniker": "AGCV\\CambiarContrase\u00F1aAdmin.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs [Design]*",
+              "RelativeToolTip": "AGCV\\CambiarContrase\u00F1aAdmin.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:35:07.586Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CrearUsuario.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CrearUsuario.cs",
+              "RelativeDocumentMoniker": "AGCV\\CrearUsuario.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CrearUsuario.cs [Design]",
+              "RelativeToolTip": "AGCV\\CrearUsuario.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:34:47.917Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InicioSesion.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs",
+              "RelativeDocumentMoniker": "AGCV\\InicioSesion.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs [Design]*",
+              "RelativeToolTip": "AGCV\\InicioSesion.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:33:59.489Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "MenuPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "AGCV\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
+              "RelativeToolTip": "AGCV\\MenuPrincipal.cs",
+              "ViewState": "AgIAAA8BAAAAAAAAAAAWwB8BAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:33:38.227Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MenuPrincipal.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
+              "RelativeDocumentMoniker": "AGCV\\MenuPrincipal.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs [Design]",
+              "RelativeToolTip": "AGCV\\MenuPrincipal.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:33:07.314Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
