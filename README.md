@@ -2,106 +2,399 @@
   <img src="title.png">
 </p>
 
-# BetterJoy v7.0
-Allows the Nintendo Switch Pro Controller, Joycons, and Switch SNES controller to be used with [Cemu](http://cemu.info/) using [Cemuhook](https://sshnuke.net/cemuhook/), [Citra](https://citra-emu.org/), [Dolphin](https://dolphin-emu.org/), [Yuzu](https://yuzu-emu.org/), and system-wide with generic XInput support.
+# AGCV - Administrador Gráfico de Controles Virtuales
 
-It also allows using the gyro to control your mouse and remap the special buttons (SL, SR, Capture) to key bindings of your choice.
+## Información del Proyecto
 
-If anyone would like to donate (for whatever reason), [you can do so here](https://www.paypal.me/DavidKhachaturov/5). 
+**Proyecto Final - Herramientas de Programación Avanzada III**
 
-#### Personal note
-Thank you for using my software and all the constructive feedback I've been getting about it. I started writing this project a while back and have since then learnt a lot more about programming and software development in general. I don't have too much time to work on this project, but I will try to fix bugs when and if they arise. Thank you for your patience in that regard too!
+**Universidad Tecnológica de Panamá**  
+**Salón:** 1IL131  
+**Año:** 2025
 
-It's been quite a wild ride, with nearly **590k** (!!) official download on GitHub and probably many more through the nightlies. I think this project was responsible for both software jobs I landed so far, so I am quite proud of it.
+### Integrantes del Equipo
 
-### Screenshot
-![Example](https://user-images.githubusercontent.com/16619943/67919451-bf8e5680-fb76-11e9-995e-7193b87548e1.png)
+- Roberto Di Maso
+- Hassan Elrada
+- Nikechi Camarena
+- Liam Thompson
+- Samir Smith
 
-# Downloads
-Go to the [Releases tab](https://github.com/Davidobot/BetterJoy/releases/)!
+## Descripción General
 
-# How to use
-1. Install drivers
-    1. Read the READMEs (they're there for a reason!)
-    1. Run *Drivers/ViGEmBus_Setup_1.16.116.exe*
-    1. Restart your computer
-2. Run *BetterJoyForCemu.exe* 
-    1. Run as Administrator if your keyboard/mouse button mappings don't work
-3. Connect your controllers.
-4. Start Cemu and ensure CemuHook has the controller selected.
-    1. If using Joycons, CemuHook will detect two controllers - each will give all buttons, but choosing one over the other just chooses preference for which hand to use for gyro controls.
-5. Go into *Input Settings*, choose XInput as a source and assign buttons normally.
-    1. If you don't want to do this for some reason, just have one input profile set up with *Wii U Gamepad* as the controller and enable "Also use for buttons/axes" under *GamePad motion source*. **This is no longer required as of version 3**
-    2. Turn rumble up to 70-80% if you want rumble.
+AGCV es un sistema integral de gestión y administración de controles virtuales para Nintendo Switch, diseñado específicamente para la compatibilidad con PC mediante Windows. El proyecto combina una interfaz gráfica de usuario moderna con un motor de controladores optimizado basado en BetterJoy, proporcionando una experiencia completa de gestión de Joy-Cons y otros controles de Nintendo.
 
-* As of version 3, you can use the pro controller and Joycons as normal xbox controllers on your PC - try it with Steam!
+El sistema permite a los usuarios conectar sus Joy-Cons de Nintendo Switch a través de Bluetooth o USB, utilizándolos como controladores compatibles con XInput y DualShock4 para juegos de PC, emuladores y otras aplicaciones.
 
-# More Info
-Check out the [wiki](https://github.com/Davidobot/BetterJoy/wiki)! There, you'll find all sorts of goodness such as the changelog, description of app settings, the FAQ and Problems page, and info on how to make BetterJoy work with Steam *better*.
+## Motivación del Proyecto
 
-# Connecting and Disconnecting the Controller
-## Bluetooth Mode
- * Hold down the small button (sync) on the top of the controller for 5 seconds - this puts the controller into broadcasting mode.
- * Search for it in your bluetooth settings and pair normally.
- * To disconnect the controller - hold the home button (or capture button) down for 2 seconds (or press the sync button). To reconnect - press any button on your controller.
+BetterJoy ha sido durante años una herramienta fundamental para usuarios que desean utilizar sus controles de Nintendo Switch en PC. Sin embargo, el proyecto original presenta varias limitaciones:
 
-## USB Mode
- * Plug the controller into your computer.
- 
-## Disconnecting \[Windows 10]
-1. Go into "Bluetooth and other devices settings"
-1. Under the first category "Mouse, keyboard, & pen", there should be the pro controller.
-1. Click on it and a "Remove" button will be revealed.
-1. Press the "Remove" button
+- Falta de soporte activo desde hace varios años
+- Interfaz de usuario básica sin funciones de administración
+- Problemas de latencia documentados, especialmente con el Joy-Con izquierdo
+- Errores de "duplicate timestamp" que afectan la detección en juegos
+- Ausencia de un sistema de gestión de usuarios y historial
+- No incluye HidHide para ocultar dispositivos duplicados
 
-# Building
+Ante estas limitaciones, decidimos no solo actualizar el motor de BetterJoy, sino crear una aplicación completa que lo integre con funcionalidades modernas de administración y gestión.
 
-## Visual Studio (IDE)
+## Arquitectura del Sistema
 
-1. If you didn't already, install **Visual Studio Community 2019** via
-   [the official guide](https://docs.microsoft.com/en-us/visualstudio/install/install-visual-studio?view=vs-2019).
-   When asked about the workloads, select **.NET Desktop Development**.
-2. Get the code project via Git or by using the *Download ZIP* button.
-3. Open Visual Studio Community and open the solution file (*BetterJoy.sln*).
-4. Open the NuGet manager via *Tools > NuGet Package Manager > Package Manager Settings*.
-5. You should have a warning mentioning *restoring your packages*. Click on the **Restore** button.
-6. You can now run and build BetterJoy.
+AGCV está construido siguiendo una arquitectura de capas que separa claramente las responsabilidades:
 
-## Visual Studio Build Tools (CLI)
-1. Download **Visual Studio Build Tools** via
-   [the official link](https://visualstudio.microsoft.com/it/downloads/#build-tools-for-visual-studio-2019).
-2. Install **NuGet** by following
-   [the official guide](https://docs.microsoft.com/en-us/nuget/install-nuget-client-tools#nugetexe-cli).
-   You should follow the section for ***nuget.exe***.
-   Verify that you can run `nuget` from your favourite terminal.
-3. Get the code project via Git or by using the *Download ZIP* button.
-4. Open a terminal (*cmd*, *PowerShell*, ...) and enter the folder with the source code.
-5. Restore the NuGet dependencies by running: `nuget restore`
-6. Now build the app with MSBuild:
-   ```
-   msbuild .\BetterJoy.sln -p:Configuration=CONFIGURATION -p:Platform=PLATFORM -t:Rebuild
-   ```
-   The available values for **CONFIGURATION** are *Release* and *Debug*.
-   The available values for **PLATFORM** are *x86* and *x64* (you want the latter 99.99% of the time).
-7. You have now built the app. See the next section for locating the binaries.
+### Componentes Principales
 
-## Binaries location
-The built binaries are located under
+**1. Motor BetterJoy (Actualizado)**
+- Motor de bajo nivel para comunicación con Joy-Cons
+- Implementación de emulación XInput y DualShock4 mediante ViGEmBus
+- Servidor UDP para compatibilidad con emuladores (Cemu, Citra, Dolphin, Yuzu)
+- Integración con HidHide para ocultar dispositivos duplicados
+- Optimizaciones de latencia mediante sincronización de pares y predicción
 
-*BetterJoyForCemu\bin\PLATFORM\CONFIGURATION*
+**2. Aplicación de Gestión (AGCV)**
+- **Capa de Presentación (capaPresentacion):** Interfaces gráficas Windows Forms
+- **Capa de Negocio (capaNegocio):** Lógica de aplicación y validaciones
+- **Capa de Datos (capaDatos):** Acceso a base de datos SQLite
+- **Capa de Entidad (capaEntidad):** Modelos de datos y objetos de transferencia
 
-where `PLATFORM` and `CONFIGURATION` are the one provided at build time. 
+### Base de Datos
 
-# Acknowledgements
-A massive thanks goes out to [rajkosto](https://github.com/rajkosto/) for putting up with 17 emails and replying very quickly to my silly queries. The UDP server is also mostly taken from his [ScpToolkit](https://github.com/rajkosto/ScpToolkit) repo.
+Sistema de gestión basado en SQLite con tres tablas principales:
 
-Also I am very grateful to [mfosse](https://github.com/mfosse/JoyCon-Driver) for pointing me in the right direction and to [Looking-Glass](https://github.com/Looking-Glass/JoyconLib) without whom I would not be able to figure anything out. (being honest here - the joycon code is his)
+- **Usuarios:** Gestión de cuentas con roles (Administrador/Usuario)
+- **Historial:** Registro de acciones y eventos del sistema
+- **Configuración:** Almacenamiento de preferencias y calibración
 
-Many thanks to [nefarius](https://github.com/ViGEm/ViGEmBus) for his ViGEm project! Apologies and appreciation go out to [epigramx](https://github.com/epigramx), creator of *WiimoteHook*, for giving me the driver idea and for letting me keep using his installation batch script even though I took it without permission. Thanks go out to [MTCKC](https://github.com/MTCKC/ProconXInput) for inspiration and batch files.
+## Mejoras Implementadas sobre BetterJoy Original
 
-A last thanks goes out to [dekuNukem](https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering) for his documentation, especially on the SPI calibration data and the IMU sensor notes!
+### Correcciones Críticas
 
-Massive *thank you* to **all** code contributors!
+**Eliminación de Errores de "Duplicate Timestamp"**
+- Problema: Los hooks globales de teclado/mouse interferían con el polling Bluetooth de alta frecuencia
+- Solución: Eliminación de hooks globales en Program.cs, manteniendo solo hooks locales temporales en el formulario de remapeo
+- Impacto: Eliminación completa del error, mejor detección por juegos, menor latencia
 
-Icons (modified): "[Switch Pro Controller](https://thenounproject.com/term/nintendo-switch/930119/)", "[
-Switch Detachable Controller Left](https://thenounproject.com/remsing/uploads/?i=930115)", "[Switch Detachable Controller Right](https://thenounproject.com/remsing/uploads/?i=930121)" icons by Chad Remsing from [the Noun Project](http://thenounproject.com/). [Super Nintendo Controller](https://thenounproject.com/themizarkshow/collection/vectogram/?i=193592) icon by Mark Davis from the [the Noun Project](http://thenounproject.com/); icon modified by [Amy Alexander](https://www.linkedin.com/in/-amy-alexander/). [Nintendo 64 Controller](https://thenounproject.com/icon/game-controller-193588/) icon by Mark Davis from the [the Noun Project](http://thenounproject.com/); icon modified by [Gino Moena](https://www.github.com/GinoMoena).
+**Reducción de Latencia del Joy-Con Izquierdo**
+- Implementación de JoyconPairSynchronizer para sincronización asimétrica
+- Predicción de posiciones del stick para compensar diferencias de timing
+- Prioridad de hilo elevada (ThreadPriority.AboveNormal) para el polling
+- Polling no bloqueante con SpinWait para reducción de microsegundos
+
+**Integración de HidHide**
+- Detección automática del driver HidHide
+- Ocultación selectiva de dispositivos para evitar entrada duplicada
+- Gestión de whitelist automática para AGCV
+- Cleanup completo al cerrar la aplicación
+
+### Nuevas Funcionalidades
+
+**Sistema de Gestión de Usuarios**
+- Autenticación con roles (Administrador/Usuario)
+- Administradores pueden gestionar usuarios, cambiar roles y contraseñas
+- Protección contra eliminación del último administrador
+- Historial completo de acciones por usuario
+
+**Monitor de Eventos**
+- Vista en tiempo real de eventos de botones y sticks
+- Visualización de datos del giroscopio y acelerómetro
+- Herramienta de diagnóstico para calibración
+
+**Historial de Actividad**
+- Registro automático de inicios de sesión
+- Registro de conexión/desconexión de controles
+- Registro de errores y eventos del sistema
+- Filtrado por usuario y tipo de evento
+
+**Mejoras de Interfaz**
+- Diseño moderno y limpio siguiendo las guías de Windows
+- Mensajes descriptivos en español
+- Indicadores visuales de estado de batería
+- Sistema de notificaciones en bandeja
+
+## Requisitos del Sistema
+
+### Hardware
+- Adaptador Bluetooth 4.0 o superior (para conexión inalámbrica)
+- Puerto USB (para conexión por cable)
+- Joy-Cons de Nintendo Switch, Pro Controller, o controles compatibles
+
+### Software
+- Windows 10/11 (64 bits)
+- .NET 8 Runtime
+- ViGEmBus Driver (incluido en instalación)
+- HidHide Driver (opcional, recomendado)
+
+## Instalación
+
+### Compilación desde Código Fuente
+
+**Requisitos previos:**
+- Visual Studio 2022 con .NET 8 SDK
+- Git
+
+**Pasos:**
+```bash
+# Clonar el repositorio
+git clone https://github.com/Antoniazog493/AGCV-Project.git
+cd AGCV-Project
+
+# Restaurar paquetes NuGet
+nuget restore
+
+# Compilar la solución
+msbuild AGCV-Project.sln /p:Configuration=Release /p:Platform=x64
+
+# Instalar drivers
+cd BetterJoyForCemu\Drivers
+.\ViGEmBus_Setup_1.16.116.exe
+```
+**Nota:** Para HidHide, descargue el instalador oficial desde: https://github.com/nefarius/HidHide/releases
+
+## Uso Básico
+
+### Primera Conexión
+
+1. **Iniciar AGCV**
+   - Si es primera vez, cree una cuenta de usuario
+   - Inicie sesión con sus credenciales
+
+2. **Conectar Joy-Cons por Bluetooth**
+   - Presione el botón de sincronización en el Joy-Con (botón pequeño junto a L/R)
+   - Vaya a Configuración de Bluetooth de Windows
+   - Seleccione "Joy-Con (L)" o "Joy-Con (R)"
+   - Espere a que AGCV detecte el control
+
+3. **Conectar por USB**
+   - Conecte el Joy-Con directamente al puerto USB
+   - AGCV lo detectará automáticamente
+
+### Funciones Principales
+
+**Emparejar Joy-Cons**
+- Haga clic en el icono de un Joy-Con conectado
+- Se emparejará automáticamente con el Joy-Con opuesto si está disponible
+- Una vez emparejados, funcionarán como un solo control
+
+**Configuración de Botones**
+- Acceda a "Reasignar Botones" desde el menú
+- Haga clic izquierdo en un botón para detectar entrada
+- Haga clic central para limpiar asignación
+- Haga clic derecho para opciones avanzadas
+
+**Giroscopio y Mouse**
+- Configure active_gyro para activar el giroscopio
+- Use reset_mouse para recentrar el cursor
+- Ajuste sensibilidad en la configuración
+
+## Configuración Avanzada
+
+### Archivo de Configuración
+
+La configuración se almacena en BetterJoyForCemu.exe.config. Algunas opciones importantes:
+
+**Configuración de Entrada**
+- ShowAsXInput: Mostrar como control Xbox 360 (true/false)
+- ShowAsDS4: Mostrar como DualShock 4 (true/false)
+- EnableRumble: Activar vibración (true/false)
+
+**Configuración de Giroscopio**
+- GyroToJoyOrMouse: Modo de giroscopio (joy_left/joy_right/mouse)
+- GyroMouseSensitivityX: Sensibilidad horizontal del mouse
+- GyroMouseSensitivityY: Sensibilidad vertical del mouse
+
+**HidHide**
+- UseHIDHide: Activar ocultación de dispositivos (true/false)
+- PurgeAffectedDevices: Limpiar lista al cerrar (true/false)
+
+**Nota:** Cambios en configuración marcados en naranja requieren reinicio de la aplicación.
+
+## Roles y Permisos
+
+### Usuario Regular
+- Conectar y usar Joy-Cons
+- Ver su propio historial
+- Cambiar configuración personal
+- Usar monitor de eventos
+
+### Administrador
+- Todas las funciones de Usuario
+- Administrar otros usuarios
+- Cambiar roles y contraseñas
+- Ver historial global
+- Gestionar configuración del sistema
+- Acceso a herramientas de diagnóstico
+
+**Nota:** El sistema siempre mantiene al menos un administrador activo.
+
+## Compatibilidad
+
+### Controles Soportados
+- Joy-Con L/R (individuales o emparejados)
+- Nintendo Switch Pro Controller
+- SNES Controller (Nintendo Switch Online)
+- N64 Controller (Nintendo Switch Online)
+- Controles de terceros compatibles (configurable)
+
+### Juegos y Emuladores
+- Juegos de Steam con soporte XInput
+- Cemu (emulador Wii U)
+- Citra (emulador 3DS)
+- Dolphin (emulador GameCube/Wii)
+- Yuzu (emulador Switch)
+- Cualquier juego compatible con XInput o DualShock4
+
+## Solución de Problemas
+
+### El Joy-Con no se conecta
+
+**Bluetooth:**
+- Verifique que el Bluetooth esté activado
+- Mantenga presionado el botón de sincronización por 5 segundos
+- Elimine emparejamientos previos de Windows
+- Reinicie el adaptador Bluetooth
+
+**USB:**
+- Use un cable USB-C de calidad con soporte de datos
+- Pruebe diferentes puertos USB
+- Verifique que AGCV esté ejecutándose como Administrador
+
+### Entrada duplicada en juegos
+
+**Solución:**
+- Instale HidHide desde: https://github.com/nefarius/HidHide/releases
+- Active UseHIDHide en configuración
+- Reinicie AGCV
+- Los Joy-Cons se ocultarán automáticamente para otras aplicaciones
+
+### Alta latencia o lag
+
+**Optimizaciones:**
+- Cierre otras aplicaciones que usen Bluetooth
+- Asegúrese de que AGCV tenga prioridad alta de CPU
+- Desactive el ahorro de energía del adaptador Bluetooth
+- En modo emparejado, el sistema compensa automáticamente la latencia
+
+### Error "Duplicate Timestamp"
+
+Este error fue común en versiones antiguas de BetterJoy. En AGCV:
+- Completamente eliminado mediante optimización de hooks
+- Si persiste, verifique que no tenga software de captura de entrada instalado
+- Desactive temporalmente software como AutoHotkey, EventGhost, etc.
+
+## Comparación con BetterJoy Original
+
+| Característica | BetterJoy Original | AGCV |
+|----------------|-------------------|------|
+| Soporte activo | No (desde 2020) | Sí (2025) |
+| Sistema de usuarios | No | Sí, con roles |
+| Historial de actividad | No | Sí, completo |
+| Integración HidHide | No | Sí, automática |
+| Error "Duplicate Timestamp" | Sí, frecuente | No, eliminado |
+| Latencia Joy-Con izquierdo | Alta | Optimizada |
+| Interfaz gráfica | Básica | Moderna, completa |
+| Monitor de eventos | No | Sí, en tiempo real |
+| Gestión de configuración | Manual | GUI integrada |
+| Base de datos | No | Sí, SQLite |
+| Documentación | Limitada | Completa |
+| Versión .NET | Framework 4.7 | .NET 8 |
+
+## Créditos y Agradecimientos
+
+### Proyecto Original BetterJoy
+
+Este proyecto está basado en y extiende el trabajo de:
+
+**BetterJoy v7.0** por Davidobot  
+Repositorio original: https://github.com/Davidobot/BetterJoy
+
+Agradecimientos especiales a:
+- **rajkosto** - ScpToolkit y servidor UDP
+- **mfosse** - JoyCon-Driver
+- **Looking-Glass** - JoyconLib
+- **nefarius** - ViGEmBus
+- **epigramx** - WiimoteHook
+- **MTCKC** - ProconXInput
+- **dekuNukem** - Documentación de ingeniería inversa de Nintendo Switch
+
+### Librerías y Dependencias
+
+- **ViGEmBus**: Driver de emulación de controles
+- **HidHide**: Ocultación de dispositivos HID
+- **hidapi**: Comunicación USB/Bluetooth de bajo nivel
+- **WindowsInput**: Simulación de entrada de teclado/mouse
+- **Nefarius.ViGEm.Client**: Cliente .NET para ViGEm
+
+### Recursos Gráficos
+
+Iconos modificados de The Noun Project:
+- Nintendo Switch Pro Controller - Chad Remsing
+- Joy-Con Left/Right - Chad Remsing
+- SNES Controller - Mark Davis (modificado por Amy Alexander)
+- N64 Controller - Mark Davis (modificado por Gino Moena)
+
+## Licencia
+
+Este proyecto mantiene compatibilidad con la licencia del proyecto original BetterJoy.
+
+El código fuente está disponible bajo los mismos términos, permitiendo uso, modificación y distribución con la debida atribución a los autores originales y a este proyecto.
+
+Para uso comercial o distribución modificada, consulte la licencia completa en el archivo LICENSE.
+
+## Desarrollo Futuro
+
+### Planes a Corto Plazo
+- Soporte para más controles de terceros
+- Perfiles de configuración por juego
+- Calibración automática de giroscopio
+- Modo de bajo consumo de energía
+- Traducción a múltiples idiomas
+
+### Planes a Largo Plazo
+- Cliente multiplataforma (Linux, macOS)
+- Sincronización en la nube de configuraciones
+- API REST para integración con otras aplicaciones
+- Soporte para otros controles (PlayStation, Xbox genéricos)
+- Modo servidor para streaming local
+
+## Contribuciones
+
+Este proyecto es parte de un trabajo académico finalizado. Sin embargo, las contribuciones de la comunidad son bienvenidas:
+
+1. Fork el repositorio
+2. Cree una rama para su feature (git checkout -b feature/nueva-funcionalidad)
+3. Commit sus cambios (git commit -m 'Añadir nueva funcionalidad')
+4. Push a la rama (git push origin feature/nueva-funcionalidad)
+5. Abra un Pull Request
+
+Por favor, asegúrese de:
+- Seguir las convenciones de código existentes
+- Documentar nuevas funcionalidades
+- Probar exhaustivamente los cambios
+- Actualizar la documentación según sea necesario
+
+## Soporte y Contacto
+
+**Reportar Problemas:**  
+Abra un issue en: https://github.com/Antoniazog493/AGCV-Project/issues
+
+**Documentación Técnica:**  
+Consulte la carpeta /docs para documentación detallada de desarrollo
+
+**Wiki del Proyecto:**  
+https://github.com/Antoniazog493/AGCV-Project/wiki
+
+## Referencias
+
+- Documentación de ViGEmBus: https://github.com/ViGEm/ViGEmBus
+- Documentación de HidHide: https://github.com/nefarius/HidHide
+- Nintendo Switch Reverse Engineering: https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering
+- Guía de Configuración de CemuHook: https://cemuhook.sshnuke.net/
+
+---
+
+**Proyecto desarrollado como requisito de la asignatura Herramientas de Programación Avanzada III**  
+**Universidad Tecnológica de Panamá - 2025**
+
+**Versión actual:** 1.0.0  
+**Última actualización:** Enero 2025
