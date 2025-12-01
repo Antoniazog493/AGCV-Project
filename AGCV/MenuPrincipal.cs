@@ -9,9 +9,37 @@ namespace AGCV
 {
     public partial class HOME : Form
     {
+        private const string MensajeMotorNoEncontrado = 
+            "ERROR: No se encontró el motor de AGCV\n\n" +
+            "¿Deseas seleccionar manualmente la ubicación del motor AGCV?";
+
+        private const string MensajeAGCVEnEjecucion = 
+            "ℹ️ AGCV ya está en ejecución\n\n" +
+            "El motor de AGCV ya está activo.\n" +
+            "Si no ves la ventana, búscala en la barra de tareas.";
+
+        private const string MensajeInstrucciones = 
+            "✅ EXITOSO: AGCV iniciado correctamente\n\n" +
+            "INSTRUCCIONES PARA CONECTAR TU JOY-CON:\n\n" +
+            "1. Presiona los botones de sincronización en tu Joy-Con:\n" +
+            "   • Joy-Con L: Botón pequeño al lado del botón '-'\n" +
+            "   • Joy-Con R: Botón pequeño al lado del botón '+'\n\n" +
+            "2. El Joy-Con aparecerá en la ventana de AGCV\n\n" +
+            "3. Windows reconocerá automáticamente el Joy-Con\n" +
+            "   como un control Xbox compatible\n\n" +
+            "NOTA: Mantén AGCV abierto mientras usas el Joy-Con";
+
+        private const string MensajeConfirmarCierreSesion = 
+            "¿Estás seguro de que deseas cerrar sesión?";
+
+        private string _agcvPathCache;
+
         public HOME()
         {
             InitializeComponent();
+            
+            // Registrar evento de cierre del formulario
+            this.FormClosing += HOME_FormClosing;
         }
 
         private void HOME_Load(object sender, EventArgs e)
@@ -39,8 +67,7 @@ namespace AGCV
                 if (string.IsNullOrEmpty(agcvPath))
                 {
                     var resultado = MessageBox.Show(
-                        "ERROR: No se encontró el motor de AGCV\n\n" +
-                        "¿Deseas seleccionar manualmente la ubicación del motor AGCV?",
+                        MensajeMotorNoEncontrado,
                         "Motor AGCV no encontrado",
                         MessageBoxButtons.YesNo,
                         MessageBoxIcon.Error);
@@ -56,6 +83,7 @@ namespace AGCV
                             {
                                 agcvPath = ofd.FileName;
                                 GuardarRutaAGCV(agcvPath);
+                                _agcvPathCache = agcvPath;
                             }
                             else
                             {
@@ -74,9 +102,7 @@ namespace AGCV
                 if (procesosAGCV.Length > 0)
                 {
                     MessageBox.Show(
-                        "ℹ️ AGCV ya está en ejecución\n\n" +
-                        "El motor de AGCV ya está activo.\n" +
-                        "Si no ves la ventana, búscala en la barra de tareas.",
+                        MensajeAGCVEnEjecucion,
                         "Información",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Information);
@@ -91,18 +117,13 @@ namespace AGCV
                     WorkingDirectory = Path.GetDirectoryName(agcvPath)
                 };
 
-                Process.Start(startInfo);
+                Process procesoIniciado = Process.Start(startInfo);
+                
+                // Guardar referencia al proceso en la sesión actual
+                SesionActual.ProcesoBetterJoy = procesoIniciado;
 
                 MessageBox.Show(
-                    "✅ EXITOSO: AGCV iniciado correctamente\n\n" +
-                    "INSTRUCCIONES PARA CONECTAR TU JOY-CON:\n\n" +
-                    "1. Presiona los botones de sincronización en tu Joy-Con:\n" +
-                    "   • Joy-Con L: Botón pequeño al lado del botón '-'\n" +
-                    "   • Joy-Con R: Botón pequeño al lado del botón '+'\n\n" +
-                    "2. El Joy-Con aparecerá en la ventana de AGCV\n\n" +
-                    "3. Windows reconocerá automáticamente el Joy-Con\n" +
-                    "   como un control Xbox compatible\n\n" +
-                    "NOTA: Mantén AGCV abierto mientras usas el Joy-Con",
+                    MensajeInstrucciones,
                     "AGCV Iniciado",
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Information);
@@ -123,6 +144,11 @@ namespace AGCV
         /// </summary>
         private string BuscarAGCV()
         {
+            if (!string.IsNullOrEmpty(_agcvPathCache) && File.Exists(_agcvPathCache))
+            {
+                return _agcvPathCache;
+            }
+
             string[] posiblesRutas = new string[]
             {
                 // 1. Ruta guardada previamente
@@ -145,7 +171,8 @@ namespace AGCV
             {
                 if (!string.IsNullOrEmpty(ruta) && File.Exists(ruta))
                 {
-                    return Path.GetFullPath(ruta);
+                    _agcvPathCache = Path.GetFullPath(ruta);
+                    return _agcvPathCache;
                 }
             }
 
@@ -209,10 +236,6 @@ namespace AGCV
             ajustes.ShowDialog();
         }
 
-        private void HOME_Click(object sender, EventArgs e)
-        {
-        }
-
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             CerrarSesion();
@@ -221,29 +244,32 @@ namespace AGCV
         private void CerrarSesion()
         {
             var resultado = MessageBox.Show(
-                "¿Estás seguro de que deseas cerrar sesión?",
+                MensajeConfirmarCierreSesion,
                 "Confirmar Cierre de Sesión",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
 
             if (resultado == DialogResult.Yes)
             {
-                // Limpiar sesión
-                SesionActual.IdUsuario = 0;
-                SesionActual.NombreUsuario = string.Empty;
+                // Limpiar sesión (esto también cerrará BetterJoy)
+                SesionActual.Limpiar();
 
                 // Cerrar menú principal (volverá al LOGIN)
                 this.Close();
             }
         }
 
-        private void lblTitulo_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Maneja el evento de cierre del formulario para cerrar BetterJoy
+        /// </summary>
+        private void HOME_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Si se cierra el formulario sin cerrar sesión, también cerrar BetterJoy
+            SesionActual.CerrarBetterJoy();
         }
 
-        private void lblTitulo_Click_1(object sender, EventArgs e)
-        {
+        private void HOME_Click(object sender, EventArgs e) { }
 
-        }
+        private void lblTitulo_Click_1(object sender, EventArgs e) { }
     }
 }

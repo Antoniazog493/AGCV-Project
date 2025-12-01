@@ -1,42 +1,5 @@
 ﻿namespace capaEntidad
 {
-    public class Class1
-    {
-    }
-    
-    /// <summary>
-    /// Entidad que representa un Joy-Con de Nintendo Switch
-    /// </summary>
-    public class CEControl
-    {
-        public int IdControl { get; set; }
-        public string NombreControl { get; set; }  // Ej: "Joy-Con Izquierdo Rojo"
-        public string Marca { get; set; }          // Versión de Switch: "Switch v1" o "Switch v2"
-        public string Modelo { get; set; }         // Tipo: "Joy-Con L (Izquierdo)" o "Joy-Con R (Derecho)"
-    }
-
-    /// <summary>
-    /// Entidad que representa una consola Nintendo Switch
-    /// </summary>
-    public class CEConsola
-    {
-        public int IdConsola { get; set; }
-        public string Nombre { get; set; }       // Ej: Switch v1, Switch v2, Switch OLED
-        public string Fabricante { get; set; }   // Nintendo
-    }
-
-    /// <summary>
-    /// Entidad que representa una conexión entre un Joy-Con y la PC
-    /// </summary>
-    public class CEConexion
-    {
-        public int IdConexion { get; set; }
-        public int IdControl { get; set; }
-        public int IdConsola { get; set; }
-        public DateTime FechaConexion { get; set; }
-        public string Estado { get; set; }       // Ej: Conectado, Desconectado, Error de reconocimiento
-    }
-    
     /// <summary>
     /// Entidad que representa un usuario del sistema AGCV
     /// </summary>
@@ -46,16 +9,44 @@
         public string NombreUsuario { get; set; } // Alias o username
         public string Correo { get; set; }        // Email de registro
         public string ClaveHash { get; set; }     // Contraseña encriptada
+        public string Rol { get; set; }           // Rol: "Usuario" o "Administrador"
+        public DateTime FechaCreacion { get; set; } // Fecha de creación de la cuenta
+        public DateTime? UltimoAcceso { get; set; } // Último acceso al sistema
+        public bool Activo { get; set; }          // Estado de la cuenta
+
+        /// <summary>
+        /// Verifica si el usuario es administrador
+        /// </summary>
+        public bool EsAdministrador() => Rol == "Administrador";
+
+        /// <summary>
+        /// Obtiene un texto descriptivo del rol
+        /// </summary>
+        public string ObtenerRolTexto()
+        {
+            return Rol == "Administrador" ? "⭐ Administrador" : "👤 Usuario";
+        }
+
+        /// <summary>
+        /// Constructor por defecto
+        /// </summary>
+        public CEUsuario()
+        {
+            Rol = "Usuario"; // Rol por defecto
+            FechaCreacion = DateTime.Now;
+            Activo = true;
+        }
     }
     
     /// <summary>
-    /// Entidad que representa el historial de conexiones de Joy-Cons
+    /// Entidad que representa el historial de acciones del usuario
     /// </summary>
     public class CEHistorial
     {
         public int IdHistorial { get; set; }
         public int IdUsuario { get; set; }
-        public int IdConexion { get; set; }
+        public string Accion { get; set; }        // Ej: "Inicio de sesión", "Conexión de Joy-Con"
+        public string Detalles { get; set; }      // Detalles adicionales de la acción
         public DateTime FechaRegistro { get; set; }
     }
 }

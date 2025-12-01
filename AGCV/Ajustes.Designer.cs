@@ -31,6 +31,11 @@
             panelHeader = new Panel();
             lblTituloText = new Label();
             panelContent = new Panel();
+            pnlAdministrarUsuarios = new Panel();
+            iconAdministrarUsuarios = new Label();
+            btnAdministrarUsuarios = new Button();
+            lblAdministrarUsuariosDescripcion = new Label();
+            lblAdministrarUsuariosTitulo = new Label();
             pnlHistorial = new Panel();
             iconHistorial = new Label();
             btnHistorial = new Button();
@@ -38,6 +43,7 @@
             lblHistorialTitulo = new Label();
             panelHeader.SuspendLayout();
             panelContent.SuspendLayout();
+            pnlAdministrarUsuarios.SuspendLayout();
             pnlHistorial.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,11 +67,12 @@
             lblTituloText.Name = "lblTituloText";
             lblTituloText.Size = new Size(209, 50);
             lblTituloText.TabIndex = 0;
-            lblTituloText.Text = "⚙️ Ajustes";
+            lblTituloText.Text = "Ajustes";
             // 
             // panelContent
             // 
             panelContent.BackColor = Color.White;
+            panelContent.Controls.Add(pnlAdministrarUsuarios);
             panelContent.Controls.Add(pnlHistorial);
             panelContent.Dock = DockStyle.Fill;
             panelContent.Location = new Point(0, 100);
@@ -73,6 +80,69 @@
             panelContent.Padding = new Padding(30);
             panelContent.Size = new Size(800, 350);
             panelContent.TabIndex = 1;
+            // 
+            // pnlAdministrarUsuarios
+            // 
+            pnlAdministrarUsuarios.Anchor = AnchorStyles.None;
+            pnlAdministrarUsuarios.BackColor = Color.FromArgb(236, 240, 241);
+            pnlAdministrarUsuarios.BorderStyle = BorderStyle.FixedSingle;
+            pnlAdministrarUsuarios.Controls.Add(iconAdministrarUsuarios);
+            pnlAdministrarUsuarios.Controls.Add(btnAdministrarUsuarios);
+            pnlAdministrarUsuarios.Controls.Add(lblAdministrarUsuariosDescripcion);
+            pnlAdministrarUsuarios.Controls.Add(lblAdministrarUsuariosTitulo);
+            pnlAdministrarUsuarios.Location = new Point(430, 35);
+            pnlAdministrarUsuarios.Name = "pnlAdministrarUsuarios";
+            pnlAdministrarUsuarios.Padding = new Padding(20);
+            pnlAdministrarUsuarios.Size = new Size(340, 280);
+            pnlAdministrarUsuarios.TabIndex = 2;
+            pnlAdministrarUsuarios.Visible = false;
+            // 
+            // iconAdministrarUsuarios
+            // 
+            iconAdministrarUsuarios.AutoSize = true;
+            iconAdministrarUsuarios.Font = new Font("Segoe UI", 30F);
+            iconAdministrarUsuarios.Location = new Point(222, 120);
+            iconAdministrarUsuarios.Name = "iconAdministrarUsuarios";
+            iconAdministrarUsuarios.Size = new Size(98, 67);
+            iconAdministrarUsuarios.TabIndex = 3;
+            iconAdministrarUsuarios.Text = "";
+            // 
+            // btnAdministrarUsuarios
+            // 
+            btnAdministrarUsuarios.BackColor = Color.FromArgb(41, 128, 185);
+            btnAdministrarUsuarios.Cursor = Cursors.Hand;
+            btnAdministrarUsuarios.FlatAppearance.BorderSize = 0;
+            btnAdministrarUsuarios.FlatStyle = FlatStyle.Flat;
+            btnAdministrarUsuarios.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnAdministrarUsuarios.ForeColor = Color.White;
+            btnAdministrarUsuarios.Location = new Point(20, 225);
+            btnAdministrarUsuarios.Name = "btnAdministrarUsuarios";
+            btnAdministrarUsuarios.Size = new Size(300, 40);
+            btnAdministrarUsuarios.TabIndex = 2;
+            btnAdministrarUsuarios.Text = "Gestionar Usuarios";
+            btnAdministrarUsuarios.UseVisualStyleBackColor = false;
+            btnAdministrarUsuarios.Click += btnAdministrarUsuarios_Click;
+            // 
+            // lblAdministrarUsuariosDescripcion
+            // 
+            lblAdministrarUsuariosDescripcion.Font = new Font("Segoe UI", 11F);
+            lblAdministrarUsuariosDescripcion.ForeColor = Color.FromArgb(127, 140, 141);
+            lblAdministrarUsuariosDescripcion.Location = new Point(20, 60);
+            lblAdministrarUsuariosDescripcion.Name = "lblAdministrarUsuariosDescripcion";
+            lblAdministrarUsuariosDescripcion.Size = new Size(300, 100);
+            lblAdministrarUsuariosDescripcion.TabIndex = 1;
+            lblAdministrarUsuariosDescripcion.Text = "Gestiona usuarios del sistema.\r\n\r\nCambia contraseñas, roles y permisos de acceso.";
+            // 
+            // lblAdministrarUsuariosTitulo
+            // 
+            lblAdministrarUsuariosTitulo.AutoSize = true;
+            lblAdministrarUsuariosTitulo.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblAdministrarUsuariosTitulo.ForeColor = Color.FromArgb(52, 73, 94);
+            lblAdministrarUsuariosTitulo.Location = new Point(10, 20);
+            lblAdministrarUsuariosTitulo.Name = "lblAdministrarUsuariosTitulo";
+            lblAdministrarUsuariosTitulo.Size = new Size(289, 32);
+            lblAdministrarUsuariosTitulo.TabIndex = 0;
+            lblAdministrarUsuariosTitulo.Text = "Administrar Usuarios";
             // 
             // pnlHistorial
             // 
@@ -83,7 +153,7 @@
             pnlHistorial.Controls.Add(btnHistorial);
             pnlHistorial.Controls.Add(lblHistorialDescripcion);
             pnlHistorial.Controls.Add(lblHistorialTitulo);
-            pnlHistorial.Location = new Point(230, 35);
+            pnlHistorial.Location = new Point(70, 35);
             pnlHistorial.Name = "pnlHistorial";
             pnlHistorial.Padding = new Padding(20);
             pnlHistorial.Size = new Size(340, 280);
@@ -97,7 +167,7 @@
             iconHistorial.Name = "iconHistorial";
             iconHistorial.Size = new Size(98, 67);
             iconHistorial.TabIndex = 3;
-            iconHistorial.Text = "📈";
+            iconHistorial.Text = "";
             // 
             // btnHistorial
             // 
@@ -111,7 +181,7 @@
             btnHistorial.Name = "btnHistorial";
             btnHistorial.Size = new Size(300, 40);
             btnHistorial.TabIndex = 2;
-            btnHistorial.Text = "📋 Ver Historial";
+            btnHistorial.Text = "Ver Historial";
             btnHistorial.UseVisualStyleBackColor = false;
             btnHistorial.Click += button2_Click;
             // 
@@ -134,7 +204,7 @@
             lblHistorialTitulo.Name = "lblHistorialTitulo";
             lblHistorialTitulo.Size = new Size(326, 32);
             lblHistorialTitulo.TabIndex = 0;
-            lblHistorialTitulo.Text = "📊 Historial de Conexiones";
+            lblHistorialTitulo.Text = "Historial de Conexiones";
             lblHistorialTitulo.Click += lblHistorialTitulo_Click;
             // 
             // Ajustes
@@ -154,6 +224,8 @@
             panelHeader.ResumeLayout(false);
             panelHeader.PerformLayout();
             panelContent.ResumeLayout(false);
+            pnlAdministrarUsuarios.ResumeLayout(false);
+            pnlAdministrarUsuarios.PerformLayout();
             pnlHistorial.ResumeLayout(false);
             pnlHistorial.PerformLayout();
             ResumeLayout(false);
@@ -169,5 +241,10 @@
         private Label lblHistorialDescripcion;
         private Button btnHistorial;
         private Label iconHistorial;
+        private Panel pnlAdministrarUsuarios;
+        private Label iconAdministrarUsuarios;
+        private Button btnAdministrarUsuarios;
+        private Label lblAdministrarUsuariosDescripcion;
+        private Label lblAdministrarUsuariosTitulo;
     }
 }

@@ -8,6 +8,14 @@ namespace AGCV
     {
         private readonly CNUsuarios _cnUsuarios = new CNUsuarios();
 
+        private const string MensajeCredencialesIncorrectas = "ERROR: Usuario o contraseña incorrectos";
+        private const string MensajeRecuperarContraseña = 
+            "🔒 Recuperación de Contraseña\n\n" +
+            "Para cambiar tu contraseña, debes contactar a un administrador del sistema.\n\n" +
+            "Los administradores pueden cambiar contraseñas desde:\n" +
+            "Ajustes → Administrar Usuarios\n\n" +
+            "Si no conoces a ningún administrador, contacta al soporte técnico.";
+
         public LogIn()
         {
             InitializeComponent();
@@ -15,25 +23,14 @@ namespace AGCV
 
         private void LogIn_Load(object sender, EventArgs e)
         {
-            // Limpiar sesión anterior
-            SesionActual.IdUsuario = 0;
-            SesionActual.NombreUsuario = string.Empty;
-
-            // Limpiar campos
+            SesionActual.Limpiar();
             txtUsuario.Clear();
             txtContraseña.Clear();
             txtUsuario.Focus();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            // Validación en tiempo real (opcional)
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            // Validación en tiempo real (opcional)
-        }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -42,62 +39,59 @@ namespace AGCV
 
         private void IntentoLogin()
         {
-            // Validaciones previas
-            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
-            {
-                MessageBox.Show("El nombre de usuario es obligatorio", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtUsuario.Focus();
-                return;
-            }
+            string usuario = txtUsuario.Text.Trim();
+            string clave = txtContraseña.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
+            var validacion = ValidacionService.ValidarCredencialesLogin(usuario, clave);
+            if (!validacion.EsValido)
             {
-                MessageBox.Show("La contraseña es obligatoria", "Validación",
+                MessageBox.Show(validacion.Mensaje, validacion.Titulo,
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtContraseña.Focus();
+                
+                if (validacion.Mensaje.Contains("nombre"))
+                {
+                    txtUsuario.Focus();
+                }
+                else
+                {
+                    txtContraseña.Focus();
+                }
                 return;
             }
 
             try
             {
-                string usuario = txtUsuario.Text.Trim();
-                string clave = txtContraseña.Text.Trim();
-
                 var datosUsuario = _cnUsuarios.Login(usuario, clave);
 
                 if (datosUsuario == null)
                 {
-                    MessageBox.Show("ERROR: Usuario o contraseña incorrectos", "Error de Autenticación",
+                    MessageBox.Show(MensajeCredencialesIncorrectas, "Error de Autenticación",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtContraseña.Clear();
                     txtContraseña.Focus();
                     return;
                 }
 
-                // Guardar usuario en sesión
                 SesionActual.IdUsuario = datosUsuario.IdUsuario;
                 SesionActual.NombreUsuario = datosUsuario.NombreUsuario;
+                SesionActual.Rol = datosUsuario.Rol;
 
-                // Mostrar mensaje de bienvenida
-                MessageBox.Show(
-                    $"EXITOSO: ¡Bienvenido a AGCV, {datosUsuario.NombreUsuario}!\n\n" +
-                    "Sistema de gestión para Joy-Cons de Nintendo Switch",
-                    "Sesión Iniciada",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                string rolTexto = datosUsuario.EsAdministrador() ? "⭐ Administrador" : "👤 Usuario";
+                string mensajeBienvenida = $"EXITOSO: ¡Bienvenido a AGCV, {datosUsuario.NombreUsuario}!\n\n" +
+                                          $"Rol: {rolTexto}\n" +
+                                          "Sistema de gestión para Joy-Cons de Nintendo Switch";
 
-                // Abrir el menú principal
+                MessageBox.Show(mensajeBienvenida, "Sesión Iniciada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 HOME menuPrincipal = new HOME();
                 menuPrincipal.FormClosed += (s, e) =>
                 {
-                    // Cuando cierren el HOME, vuelvo a mostrar LOGIN
                     LimpiarFormulario();
                     this.Show();
                 };
                 menuPrincipal.Show();
 
-                // Ocultar el login (no cerrar)
                 this.Hide();
             }
             catch (Exception ex)
@@ -112,7 +106,6 @@ namespace AGCV
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Abrir formulario de crear usuario
             using (var crearUsuario = new CrearUsuario())
             {
                 crearUsuario.ShowDialog();
@@ -121,12 +114,8 @@ namespace AGCV
 
         private void lblOlvidaste_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MessageBox.Show(
-                "Para recuperar tu contraseña, contacta al administrador del sistema.\n\n" +
-                "Email: soporte@agcv.com",
-                "Recuperar Contraseña",
-                MessageBoxButtons.OK,
-                MessageBoxIcon.Information);
+            MessageBox.Show(MensajeRecuperarContraseña, "Recuperar Contraseña",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void LimpiarFormulario()
@@ -136,22 +125,7 @@ namespace AGCV
             txtUsuario.Focus();
         }
 
-        private void lblDescripcion_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblTitulo_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void lblIcono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTituloApp_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void lblDescripcion_Click(object sender, EventArgs e) { }
+        private void lblTitulo_Click(object sender, EventArgs e) { }
     }
 }

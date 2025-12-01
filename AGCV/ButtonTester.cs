@@ -69,7 +69,7 @@ namespace AGCV
         private Dictionary<string, Stopwatch> buttonPressTimers;
         private int eventCounter = 0;
         private const int MAX_LOG_LINES = 1000;
-        
+
         // Estados para evitar mensajes repetidos
         private bool wasConnected = false;
         private bool hasLoggedDisconnection = false;
@@ -101,7 +101,7 @@ namespace AGCV
                     return;
                 }
             }
-            
+
             // Solo loguear si es la primera vez que no se encuentra
             if (!hasLoggedNoController)
             {
@@ -127,7 +127,7 @@ namespace AGCV
             {
                 lblStatus.Text = "? Joy-Con desconectado";
                 lblStatus.ForeColor = Color.Red;
-                
+
                 // Solo loguear desconexión una vez
                 if (wasConnected && !hasLoggedDisconnection)
                 {
@@ -135,13 +135,13 @@ namespace AGCV
                     hasLoggedDisconnection = true;
                     wasConnected = false;
                 }
-                
+
                 // Intentar reconectar silenciosamente
                 if (controllerIndex != -1)
                 {
                     controllerIndex = -1;
                 }
-                
+
                 FindController();
                 return;
             }
@@ -161,14 +161,14 @@ namespace AGCV
 
             // Detectar cambios en botones
             DetectButtonChanges(gamepad, latency);
-            
+
             // Actualizar información de triggers (solo si cambió significativamente)
             if (Math.Abs(gamepad.bLeftTrigger - previousLeftTrigger) > 10)
             {
                 LogTriggerEvent("LT", gamepad.bLeftTrigger, latency);
                 previousLeftTrigger = gamepad.bLeftTrigger;
             }
-            
+
             if (Math.Abs(gamepad.bRightTrigger - previousRightTrigger) > 10)
             {
                 LogTriggerEvent("RT", gamepad.bRightTrigger, latency);
@@ -218,7 +218,7 @@ namespace AGCV
         {
             string action = isPressed ? "PRESSED" : "RELEASED";
             Color color = isPressed ? Color.FromArgb(46, 204, 113) : Color.FromArgb(231, 76, 60);
-            
+
             long pressDuration = 0;
             if (isPressed)
             {
@@ -242,7 +242,7 @@ namespace AGCV
 
             string joyConType = DetermineJoyConType(buttonName);
             string durationInfo = pressDuration > 0 ? $" | Duration: {pressDuration}ms" : "";
-            
+
             LogMessage(
                 $"[{joyConType}] {buttonName,-12} {action,-9} @ {latency}ms{durationInfo}",
                 "INPUT",
@@ -266,22 +266,22 @@ namespace AGCV
         private string DetermineJoyConType(string buttonName)
         {
             // Botones del Joy-Con Left
-            if (buttonName.Contains("?") || buttonName.Contains("?") || 
+            if (buttonName.Contains("?") || buttonName.Contains("?") ||
                 buttonName.Contains("?") || buttonName.Contains("?") ||
-                buttonName == "LB" || buttonName == "L-STICK" || 
+                buttonName == "LB" || buttonName == "L-STICK" ||
                 buttonName == "BACK (-)")
             {
                 return "Joy-Con L";
             }
             // Botones del Joy-Con Right
-            else if (buttonName == "A" || buttonName == "B" || 
+            else if (buttonName == "A" || buttonName == "B" ||
                      buttonName == "X" || buttonName == "Y" ||
                      buttonName == "RB" || buttonName == "R-STICK" ||
                      buttonName == "START (+)")
             {
                 return "Joy-Con R";
             }
-            
+
             return "Controller";
         }
 
@@ -333,7 +333,7 @@ namespace AGCV
                     {
                         System.IO.File.WriteAllText(sfd.FileName, txtLog.Text);
                         LogMessage($"?? Log exportado a: {sfd.FileName}", "SYSTEM", Color.Green);
-                        
+
                         MessageBox.Show(
                             $"? Log exportado exitosamente\n\n{sfd.FileName}",
                             "Exportación Exitosa",
@@ -403,6 +403,16 @@ namespace AGCV
             globalStopwatch?.Stop();
             LogMessage("?? Joy-Con Event Monitor cerrado", "SYSTEM", Color.Blue);
             base.OnFormClosing(e);
+        }
+
+        private void lblTitulo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

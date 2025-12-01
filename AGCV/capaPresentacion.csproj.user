@@ -1,10 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <Compile Update="AdministrarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Ajustes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ButtonTester.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="CambiarContraseñaAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Historial.cs">

@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
+      "projectUniqueName": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
       "projectName": "capaEntidad",
-      "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
+      "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
       "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\obj\\",
+      "outputPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

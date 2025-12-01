@@ -76,9 +76,6 @@
     <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="! Install the drivers in the Drivers folder">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <Content Include="Drivers\ViGEmBusSetup_x64.msi">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

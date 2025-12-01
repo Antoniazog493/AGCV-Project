@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\capaNegocio.csproj": {}
+    "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\capaNegocio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj": {
+    "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\capaDatos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\capaDatos.csproj",
         "projectName": "capaDatos",
-        "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj",
+        "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\capaDatos.csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -33,8 +33,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
-                "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj"
+              "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
+                "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj"
               }
             }
           }
@@ -83,14 +83,14 @@
         }
       }
     },
-    "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
+    "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
         "projectName": "capaEntidad",
-        "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
+        "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -152,14 +152,14 @@
         }
       }
     },
-    "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\capaNegocio.csproj": {
+    "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\capaNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\capaNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\capaNegocio.csproj",
         "projectName": "capaNegocio",
-        "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\capaNegocio.csproj",
+        "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\capaNegocio.csproj",
         "packagesPath": "C:\\Users\\Anton\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaNegocio\\obj\\",
+        "outputPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -181,11 +181,11 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj": {
-                "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaDatos\\capaDatos.csproj"
+              "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\capaDatos.csproj": {
+                "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\capaDatos.csproj"
               },
-              "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
-                "projectPath": "C:\\Users\\Anton\\Downloads\\BetterJoy\\AGCV-Project\\capaEntidad\\capaEntidad.csproj"
+              "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj": {
+                "projectPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaEntidad\\capaEntidad.csproj"
               }
             }
           }

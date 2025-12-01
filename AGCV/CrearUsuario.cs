@@ -9,72 +9,20 @@ namespace AGCV
     {
         private readonly CNUsuarios _cnUsuarios = new CNUsuarios();
 
+        private const string MensajeConfirmarCancelacion = 
+            "¿Estás seguro de que deseas cancelar?\n\nSe perderán todos los datos ingresados.";
+
         public CrearUsuario()
         {
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            // Validación en tiempo real (opcional)
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-            // Validación en tiempo real (opcional)
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-            // Validación en tiempo real (opcional)
-        }
+        private void textBox1_TextChanged(object sender, EventArgs e) { }
+        private void textBox2_TextChanged(object sender, EventArgs e) { }
+        private void textBox3_TextChanged(object sender, EventArgs e) { }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Validaciones previas
-            if (string.IsNullOrWhiteSpace(txtNombre.Text))
-            {
-                MessageBox.Show("El nombre de usuario es obligatorio", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtNombre.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtCorreo.Text))
-            {
-                MessageBox.Show("El correo es obligatorio", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtCorreo.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtContraseña.Text))
-            {
-                MessageBox.Show("La contraseña es obligatoria", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtContraseña.Focus();
-                return;
-            }
-
-            // Validar formato de correo básico
-            if (!txtCorreo.Text.Contains("@") || !txtCorreo.Text.Contains("."))
-            {
-                MessageBox.Show("Ingresa un correo válido (ejemplo@correo.com)", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtCorreo.Focus();
-                return;
-            }
-
-            // Validar longitud de contraseña
-            if (txtContraseña.Text.Length < 6)
-            {
-                MessageBox.Show("La contraseña debe tener mínimo 6 caracteres", "Validación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtContraseña.Focus();
-                return;
-            }
-
-            // Crear objeto usuario
             var cEUsuario = new CEUsuario
             {
                 NombreUsuario = txtNombre.Text.Trim(),
@@ -82,28 +30,38 @@ namespace AGCV
                 ClaveHash = txtContraseña.Text
             };
 
-            // Validar con la lógica existente
-            bool validado = _cnUsuarios.validarDatos(cEUsuario);
-            if (!validado)
+            var validacion = _cnUsuarios.ValidarDatos(cEUsuario);
+            if (!validacion.EsValido)
             {
+                MessageBox.Show(validacion.Mensaje, validacion.Titulo,
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
+                if (validacion.Mensaje.Contains("nombre"))
+                {
+                    txtNombre.Focus();
+                }
+                else if (validacion.Mensaje.Contains("correo"))
+                {
+                    txtCorreo.Focus();
+                }
+                else if (validacion.Mensaje.Contains("contraseña"))
+                {
+                    txtContraseña.Focus();
+                }
                 return;
             }
 
             try
             {
-                // Guardar usuario
                 _cnUsuarios.CrearCliente(cEUsuario);
 
-                // Mostrar mensaje de éxito
-                MessageBox.Show(
-                    "EXITOSO: Cuenta creada exitosamente\n\n" +
-                    $"Usuario: {txtNombre.Text}\n" +
-                    $"Correo: {txtCorreo.Text}",
-                    "Éxito",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
+                string mensajeExito = "EXITOSO: Cuenta creada exitosamente\n\n" +
+                                     $"Usuario: {txtNombre.Text}\n" +
+                                     $"Correo: {txtCorreo.Text}";
 
-                // Limpiar y cerrar
+                MessageBox.Show(mensajeExito, "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 LimpiarFormulario();
                 this.Close();
             }
@@ -119,8 +77,7 @@ namespace AGCV
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            var resultado = MessageBox.Show(
-                "¿Estás seguro de que deseas cancelar?\n\nSe perderán todos los datos ingresados.",
+            var resultado = MessageBox.Show(MensajeConfirmarCancelacion,
                 "Confirmar cancelación",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -140,9 +97,6 @@ namespace AGCV
             txtNombre.Focus();
         }
 
-        private void lblTituloText_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void lblTituloText_Click(object sender, EventArgs e) { }
     }
 }
