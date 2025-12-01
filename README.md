@@ -2,15 +2,15 @@
   <img src="title.png">
 </p>
 
-# AGCV - Administrador Gr·fico de Controles Virtuales
+# AGCV - Administrador Gr√°fico de Controles Virtuales
 
-## InformaciÛn del Proyecto
+## Informaci√≥n del Proyecto
 
-**Proyecto Final - Herramientas de ProgramaciÛn Avanzada III**
+**Proyecto Final - Herramientas de Programaci√≥n Avanzada III**
 
-**Universidad TecnolÛgica de Panam·**  
-**SalÛn:** 1IL131  
-**AÒo:** 2025
+**Universidad Tecnol√≥gica de Panam√°**  
+**Sal√≥n:** 1IL131  
+**A√±o:** 2025
 
 ### Integrantes del Equipo
 
@@ -20,210 +20,174 @@
 - Liam Thompson
 - Samir Smith
 
-## DescripciÛn General
+## Descripci√≥n General
 
-AGCV es un sistema integral de gestiÛn y administraciÛn de controles virtuales para Nintendo Switch, diseÒado especÌficamente para la compatibilidad con PC mediante Windows. El proyecto combina una interfaz gr·fica de usuario moderna con un motor de controladores optimizado basado en BetterJoy, proporcionando una experiencia completa de gestiÛn de Joy-Cons y otros controles de Nintendo.
+AGCV es un sistema integral de gesti√≥n y administraci√≥n de controles virtuales para Nintendo Switch, dise√±ado espec√≠ficamente para la compatibilidad con PC mediante Windows. El proyecto combina una interfaz gr√°fica de usuario moderna con un motor de controladores optimizado basado en BetterJoy, proporcionando una experiencia completa de gesti√≥n de Joy-Cons.
 
-El sistema permite a los usuarios conectar sus Joy-Cons de Nintendo Switch a travÈs de Bluetooth o USB, utiliz·ndolos como controladores compatibles con XInput y DualShock4 para juegos de PC, emuladores y otras aplicaciones.
+El sistema permite a los usuarios conectar sus Joy-Cons de Nintendo Switch a trav√©s de Bluetooth o USB, utiliz√°ndolos como controladores compatibles con XInput y DualShock4 para juegos de PC, emuladores y otras aplicaciones.
 
-## MotivaciÛn del Proyecto
+## Motivaci√≥n del Proyecto
 
-BetterJoy ha sido durante aÒos una herramienta fundamental para usuarios que desean utilizar sus controles de Nintendo Switch en PC. Sin embargo, el proyecto original presenta varias limitaciones:
+BetterJoy ha sido durante a√±os una herramienta fundamental para usuarios que desean utilizar sus controles de Nintendo Switch en PC. Sin embargo, el proyecto original presenta varias limitaciones:
 
-- Falta de soporte activo desde hace varios aÒos
-- Interfaz de usuario b·sica sin funciones de administraciÛn
+- Falta de soporte activo desde hace varios a√±os
+- Interfaz de usuario b√°sica sin funciones de administraci√≥n
 - Problemas de latencia documentados, especialmente con el Joy-Con izquierdo
-- Errores de "duplicate timestamp" que afectan la detecciÛn en juegos
-- Ausencia de un sistema de gestiÛn de usuarios y historial
+- Errores de "duplicate timestamp" que afectan la detecci√≥n en juegos
+- Ausencia de un sistema de gesti√≥n de usuarios y historial
 - No incluye HidHide para ocultar dispositivos duplicados
 
-Ante estas limitaciones, decidimos no solo actualizar el motor de BetterJoy, sino crear una aplicaciÛn completa que lo integre con funcionalidades modernas de administraciÛn y gestiÛn.
+Ante estas limitaciones, decidimos no solo actualizar el motor de BetterJoy, sino crear una aplicaci√≥n completa que lo integre con funcionalidades modernas de administraci√≥n y gesti√≥n.
 
 ## Arquitectura del Sistema
 
-AGCV est· construido siguiendo una arquitectura de capas que separa claramente las responsabilidades:
+AGCV est√° construido siguiendo una arquitectura de capas que separa claramente las responsabilidades:
 
 ### Componentes Principales
 
 **1. Motor BetterJoy (Actualizado)**
-- Motor de bajo nivel para comunicaciÛn con Joy-Cons
-- ImplementaciÛn de emulaciÛn XInput y DualShock4 mediante ViGEmBus
+- Motor de bajo nivel para comunicaci√≥n con Joy-Cons
+- Implementaci√≥n de emulaci√≥n XInput y DualShock4 mediante ViGEmBus
 - Servidor UDP para compatibilidad con emuladores (Cemu, Citra, Dolphin, Yuzu)
-- IntegraciÛn con HidHide para ocultar dispositivos duplicados
-- Optimizaciones de latencia mediante sincronizaciÛn de pares y predicciÛn
+- Integraci√≥n con HidHide para ocultar dispositivos duplicados
+- Optimizaciones de latencia mediante sincronizaci√≥n de pares y predicci√≥n
 
-**2. AplicaciÛn de GestiÛn (AGCV)**
-- **Capa de PresentaciÛn (capaPresentacion):** Interfaces gr·ficas Windows Forms
-- **Capa de Negocio (capaNegocio):** LÛgica de aplicaciÛn y validaciones
+**2. Aplicaci√≥n de Gesti√≥n (AGCV)**
+- **Capa de Presentaci√≥n (capaPresentacion):** Interfaces gr√°ficas Windows Forms
+- **Capa de Negocio (capaNegocio):** L√≥gica de aplicaci√≥n y validaciones
 - **Capa de Datos (capaDatos):** Acceso a base de datos SQLite
 - **Capa de Entidad (capaEntidad):** Modelos de datos y objetos de transferencia
 
 ### Base de Datos
 
-Sistema de gestiÛn basado en SQLite con tres tablas principales:
+Sistema de gesti√≥n basado en SQL con tres tablas principales:
 
-- **Usuarios:** GestiÛn de cuentas con roles (Administrador/Usuario)
+- **Usuarios:** Gesti√≥n de cuentas con roles (Administrador/Usuario)
 - **Historial:** Registro de acciones y eventos del sistema
-- **ConfiguraciÛn:** Almacenamiento de preferencias y calibraciÛn
+- **Configuraci√≥n:** Almacenamiento de preferencias y calibraci√≥n
 
 ## Mejoras Implementadas sobre BetterJoy Original
 
-### Correcciones CrÌticas
+### Correcciones Cr√≠ticas
 
-**EliminaciÛn de Errores de "Duplicate Timestamp"**
-- Problema: Los hooks globales de teclado/mouse interferÌan con el polling Bluetooth de alta frecuencia
-- SoluciÛn: EliminaciÛn de hooks globales en Program.cs, manteniendo solo hooks locales temporales en el formulario de remapeo
-- Impacto: EliminaciÛn completa del error, mejor detecciÛn por juegos, menor latencia
+**Eliminaci√≥n de Errores de "Duplicate Timestamp"**
+- Problema: Los hooks globales de teclado/mouse interfer√≠an con el polling Bluetooth de alta frecuencia
+- Soluci√≥n: Eliminaci√≥n de hooks globales en Program.cs, manteniendo solo hooks locales temporales en el formulario de remapeo
+- Impacto: Eliminaci√≥n completa del error, mejor detecci√≥n por juegos, menor latencia
 
-**ReducciÛn de Latencia del Joy-Con Izquierdo**
-- ImplementaciÛn de JoyconPairSynchronizer para sincronizaciÛn asimÈtrica
-- PredicciÛn de posiciones del stick para compensar diferencias de timing
+**Reducci√≥n de Latencia del Joy-Con Izquierdo**
+- Implementaci√≥n de JoyconPairSynchronizer para sincronizaci√≥n asim√©trica
+- Predicci√≥n de posiciones del stick para compensar diferencias de timing
 - Prioridad de hilo elevada (ThreadPriority.AboveNormal) para el polling
-- Polling no bloqueante con SpinWait para reducciÛn de microsegundos
+- Polling no bloqueante con SpinWait para reducci√≥n de microsegundos
 
-**IntegraciÛn de HidHide**
-- DetecciÛn autom·tica del driver HidHide
-- OcultaciÛn selectiva de dispositivos para evitar entrada duplicada
-- GestiÛn de whitelist autom·tica para AGCV
-- Cleanup completo al cerrar la aplicaciÛn
+**Integraci√≥n de HidHide**
+- Detecci√≥n autom√°tica del driver HidHide
+- Ocultaci√≥n selectiva de dispositivos para evitar entrada duplicada
+- Gesti√≥n de whitelist autom√°tica para AGCV
+- Cleanup completo al cerrar la aplicaci√≥n
 
 ### Nuevas Funcionalidades
 
-**Sistema de GestiÛn de Usuarios**
-- AutenticaciÛn con roles (Administrador/Usuario)
-- Administradores pueden gestionar usuarios, cambiar roles y contraseÒas
-- ProtecciÛn contra eliminaciÛn del ˙ltimo administrador
+**Sistema de Gesti√≥n de Usuarios**
+- Autenticaci√≥n con roles (Administrador/Usuario)
+- Administradores pueden gestionar usuarios, cambiar roles y contrase√±as
+- Protecci√≥n contra eliminaci√≥n del √∫ltimo administrador
 - Historial completo de acciones por usuario
 
 **Monitor de Eventos**
 - Vista en tiempo real de eventos de botones y sticks
-- VisualizaciÛn de datos del giroscopio y acelerÛmetro
-- Herramienta de diagnÛstico para calibraciÛn
+- Visualizaci√≥n de datos del giroscopio y aceler√≥metro
+- Herramienta de diagn√≥stico para calibraci√≥n
 
 **Historial de Actividad**
-- Registro autom·tico de inicios de sesiÛn
-- Registro de conexiÛn/desconexiÛn de controles
+- Registro autom√°tico de inicios de sesi√≥n
+- Registro de conexi√≥n/desconexi√≥n de controles
 - Registro de errores y eventos del sistema
 - Filtrado por usuario y tipo de evento
 
 **Mejoras de Interfaz**
-- DiseÒo moderno y limpio siguiendo las guÌas de Windows
-- Mensajes descriptivos en espaÒol
-- Indicadores visuales de estado de baterÌa
+- Dise√±o moderno y limpio siguiendo las gu√≠as de Windows
+- Mensajes descriptivos en espa√±ol
+- Indicadores visuales de estado de bater√≠a
 - Sistema de notificaciones en bandeja
 
 ## Requisitos del Sistema
 
 ### Hardware
-- Adaptador Bluetooth 4.0 o superior (para conexiÛn inal·mbrica)
-- Puerto USB (para conexiÛn por cable)
+- Adaptador Bluetooth 4.0 o superior (para conexi√≥n inal√°mbrica)
+- Puerto USB (para conexi√≥n por cable)
 - Joy-Cons de Nintendo Switch, Pro Controller, o controles compatibles
 
 ### Software
 - Windows 10/11 (64 bits)
 - .NET 8 Runtime
-- ViGEmBus Driver (incluido en instalaciÛn)
+- ViGEmBus Driver (incluido en instalaci√≥n)
 - HidHide Driver (opcional, recomendado)
 
-## InstalaciÛn
+## Instalaci√≥n
 
-### CompilaciÛn desde CÛdigo Fuente
+### Compilaci√≥n desde C√≥digo Fuente
 
 **Requisitos previos:**
 - Visual Studio 2022 con .NET 8 SDK
 - Git
 
-**Pasos:**
-```bash
-# Clonar el repositorio
-git clone https://github.com/Antoniazog493/AGCV-Project.git
-cd AGCV-Project
-
-# Restaurar paquetes NuGet
-nuget restore
-
-# Compilar la soluciÛn
-msbuild AGCV-Project.sln /p:Configuration=Release /p:Platform=x64
-
-# Instalar drivers
-cd BetterJoyForCemu\Drivers
-.\ViGEmBus_Setup_1.16.116.exe
-```
-**Nota:** Para HidHide, descargue el instalador oficial desde: https://github.com/nefarius/HidHide/releases
-
-## Uso B·sico
-
-### Primera ConexiÛn
-
-1. **Iniciar AGCV**
-   - Si es primera vez, cree una cuenta de usuario
-   - Inicie sesiÛn con sus credenciales
-
-2. **Conectar Joy-Cons por Bluetooth**
-   - Presione el botÛn de sincronizaciÛn en el Joy-Con (botÛn pequeÒo junto a L/R)
-   - Vaya a ConfiguraciÛn de Bluetooth de Windows
-   - Seleccione "Joy-Con (L)" o "Joy-Con (R)"
-   - Espere a que AGCV detecte el control
-
-3. **Conectar por USB**
-   - Conecte el Joy-Con directamente al puerto USB
-   - AGCV lo detectar· autom·ticamente
-
 ### Funciones Principales
 
 **Emparejar Joy-Cons**
 - Haga clic en el icono de un Joy-Con conectado
-- Se emparejar· autom·ticamente con el Joy-Con opuesto si est· disponible
-- Una vez emparejados, funcionar·n como un solo control
+- Se emparejar√° autom√°ticamente con el Joy-Con opuesto si est√° disponible
+- Una vez emparejados, funcionar√°n como un solo control
 
-**ConfiguraciÛn de Botones**
-- Acceda a "Reasignar Botones" desde el men˙
-- Haga clic izquierdo en un botÛn para detectar entrada
-- Haga clic central para limpiar asignaciÛn
+**Configuraci√≥n de Botones**
+- Acceda a "Reasignar Botones" desde el men√∫
+- Haga clic izquierdo en un bot√≥n para detectar entrada
+- Haga clic central para limpiar asignaci√≥n
 - Haga clic derecho para opciones avanzadas
 
 **Giroscopio y Mouse**
 - Configure active_gyro para activar el giroscopio
 - Use reset_mouse para recentrar el cursor
-- Ajuste sensibilidad en la configuraciÛn
+- Ajuste sensibilidad en la configuraci√≥n
 
-## ConfiguraciÛn Avanzada
+## Configuraci√≥n Avanzada
 
-### Archivo de ConfiguraciÛn
+### Archivo de Configuraci√≥n
 
-La configuraciÛn se almacena en BetterJoyForCemu.exe.config. Algunas opciones importantes:
+La configuraci√≥n se almacena en BetterJoyForCemu.exe.config. Algunas opciones importantes:
 
-**ConfiguraciÛn de Entrada**
+**Configuraci√≥n de Entrada**
 - ShowAsXInput: Mostrar como control Xbox 360 (true/false)
 - ShowAsDS4: Mostrar como DualShock 4 (true/false)
-- EnableRumble: Activar vibraciÛn (true/false)
+- EnableRumble: Activar vibraci√≥n (true/false)
 
-**ConfiguraciÛn de Giroscopio**
+**Configuraci√≥n de Giroscopio**
 - GyroToJoyOrMouse: Modo de giroscopio (joy_left/joy_right/mouse)
 - GyroMouseSensitivityX: Sensibilidad horizontal del mouse
 - GyroMouseSensitivityY: Sensibilidad vertical del mouse
 
 **HidHide**
-- UseHIDHide: Activar ocultaciÛn de dispositivos (true/false)
+- UseHIDHide: Activar ocultaci√≥n de dispositivos (true/false)
 - PurgeAffectedDevices: Limpiar lista al cerrar (true/false)
 
-**Nota:** Cambios en configuraciÛn marcados en naranja requieren reinicio de la aplicaciÛn.
+**Nota:** Cambios en configuraci√≥n marcados en naranja requieren reinicio de la aplicaci√≥n.
 
 ## Roles y Permisos
 
 ### Usuario Regular
 - Conectar y usar Joy-Cons
 - Ver su propio historial
-- Cambiar configuraciÛn personal
+- Cambiar configuraci√≥n personal
 - Usar monitor de eventos
 
 ### Administrador
 - Todas las funciones de Usuario
 - Administrar otros usuarios
-- Cambiar roles y contraseÒas
+- Cambiar roles y contrase√±as
 - Ver historial global
-- Gestionar configuraciÛn del sistema
-- Acceso a herramientas de diagnÛstico
+- Gestionar configuraci√≥n del sistema
+- Acceso a herramientas de diagn√≥stico
 
 **Nota:** El sistema siempre mantiene al menos un administrador activo.
 
@@ -244,66 +208,66 @@ La configuraciÛn se almacena en BetterJoyForCemu.exe.config. Algunas opciones im
 - Yuzu (emulador Switch)
 - Cualquier juego compatible con XInput o DualShock4
 
-## SoluciÛn de Problemas
+## Soluci√≥n de Problemas
 
 ### El Joy-Con no se conecta
 
 **Bluetooth:**
-- Verifique que el Bluetooth estÈ activado
-- Mantenga presionado el botÛn de sincronizaciÛn por 5 segundos
+- Verifique que el Bluetooth est√© activado
+- Mantenga presionado el bot√≥n de sincronizaci√≥n por 5 segundos
 - Elimine emparejamientos previos de Windows
 - Reinicie el adaptador Bluetooth
 
 **USB:**
 - Use un cable USB-C de calidad con soporte de datos
 - Pruebe diferentes puertos USB
-- Verifique que AGCV estÈ ejecut·ndose como Administrador
+- Verifique que AGCV est√© ejecut√°ndose como Administrador
 
 ### Entrada duplicada en juegos
 
-**SoluciÛn:**
+**Soluci√≥n:**
 - Instale HidHide desde: https://github.com/nefarius/HidHide/releases
-- Active UseHIDHide en configuraciÛn
+- Active UseHIDHide en configuraci√≥n
 - Reinicie AGCV
-- Los Joy-Cons se ocultar·n autom·ticamente para otras aplicaciones
+- Los Joy-Cons se ocultar√°n autom√°ticamente para otras aplicaciones
 
 ### Alta latencia o lag
 
 **Optimizaciones:**
 - Cierre otras aplicaciones que usen Bluetooth
-- Aseg˙rese de que AGCV tenga prioridad alta de CPU
-- Desactive el ahorro de energÌa del adaptador Bluetooth
-- En modo emparejado, el sistema compensa autom·ticamente la latencia
+- Aseg√∫rese de que AGCV tenga prioridad alta de CPU
+- Desactive el ahorro de energ√≠a del adaptador Bluetooth
+- En modo emparejado, el sistema compensa autom√°ticamente la latencia
 
 ### Error "Duplicate Timestamp"
 
-Este error fue com˙n en versiones antiguas de BetterJoy. En AGCV:
-- Completamente eliminado mediante optimizaciÛn de hooks
+Este error fue com√∫n en versiones antiguas de BetterJoy. En AGCV:
+- Completamente eliminado mediante optimizaci√≥n de hooks
 - Si persiste, verifique que no tenga software de captura de entrada instalado
 - Desactive temporalmente software como AutoHotkey, EventGhost, etc.
 
-## ComparaciÛn con BetterJoy Original
+## Comparaci√≥n con BetterJoy Original
 
-| CaracterÌstica | BetterJoy Original | AGCV |
+| Caracter√≠stica | BetterJoy Original | AGCV |
 |----------------|-------------------|------|
-| Soporte activo | No (desde 2020) | SÌ (2025) |
-| Sistema de usuarios | No | SÌ, con roles |
-| Historial de actividad | No | SÌ, completo |
-| IntegraciÛn HidHide | No | SÌ, autom·tica |
-| Error "Duplicate Timestamp" | SÌ, frecuente | No, eliminado |
+| Soporte activo | No (desde 2020) | S√≠ (2025) |
+| Sistema de usuarios | No | S√≠, con roles |
+| Historial de actividad | No | S√≠, completo |
+| Integraci√≥n HidHide | No | S√≠, autom√°tica |
+| Error "Duplicate Timestamp" | S√≠, frecuente | No, eliminado |
 | Latencia Joy-Con izquierdo | Alta | Optimizada |
-| Interfaz gr·fica | B·sica | Moderna, completa |
-| Monitor de eventos | No | SÌ, en tiempo real |
-| GestiÛn de configuraciÛn | Manual | GUI integrada |
-| Base de datos | No | SÌ, SQLite |
-| DocumentaciÛn | Limitada | Completa |
-| VersiÛn .NET | Framework 4.7 | .NET 8 |
+| Interfaz gr√°fica | B√°sica | Moderna, completa |
+| Monitor de eventos | No | S√≠, en tiempo real |
+| Gesti√≥n de configuraci√≥n | Manual | GUI integrada |
+| Base de datos | No | S√≠, SQLite |
+| Documentaci√≥n | Limitada | Completa |
+| Versi√≥n .NET | Framework 4.7 | .NET 8 |
 
-## CrÈditos y Agradecimientos
+## Cr√©ditos y Agradecimientos
 
 ### Proyecto Original BetterJoy
 
-Este proyecto est· basado en y extiende el trabajo de:
+Este proyecto est√° basado en y extiende el trabajo de:
 
 **BetterJoy v7.0** por Davidobot  
 Repositorio original: https://github.com/Davidobot/BetterJoy
@@ -315,17 +279,17 @@ Agradecimientos especiales a:
 - **nefarius** - ViGEmBus
 - **epigramx** - WiimoteHook
 - **MTCKC** - ProconXInput
-- **dekuNukem** - DocumentaciÛn de ingenierÌa inversa de Nintendo Switch
+- **dekuNukem** - Documentaci√≥n de ingenier√≠a inversa de Nintendo Switch
 
-### LibrerÌas y Dependencias
+### Librer√≠as y Dependencias
 
-- **ViGEmBus**: Driver de emulaciÛn de controles
-- **HidHide**: OcultaciÛn de dispositivos HID
-- **hidapi**: ComunicaciÛn USB/Bluetooth de bajo nivel
-- **WindowsInput**: SimulaciÛn de entrada de teclado/mouse
+- **ViGEmBus**: Driver de emulaci√≥n de controles
+- **HidHide**: Ocultaci√≥n de dispositivos HID
+- **hidapi**: Comunicaci√≥n USB/Bluetooth de bajo nivel
+- **WindowsInput**: Simulaci√≥n de entrada de teclado/mouse
 - **Nefarius.ViGEm.Client**: Cliente .NET para ViGEm
 
-### Recursos Gr·ficos
+### Recursos Gr√°ficos
 
 Iconos modificados de The Noun Project:
 - Nintendo Switch Pro Controller - Chad Remsing
@@ -337,64 +301,64 @@ Iconos modificados de The Noun Project:
 
 Este proyecto mantiene compatibilidad con la licencia del proyecto original BetterJoy.
 
-El cÛdigo fuente est· disponible bajo los mismos tÈrminos, permitiendo uso, modificaciÛn y distribuciÛn con la debida atribuciÛn a los autores originales y a este proyecto.
+El c√≥digo fuente est√° disponible bajo los mismos t√©rminos, permitiendo uso, modificaci√≥n y distribuci√≥n con la debida atribuci√≥n a los autores originales y a este proyecto.
 
-Para uso comercial o distribuciÛn modificada, consulte la licencia completa en el archivo LICENSE.
+Para uso comercial o distribuci√≥n modificada, consulte la licencia completa en el archivo LICENSE.
 
 ## Desarrollo Futuro
 
 ### Planes a Corto Plazo
-- Soporte para m·s controles de terceros
-- Perfiles de configuraciÛn por juego
-- CalibraciÛn autom·tica de giroscopio
-- Modo de bajo consumo de energÌa
-- TraducciÛn a m˙ltiples idiomas
+- Soporte para m√°s controles de terceros
+- Perfiles de configuraci√≥n por juego
+- Calibraci√≥n autom√°tica de giroscopio
+- Modo de bajo consumo de energ√≠a
+- Traducci√≥n a m√∫ltiples idiomas
 
 ### Planes a Largo Plazo
 - Cliente multiplataforma (Linux, macOS)
-- SincronizaciÛn en la nube de configuraciones
-- API REST para integraciÛn con otras aplicaciones
-- Soporte para otros controles (PlayStation, Xbox genÈricos)
+- Sincronizaci√≥n en la nube de configuraciones
+- API REST para integraci√≥n con otras aplicaciones
+- Soporte para otros controles (PlayStation, Xbox gen√©ricos)
 - Modo servidor para streaming local
 
 ## Contribuciones
 
-Este proyecto es parte de un trabajo acadÈmico finalizado. Sin embargo, las contribuciones de la comunidad son bienvenidas:
+Este proyecto es parte de un trabajo acad√©mico finalizado. Sin embargo, las contribuciones de la comunidad son bienvenidas:
 
 1. Fork el repositorio
 2. Cree una rama para su feature (git checkout -b feature/nueva-funcionalidad)
-3. Commit sus cambios (git commit -m 'AÒadir nueva funcionalidad')
+3. Commit sus cambios (git commit -m 'A√±adir nueva funcionalidad')
 4. Push a la rama (git push origin feature/nueva-funcionalidad)
 5. Abra un Pull Request
 
-Por favor, aseg˙rese de:
-- Seguir las convenciones de cÛdigo existentes
+Por favor, aseg√∫rese de:
+- Seguir las convenciones de c√≥digo existentes
 - Documentar nuevas funcionalidades
 - Probar exhaustivamente los cambios
-- Actualizar la documentaciÛn seg˙n sea necesario
+- Actualizar la documentaci√≥n seg√∫n sea necesario
 
 ## Soporte y Contacto
 
 **Reportar Problemas:**  
 Abra un issue en: https://github.com/Antoniazog493/AGCV-Project/issues
 
-**DocumentaciÛn TÈcnica:**  
-Consulte la carpeta /docs para documentaciÛn detallada de desarrollo
+**Documentaci√≥n T√©cnica:**  
+Consulte la carpeta /docs para documentaci√≥n detallada de desarrollo
 
 **Wiki del Proyecto:**  
 https://github.com/Antoniazog493/AGCV-Project/wiki
 
 ## Referencias
 
-- DocumentaciÛn de ViGEmBus: https://github.com/ViGEm/ViGEmBus
-- DocumentaciÛn de HidHide: https://github.com/nefarius/HidHide
+- Documentaci√≥n de ViGEmBus: https://github.com/ViGEm/ViGEmBus
+- Documentaci√≥n de HidHide: https://github.com/nefarius/HidHide
 - Nintendo Switch Reverse Engineering: https://github.com/dekuNukem/Nintendo_Switch_Reverse_Engineering
-- GuÌa de ConfiguraciÛn de CemuHook: https://cemuhook.sshnuke.net/
+- Gu√≠a de Configuraci√≥n de CemuHook: https://cemuhook.sshnuke.net/
 
 ---
 
-**Proyecto desarrollado como requisito de la asignatura Herramientas de ProgramaciÛn Avanzada III**  
-**Universidad TecnolÛgica de Panam· - 2025**
+**Proyecto desarrollado como requisito de la asignatura Herramientas de Programaci√≥n Avanzada III**  
+**Universidad Tecnol√≥gica de Panam√° - 2025**
 
-**VersiÛn actual:** 1.0.0  
-**⁄ltima actualizaciÛn:** Enero 2025
+**Versi√≥n actual:** 1.0.0  
+**√öltima actualizaci√≥n:** Enero 2025
