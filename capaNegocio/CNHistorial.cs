@@ -55,11 +55,26 @@ namespace capaNegocio
         }
 
         /// <summary>
-        /// Obtiene estadísticas del historial
+        /// Obtiene estadísticas del historial de un usuario
         /// </summary>
         public Dictionary<string, int> ObtenerEstadisticas(int idUsuario)
         {
             return _cdHistorial.ObtenerEstadisticas(idUsuario);
+        }
+
+        /// <summary>
+        /// Obtiene estadísticas globales del sistema (solo administradores)
+        /// </summary>
+        public Dictionary<string, int> ObtenerEstadisticasGlobales()
+        {
+            try
+            {
+                return _cdHistorial.ObtenerEstadisticasGlobales();
+            }
+            catch
+            {
+                return new Dictionary<string, int>();
+            }
         }
 
         /// <summary>
@@ -71,7 +86,21 @@ namespace capaNegocio
         }
 
         /// <summary>
-        /// Limpia registros antiguos
+        /// Limpia TODO el historial del sistema (solo administradores)
+        /// </summary>
+        public bool LimpiarHistorialGlobal(int idUsuarioSolicitante)
+        {
+            // Verificar que sea administrador
+            if (!_cdUsuarios.EsAdministrador(idUsuarioSolicitante))
+            {
+                return false;
+            }
+
+            return _cdHistorial.LimpiarTodoElHistorial();
+        }
+
+        /// <summary>
+        /// Limpia registros antiguos de un usuario
         /// </summary>
         public int LimpiarHistorialAntiguo(int idUsuario, int diasAntiguedad)
         {
@@ -79,7 +108,21 @@ namespace capaNegocio
         }
 
         /// <summary>
-        /// Cuenta los registros
+        /// Limpia registros antiguos de TODO el sistema (solo administradores)
+        /// </summary>
+        public int LimpiarHistorialGlobalAntiguo(int idUsuarioSolicitante, int diasAntiguedad)
+        {
+            // Verificar que sea administrador
+            if (!_cdUsuarios.EsAdministrador(idUsuarioSolicitante))
+            {
+                return 0;
+            }
+
+            return _cdHistorial.LimpiarHistorialGlobalAntiguo(diasAntiguedad);
+        }
+
+        /// <summary>
+        /// Cuenta los registros de un usuario
         /// </summary>
         public int ContarRegistros(int idUsuario)
         {
@@ -87,7 +130,7 @@ namespace capaNegocio
         }
 
         /// <summary>
-        /// Exporta el historial a CSV
+        /// Exporta el historial de un usuario a CSV
         /// </summary>
         public bool ExportarACSV(int idUsuario, string rutaArchivo)
         {
@@ -104,10 +147,52 @@ namespace capaNegocio
                     foreach (DataRow fila in historial.Rows)
                     {
                         var fecha = ((DateTime)fila["FechaRegistro"]).ToString("yyyy-MM-dd HH:mm:ss");
-                        var accion = fila["Accion"].ToString().Replace(",", ";");
-                        var detalles = (fila["Detalles"] != DBNull.Value ? fila["Detalles"].ToString() : "").Replace(",", ";");
+                        var accion = fila["Accion"].ToString().Replace(",", ";").Replace("\n", " ").Replace("\r", "");
+                        var detalles = (fila["Detalles"] != DBNull.Value ? fila["Detalles"].ToString() : "")
+                            .Replace(",", ";").Replace("\n", " ").Replace("\r", "");
 
                         escritor.WriteLine($"{fecha},{accion},{detalles}");
+                    }
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Exporta TODO el historial del sistema a CSV (solo administradores)
+        /// </summary>
+        public bool ExportarHistorialGlobalACSV(int idUsuarioSolicitante, string rutaArchivo)
+        {
+            try
+            {
+                // Verificar que sea administrador
+                if (!_cdUsuarios.EsAdministrador(idUsuarioSolicitante))
+                {
+                    return false;
+                }
+
+                var historial = _cdHistorial.ObtenerTodoElHistorial(null); // Sin límite para exportación
+                
+                using (var escritor = new System.IO.StreamWriter(rutaArchivo, false, System.Text.Encoding.UTF8))
+                {
+                    // Escribir encabezados (incluye usuario)
+                    escritor.WriteLine("Usuario,Fecha,Acción,Detalles");
+
+                    // Escribir datos
+                    foreach (DataRow fila in historial.Rows)
+                    {
+                        var usuario = fila["NombreUsuario"].ToString().Replace(",", ";");
+                        var fecha = ((DateTime)fila["FechaRegistro"]).ToString("yyyy-MM-dd HH:mm:ss");
+                        var accion = fila["Accion"].ToString().Replace(",", ";").Replace("\n", " ").Replace("\r", "");
+                        var detalles = (fila["Detalles"] != DBNull.Value ? fila["Detalles"].ToString() : "")
+                            .Replace(",", ";").Replace("\n", " ").Replace("\r", "");
+
+                        escritor.WriteLine($"{usuario},{fecha},{accion},{detalles}");
                     }
                 }
 

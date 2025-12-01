@@ -211,5 +211,93 @@ namespace capaDatos
                 }
             }
         }
+
+        /// <summary>
+        /// Obtiene estadísticas globales del sistema
+        /// </summary>
+        public Dictionary<string, int> ObtenerEstadisticasGlobales()
+        {
+            var stats = new Dictionary<string, int>();
+
+            using (SqlConnection cn = new SqlConnection(CadenaConexion))
+            {
+                cn.Open();
+                string query = @"SELECT 
+                                    COUNT(*) AS TotalRegistros,
+                                    COUNT(DISTINCT IdUsuario) AS UsuariosConRegistros,
+                                    SUM(CASE WHEN Accion LIKE '%Conexión%' THEN 1 ELSE 0 END) AS TotalConexiones,
+                                    SUM(CASE WHEN Accion LIKE '%Desconexión%' THEN 1 ELSE 0 END) AS TotalDesconexiones,
+                                    SUM(CASE WHEN Accion LIKE '%Error%' THEN 1 ELSE 0 END) AS TotalErrores
+                                FROM CEHistorial WITH (NOLOCK)";
+
+                using (SqlCommand cmd = new SqlCommand(query, cn))
+                {
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            stats["TotalRegistros"] = reader.GetInt32(0);
+                            stats["UsuariosConRegistros"] = reader.GetInt32(1);
+                            stats["TotalConexiones"] = reader.GetInt32(2);
+                            stats["TotalDesconexiones"] = reader.GetInt32(3);
+                            stats["TotalErrores"] = reader.GetInt32(4);
+                        }
+                    }
+                }
+            }
+
+            return stats;
+        }
+
+        /// <summary>
+        /// Limpia TODO el historial del sistema (solo administradores)
+        /// </summary>
+        public bool LimpiarTodoElHistorial()
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(CadenaConexion))
+                {
+                    cn.Open();
+                    string query = "DELETE FROM CEHistorial";
+
+                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    {
+                        cmd.ExecuteNonQuery();
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Limpia registros antiguos de TODO el sistema (solo administradores)
+        /// </summary>
+        public int LimpiarHistorialGlobalAntiguo(int diasAntiguedad)
+        {
+            try
+            {
+                using (SqlConnection cn = new SqlConnection(CadenaConexion))
+                {
+                    cn.Open();
+                    string query = @"DELETE FROM CEHistorial 
+                                    WHERE FechaRegistro < DATEADD(DAY, -@Dias, GETDATE())";
+
+                    using (SqlCommand cmd = new SqlCommand(query, cn))
+                    {
+                        cmd.Parameters.Add("@Dias", SqlDbType.Int).Value = diasAntiguedad;
+                        return cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch
+            {
+                return 0;
+            }
+        }
     }
 }

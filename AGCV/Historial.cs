@@ -10,6 +10,7 @@ namespace AGCV
     {
         private readonly CNHistorial _cnHistorial = new CNHistorial();
         private int _idUsuario;
+        private bool _esAdministrador;
 
         public Historial()
         {
@@ -19,7 +20,17 @@ namespace AGCV
         private void Historial_Load(object sender, EventArgs e)
         {
             _idUsuario = SesionActual.IdUsuario;
-            lblBienvenida.Text = $"Bienvenido, {SesionActual.NombreUsuario}";
+            _esAdministrador = SesionActual.EsAdministrador();
+            
+            // Mostrar mensaje diferente según el rol
+            if (_esAdministrador)
+            {
+                lblBienvenida.Text = $"Administrador: {SesionActual.NombreUsuario} - Historial Global";
+            }
+            else
+            {
+                lblBienvenida.Text = $"Bienvenido, {SesionActual.NombreUsuario}";
+            }
             
             CargarHistorial();
         }
@@ -31,7 +42,17 @@ namespace AGCV
         {
             try
             {
-                DataTable historial = _cnHistorial.ObtenerHistorial(_idUsuario, 500); // Últimos 500 registros
+                DataTable historial;
+                
+                // Si es administrador, obtener TODO el historial
+                if (_esAdministrador)
+                {
+                    historial = _cnHistorial.ObtenerTodoElHistorial(_idUsuario, 1000); // Últimos 1000 registros globales
+                }
+                else
+                {
+                    historial = _cnHistorial.ObtenerHistorial(_idUsuario, 500); // Últimos 500 registros del usuario
+                }
                 
                 if (historial != null && historial.Rows.Count > 0)
                 {
@@ -41,8 +62,7 @@ namespace AGCV
                     ConfigurarColumnas();
                     
                     // Actualizar contador
-                    int totalRegistros = _cnHistorial.ContarRegistros(_idUsuario);
-                    lblRegistros.Text = $"Registros: {totalRegistros}";
+                    lblRegistros.Text = $"Registros: {historial.Rows.Count}";
                     
                     // Mostrar estadísticas
                     MostrarEstadisticas();
@@ -50,13 +70,17 @@ namespace AGCV
                 else
                 {
                     lblRegistros.Text = "Registros: 0";
-                    MessageBox.Show(
-                        "📊 No hay registros de historial\n\n" +
-                        "El historial comenzará a registrarse automáticamente\n" +
-                        "cuando conectes Joy-Cons con AGCV.",
-                        "Información",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information);
+                    
+                    string mensaje = _esAdministrador 
+                        ? "📊 No hay registros de historial en el sistema\n\n" +
+                          "El historial comenzará a registrarse automáticamente\n" +
+                          "cuando los usuarios utilicen AGCV."
+                        : "📊 No hay registros de historial\n\n" +
+                          "El historial comenzará a registrarse automáticamente\n" +
+                          "cuando conectes Joy-Cons con AGCV.";
+                    
+                    MessageBox.Show(mensaje, "Información",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
@@ -81,47 +105,109 @@ namespace AGCV
             if (dataGridView1.Columns.Contains("IdUsuario"))
                 dataGridView1.Columns["IdUsuario"].Visible = false;
 
+            // Mostrar columna NombreUsuario solo para administradores
+            if (dataGridView1.Columns.Contains("NombreUsuario"))
+            {
+                if (_esAdministrador)
+                {
+                    dataGridView1.Columns["NombreUsuario"].HeaderText = "Usuario";
+                    dataGridView1.Columns["NombreUsuario"].Width = 150;
+                    dataGridView1.Columns["NombreUsuario"].DisplayIndex = 0; // Primera columna
+                }
+                else
+                {
+                    dataGridView1.Columns["NombreUsuario"].Visible = false;
+                }
+            }
+
             // Configurar encabezados y anchos
             if (dataGridView1.Columns.Contains("FechaRegistro"))
             {
                 dataGridView1.Columns["FechaRegistro"].HeaderText = "Fecha y Hora";
                 dataGridView1.Columns["FechaRegistro"].Width = 180;
                 dataGridView1.Columns["FechaRegistro"].DefaultCellStyle.Format = "dd/MM/yyyy HH:mm:ss";
+                if (_esAdministrador)
+                {
+                    dataGridView1.Columns["FechaRegistro"].DisplayIndex = 1; // Segunda columna
+                }
             }
 
             if (dataGridView1.Columns.Contains("Accion"))
             {
                 dataGridView1.Columns["Accion"].HeaderText = "Acción";
                 dataGridView1.Columns["Accion"].Width = 200;
+                if (_esAdministrador)
+                {
+                    dataGridView1.Columns["Accion"].DisplayIndex = 2; // Tercera columna
+                }
             }
 
             if (dataGridView1.Columns.Contains("Detalles"))
             {
                 dataGridView1.Columns["Detalles"].HeaderText = "Detalles";
                 dataGridView1.Columns["Detalles"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                if (_esAdministrador)
+                {
+                    dataGridView1.Columns["Detalles"].DisplayIndex = 3; // Cuarta columna
+                }
             }
 
             // Alternar colores de filas para mejor legibilidad
             dataGridView1.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(245, 245, 245);
+            
+            // Color especial para administradores
+            if (_esAdministrador)
+            {
+                dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(230, 0, 18);
+                dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = System.Drawing.Color.White;
+                dataGridView1.ColumnHeadersDefaultCellStyle.Font = new System.Drawing.Font("Segoe UI", 10, System.Drawing.FontStyle.Bold);
+                dataGridView1.EnableHeadersVisualStyles = false;
+            }
         }
 
         /// <summary>
-        /// Muestra estadísticas del historial en la consola
+        /// Muestra estadísticas del historial
         /// </summary>
         private void MostrarEstadisticas()
         {
             try
             {
-                var stats = _cnHistorial.ObtenerEstadisticas(_idUsuario);
+                Dictionary<string, int> stats;
                 
-                if (stats != null && stats.Count > 0)
+                if (_esAdministrador)
                 {
-                    string mensaje = $"📊 ESTADÍSTICAS\n\n" +
-                        $"Total de registros: {stats.GetValueOrDefault("TotalRegistros", 0)}\n" +
-                        $"Conexiones: {stats.GetValueOrDefault("TotalConexiones", 0)}\n" +
-                        $"Desconexiones: {stats.GetValueOrDefault("TotalDesconexiones", 0)}";
+                    // Para administradores: estadísticas globales
+                    stats = _cnHistorial.ObtenerEstadisticasGlobales();
                     
-                    // Se podría mostrar en un tooltip o en un label adicional
+                    if (stats != null && stats.Count > 0)
+                    {
+                        string mensaje = $"📊 ESTADÍSTICAS GLOBALES\n\n" +
+                            $"Total de registros: {stats.GetValueOrDefault("TotalRegistros", 0)}\n" +
+                            $"Usuarios activos: {stats.GetValueOrDefault("UsuariosConRegistros", 0)}\n" +
+                            $"Conexiones: {stats.GetValueOrDefault("TotalConexiones", 0)}\n" +
+                            $"Desconexiones: {stats.GetValueOrDefault("TotalDesconexiones", 0)}\n" +
+                            $"Errores: {stats.GetValueOrDefault("TotalErrores", 0)}";
+                        
+                        // Mostrar en tooltip del label de registros
+                        ToolTip tooltip = new ToolTip();
+                        tooltip.SetToolTip(lblRegistros, mensaje);
+                    }
+                }
+                else
+                {
+                    // Para usuarios normales: estadísticas personales
+                    stats = _cnHistorial.ObtenerEstadisticas(_idUsuario);
+                    
+                    if (stats != null && stats.Count > 0)
+                    {
+                        string mensaje = $"📊 ESTADÍSTICAS\n\n" +
+                            $"Total de registros: {stats.GetValueOrDefault("TotalRegistros", 0)}\n" +
+                            $"Conexiones: {stats.GetValueOrDefault("TotalConexiones", 0)}\n" +
+                            $"Desconexiones: {stats.GetValueOrDefault("TotalDesconexiones", 0)}";
+                        
+                        ToolTip tooltip = new ToolTip();
+                        tooltip.SetToolTip(lblRegistros, mensaje);
+                    }
                 }
             }
             catch
@@ -140,24 +226,38 @@ namespace AGCV
                 {
                     sfd.Filter = "Archivo CSV|*.csv|Todos los archivos|*.*";
                     sfd.Title = "Exportar Historial a CSV";
-                    sfd.FileName = $"Historial_AGCV_{SesionActual.NombreUsuario}_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+                    
+                    string nombreArchivo = _esAdministrador 
+                        ? $"Historial_Global_AGCV_{DateTime.Now:yyyyMMdd_HHmmss}.csv"
+                        : $"Historial_AGCV_{SesionActual.NombreUsuario}_{DateTime.Now:yyyyMMdd_HHmmss}.csv";
+                    
+                    sfd.FileName = nombreArchivo;
 
                     if (sfd.ShowDialog() == DialogResult.OK)
                     {
-                        bool exitoso = _cnHistorial.ExportarACSV(_idUsuario, sfd.FileName);
+                        bool exitoso;
+                        
+                        if (_esAdministrador)
+                        {
+                            exitoso = _cnHistorial.ExportarHistorialGlobalACSV(_idUsuario, sfd.FileName);
+                        }
+                        else
+                        {
+                            exitoso = _cnHistorial.ExportarACSV(_idUsuario, sfd.FileName);
+                        }
 
                         if (exitoso)
                         {
-                            MessageBox.Show(
+                            var result = MessageBox.Show(
                                 $"✅ EXPORTACIÓN EXITOSA\n\n" +
                                 $"El historial se ha exportado correctamente a:\n\n" +
                                 $"{sfd.FileName}\n\n" +
-                                $"¿Deseas abrir el archivo ahora?",
+                                $"¿Deseas abrir la ubicación del archivo?",
                                 "Exportación Completada",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Information);
 
-                            if (MessageBox.Show("", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                            if (result == DialogResult.Yes)
                             {
                                 System.Diagnostics.Process.Start("explorer.exe", $"/select,\"{sfd.FileName}\"");
                             }
@@ -187,10 +287,23 @@ namespace AGCV
         {
             try
             {
+                // Solo administradores pueden limpiar el historial global
+                if (!_esAdministrador)
+                {
+                    MessageBox.Show(
+                        "⚠️ ACCESO DENEGADO\n\n" +
+                        "Solo los administradores pueden limpiar el historial.\n\n" +
+                        "Contacta a un administrador si necesitas limpiar tu historial.",
+                        "Permiso Requerido",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Warning);
+                    return;
+                }
+
                 // Mostrar opciones de limpieza
                 using (var dialog = new Form())
                 {
-                    dialog.Text = "Limpiar Historial";
+                    dialog.Text = "Limpiar Historial Global";
                     dialog.Width = 450;
                     dialog.Height = 250;
                     dialog.FormBorderStyle = FormBorderStyle.FixedDialog;
@@ -200,16 +313,16 @@ namespace AGCV
 
                     var label = new Label
                     {
-                        Text = "¿Qué deseas limpiar?",
+                        Text = "¿Qué deseas limpiar? (Historial Global)",
                         Left = 20,
                         Top = 20,
                         Width = 400,
-                        Font = new System.Drawing.Font("Segoe UI", 12, System.Drawing.FontStyle.Bold)
+                        Font = new System.Drawing.Font("Segoe UI", 11, System.Drawing.FontStyle.Bold)
                     };
 
                     var btnTodo = new Button
                     {
-                        Text = "🗑️ Limpiar TODO el historial",
+                        Text = "🗑️ Limpiar TODO el historial del sistema",
                         Left = 20,
                         Top = 60,
                         Width = 400,
@@ -275,21 +388,22 @@ namespace AGCV
                         if (opcion == "todo")
                         {
                             var confirmacion = MessageBox.Show(
-                                "⚠️ ADVERTENCIA\n\n" +
-                                "¿Estás seguro de que deseas eliminar TODO el historial?\n\n" +
+                                "⚠️ ADVERTENCIA CRÍTICA\n\n" +
+                                "¿Estás seguro de que deseas eliminar TODO el historial del sistema?\n\n" +
+                                "Esto eliminará los registros de TODOS los usuarios.\n\n" +
                                 "Esta acción NO se puede deshacer.",
-                                "Confirmar Eliminación",
+                                "Confirmar Eliminación Global",
                                 MessageBoxButtons.YesNo,
                                 MessageBoxIcon.Warning);
 
                             if (confirmacion == DialogResult.Yes)
                             {
-                                bool exitoso = _cnHistorial.LimpiarHistorial(_idUsuario);
+                                bool exitoso = _cnHistorial.LimpiarHistorialGlobal(_idUsuario);
 
                                 if (exitoso)
                                 {
                                     MessageBox.Show(
-                                        "✅ Historial limpiado correctamente",
+                                        "✅ Historial global limpiado correctamente",
                                         "Éxito",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Information);
@@ -299,7 +413,7 @@ namespace AGCV
                                 else
                                 {
                                     MessageBox.Show(
-                                        "❌ Error al limpiar el historial",
+                                        "❌ Error al limpiar el historial global",
                                         "Error",
                                         MessageBoxButtons.OK,
                                         MessageBoxIcon.Error);
@@ -308,11 +422,11 @@ namespace AGCV
                         }
                         else if (opcion == "antiguo")
                         {
-                            int eliminados = _cnHistorial.LimpiarHistorialAntiguo(_idUsuario, 30);
+                            int eliminados = _cnHistorial.LimpiarHistorialGlobalAntiguo(_idUsuario, 30);
 
                             MessageBox.Show(
-                                $"✅ Se eliminaron {eliminados} registros antiguos\n\n" +
-                                "(Registros con más de 30 días)",
+                                $"✅ Se eliminaron {eliminados} registros antiguos del sistema\n\n" +
+                                "(Registros con más de 30 días de todos los usuarios)",
                                 "Limpieza Completada",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Information);
