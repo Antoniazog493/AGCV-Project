@@ -731,6 +731,7 @@ namespace BetterJoyForCemu {
                 }
             }
 
+            // Handle active_gyro toggle based on Joy-Con button (no global hooks needed)
             string res_val = Config.Value("active_gyro");
             if (res_val.StartsWith("joy_")) {
                 int i = Int32.Parse(res_val.Substring(4));
@@ -744,6 +745,9 @@ namespace BetterJoyForCemu {
                         active_gyro = !active_gyro;
                 }
             }
+            // NOTE: Keyboard/mouse triggers for active_gyro removed to prevent interference
+            // Only Joy-Con button-based gyro activation is supported now
+            // This eliminates the "duplicate timestamp" errors caused by global input hooks
 
             if (CachedConfig.GyroToJoyOrMouse.Substring(0, 3) == "joy") {
                 if (Config.Value("active_gyro") == "0" || active_gyro) {
@@ -777,13 +781,14 @@ namespace BetterJoyForCemu {
                     WindowsInput.Simulate.Events().MoveBy(dx, dy).Invoke();
                 }
 
-                // reset mouse position to centre of primary monitor
+                // reset mouse position to centre of primary monitor (Joy-Con button only)
                 res_val = Config.Value("reset_mouse");
                 if (res_val.StartsWith("joy_")) {
                     int i = Int32.Parse(res_val.Substring(4));
                     if (buttons_down[i] || (other != null && other.buttons_down[i]))
                         WindowsInput.Simulate.Events().MoveTo(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2).Invoke();
                 }
+                // NOTE: Keyboard/mouse triggers for reset_mouse removed to prevent interference
             }
         }
 
@@ -1457,11 +1462,11 @@ namespace BetterJoyForCemu {
                     // Don't map Home to Guide unless explicitly configured (prevents MS GameBar)
                     output.guide = Config.Value("home") != "0" && buttons[(int)Button.HOME];
 
-                    output.shoulder_left = buttons[(int)(isLeft ? Button.SHOULDER_1 : Button.SHOULDER2_1)];
-                    output.shoulder_right = buttons[(int)(isLeft ? Button.SHOULDER2_1 : Button.SHOULDER_1)];
+                    output.shoulder_left = buttons[(int)Button.SHOULDER_1];
+                    output.shoulder_right = buttons[(int)Button.SHOULDER2_1];
 
-                    output.thumb_stick_left = buttons[(int)(isLeft ? Button.STICK : Button.STICK2)];
-                    output.thumb_stick_right = buttons[(int)(isLeft ? Button.STICK2 : Button.STICK)];
+                    output.thumb_stick_left = buttons[(int)Button.STICK];
+                    output.thumb_stick_right = buttons[(int)Button.STICK2];
                 } else { // single joycon mode
                     output.a = buttons[(int)(!CachedConfig.SwapAB ? isLeft ? Button.DPAD_LEFT : Button.DPAD_RIGHT : isLeft ? Button.DPAD_DOWN : Button.DPAD_UP)];
                     output.b = buttons[(int)(CachedConfig.SwapAB ? isLeft ? Button.DPAD_LEFT : Button.DPAD_RIGHT : isLeft ? Button.DPAD_DOWN : Button.DPAD_UP)];

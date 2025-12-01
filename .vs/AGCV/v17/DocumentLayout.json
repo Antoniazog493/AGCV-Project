@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|c:\\users\\anton\\downloads\\agcv-project\\betterjoyforcemu\\fixes_duplicate_timestamp.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
+      "RelativeMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|solutionrelative:betterjoyforcemu\\fixes_duplicate_timestamp.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|c:\\users\\anton\\downloads\\agcv-project\\betterjoyforcemu\\joycon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|solutionrelative:betterjoyforcemu\\joycon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\ajustes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\ajustes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
@@ -10,7 +18,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|C:\\Users\\Anton\\Downloads\\AGCV-Project\\agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -18,15 +26,15 @@
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\administrarusuarios.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\buttontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|C:\\Users\\Anton\\Downloads\\AGCV-Project\\agcv\\buttontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\buttontester.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|C:\\Users\\Anton\\Downloads\\AGCV-Project\\agcv\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\crearusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|C:\\Users\\Anton\\Downloads\\AGCV-Project\\agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -34,11 +42,11 @@
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\cambiarcontrase\u00F1aadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|C:\\Users\\Anton\\Downloads\\AGCV-Project\\agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|c:\\users\\anton\\downloads\\agcv-project\\agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|C:\\Users\\Anton\\Downloads\\AGCV-Project\\agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{325E65DF-A178-4A14-8935-FBB875890E51}|AGCV\\capaPresentacion.csproj|solutionrelative:agcv\\iniciosesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -64,6 +72,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Anton\\Downloads\\AGCV-Project\\HISTORIAL_GLOBAL_ADMINS.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:HISTORIAL_GLOBAL_ADMINS.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|c:\\users\\anton\\downloads\\agcv-project\\betterjoyforcemu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BF709E9-C133-41DF-933A-C9FF3F664C7B}|BetterJoyForCemu\\BetterJoy.csproj|solutionrelative:betterjoyforcemu\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -73,7 +85,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -85,7 +97,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 0,
+              "Title": "FIXES_DUPLICATE_TIMESTAMP.md",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\FIXES_DUPLICATE_TIMESTAMP.md",
+              "RelativeDocumentMoniker": "BetterJoyForCemu\\FIXES_DUPLICATE_TIMESTAMP.md",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\FIXES_DUPLICATE_TIMESTAMP.md",
+              "RelativeToolTip": "BetterJoyForCemu\\FIXES_DUPLICATE_TIMESTAMP.md",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
+              "WhenOpened": "2025-12-01T20:47:37.485Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Joycon.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\Joycon.cs",
+              "RelativeDocumentMoniker": "BetterJoyForCemu\\Joycon.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\Joycon.cs",
+              "RelativeToolTip": "BetterJoyForCemu\\Joycon.cs",
+              "ViewState": "AgIAAJMGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T20:45:51.847Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\Program.cs",
+              "RelativeDocumentMoniker": "BetterJoyForCemu\\Program.cs",
+              "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\BetterJoyForCemu\\Program.cs",
+              "RelativeToolTip": "BetterJoyForCemu\\Program.cs",
+              "ViewState": "AgIAAHICAAAAAAAAAIBZwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T20:44:52.664Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
               "Title": "HISTORIAL_GLOBAL_ADMINS.md",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\HISTORIAL_GLOBAL_ADMINS.md",
               "RelativeDocumentMoniker": "HISTORIAL_GLOBAL_ADMINS.md",
@@ -93,12 +144,11 @@
               "RelativeToolTip": "HISTORIAL_GLOBAL_ADMINS.md",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAADoBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-12-01T16:53:23.007Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T16:53:23.007Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "CDHistorial.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaDatos\\CDHistorial.cs",
               "RelativeDocumentMoniker": "capaDatos\\CDHistorial.cs",
@@ -106,12 +156,11 @@
               "RelativeToolTip": "capaDatos\\CDHistorial.cs",
               "ViewState": "AgIAACwBAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:52:18.333Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T16:52:18.333Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "CNHistorial.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\capaNegocio\\CNHistorial.cs",
               "RelativeDocumentMoniker": "capaNegocio\\CNHistorial.cs",
@@ -119,12 +168,11 @@
               "RelativeToolTip": "capaNegocio\\CNHistorial.cs",
               "ViewState": "AgIAAOUAAAAAAAAAAABRwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:51:49.262Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T16:51:49.262Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Ajustes.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Ajustes.cs",
               "RelativeDocumentMoniker": "AGCV\\Ajustes.cs",
@@ -137,7 +185,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Ajustes.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Ajustes.cs",
               "RelativeDocumentMoniker": "AGCV\\Ajustes.cs",
@@ -149,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Historial.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\Historial.cs",
               "RelativeDocumentMoniker": "AGCV\\Historial.cs",
@@ -157,12 +205,11 @@
               "RelativeToolTip": "AGCV\\Historial.cs",
               "ViewState": "AgIAAMQBAAAAAAAAAABZwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:46:34.573Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T16:46:34.573Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "plan-e71b81c7-6315-4db5-b501-aace63a3d468.md",
               "DocumentMoniker": "C:\\Users\\Anton\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md",
               "RelativeDocumentMoniker": "..\\..\\AppData\\Local\\Temp\\VisualStudio\\copilot-vs\\plan-e71b81c7-6315-4db5-b501-aace63a3d468.md",
@@ -175,7 +222,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "AdministrarUsuarios.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs",
               "RelativeDocumentMoniker": "AGCV\\AdministrarUsuarios.cs",
@@ -188,31 +235,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "AdministrarUsuarios.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs",
               "RelativeDocumentMoniker": "AGCV\\AdministrarUsuarios.cs",
               "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\AdministrarUsuarios.cs [Design]",
               "RelativeToolTip": "AGCV\\AdministrarUsuarios.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:35:28.908Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:35:28.908Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ButtonTester.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\ButtonTester.cs",
               "RelativeDocumentMoniker": "AGCV\\ButtonTester.cs",
               "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\ButtonTester.cs [Design]",
               "RelativeToolTip": "AGCV\\ButtonTester.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:35:25.062Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:35:25.062Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "CambiarContrase\u00F1aAdmin.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs",
               "RelativeDocumentMoniker": "AGCV\\CambiarContrase\u00F1aAdmin.cs",
@@ -225,43 +270,40 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "CambiarContrase\u00F1aAdmin.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs",
               "RelativeDocumentMoniker": "AGCV\\CambiarContrase\u00F1aAdmin.cs",
               "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CambiarContrase\u00F1aAdmin.cs [Design]",
               "RelativeToolTip": "AGCV\\CambiarContrase\u00F1aAdmin.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:35:07.586Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:35:07.586Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "CrearUsuario.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CrearUsuario.cs",
               "RelativeDocumentMoniker": "AGCV\\CrearUsuario.cs",
               "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\CrearUsuario.cs [Design]",
               "RelativeToolTip": "AGCV\\CrearUsuario.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:34:47.917Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:34:47.917Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "InicioSesion.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs",
               "RelativeDocumentMoniker": "AGCV\\InicioSesion.cs",
               "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\InicioSesion.cs [Design]",
               "RelativeToolTip": "AGCV\\InicioSesion.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:33:59.489Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:33:59.489Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "MenuPrincipal.cs",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "AGCV\\MenuPrincipal.cs",
@@ -274,15 +316,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "MenuPrincipal.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "AGCV\\MenuPrincipal.cs",
               "ToolTip": "C:\\Users\\Anton\\Downloads\\AGCV-Project\\AGCV\\MenuPrincipal.cs [Design]",
               "RelativeToolTip": "AGCV\\MenuPrincipal.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:33:07.314Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T16:33:07.314Z"
             }
           ]
         }

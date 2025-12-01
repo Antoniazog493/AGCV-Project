@@ -26,8 +26,12 @@ namespace BetterJoyForCemu {
         static MainForm form;
         static public bool useHidHide = false; // Will be auto-detected
         public static List<SController> thirdPartyCons = new List<SController>();
-        private static WindowsInput.Events.Sources.IKeyboardEventSource keyboard;
-        private static WindowsInput.Events.Sources.IMouseEventSource mouse;
+        
+        // DISABLED: Global keyboard/mouse hooks removed to prevent interference with Joy-Con polling
+        // These hooks were causing "duplicate timestamp" errors and detection issues
+        // Keyboard/mouse event capture is only used in the Reassign window where needed
+        // private static WindowsInput.Events.Sources.IKeyboardEventSource keyboard;
+        // private static WindowsInput.Events.Sources.IMouseEventSource mouse;
 
         public static void Start() {
             pid = Process.GetCurrentProcess().Id.ToString(); // get current process id
@@ -99,64 +103,29 @@ namespace BetterJoyForCemu {
 
             server.Start(IPAddress.Parse(ConfigurationManager.AppSettings["IP"]), Int32.Parse(ConfigurationManager.AppSettings["Port"]));
 
-            // Capture keyboard + mouse events for binding's sake
-            keyboard = WindowsInput.Capture.Global.KeyboardAsync();
-            keyboard.KeyEvent += Keyboard_KeyEvent;
-            mouse = WindowsInput.Capture.Global.MouseAsync();
-            mouse.MouseEvent += Mouse_MouseEvent;
+            // REMOVED: Global keyboard/mouse event capture
+            // These were interfering with Joy-Con polling causing duplicate timestamps
+            // Event capture is now only used in Reassign window when actively remapping
+            // keyboard = WindowsInput.Capture.Global.KeyboardAsync();
+            // keyboard.KeyEvent += Keyboard_KeyEvent;
+            // mouse = WindowsInput.Capture.Global.MouseAsync();
+            // mouse.MouseEvent += Mouse_MouseEvent;
 
             form.console.AppendText("All systems go\r\n");
         }
 
+        // REMOVED: These event handlers are no longer used at the global Program level
+        // They caused interference with Joy-Con communication
+        // Event capture for active_gyro and reset_mouse is now handled per-controller in Joycon.cs
+        /*
         private static void Mouse_MouseEvent(object sender, WindowsInput.Events.Sources.EventSourceEventArgs<WindowsInput.Events.Sources.MouseEvent> e) {
-            if (e.Data.ButtonDown != null) {
-                string res_val = Config.Value("reset_mouse");
-                if (res_val.StartsWith("mse_"))
-                    if ((int)e.Data.ButtonDown.Button == Int32.Parse(res_val.Substring(4)))
-                        WindowsInput.Simulate.Events().MoveTo(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2).Invoke();
-
-                res_val = Config.Value("active_gyro");
-                if (res_val.StartsWith("mse_"))
-                    if ((int)e.Data.ButtonDown.Button == Int32.Parse(res_val.Substring(4)))
-                        // Use ToList() to avoid collection modification during enumeration
-                        foreach (var i in mgr.j.ToList())
-                            i.active_gyro = true;
-            }
-
-            if (e.Data.ButtonUp != null) {
-                string res_val = Config.Value("active_gyro");
-                if (res_val.StartsWith("mse_"))
-                    if ((int)e.Data.ButtonUp.Button == Int32.Parse(res_val.Substring(4)))
-                        // Use ToList() to avoid collection modification during enumeration
-                        foreach (var i in mgr.j.ToList())
-                            i.active_gyro = false;
-            }
+            // ... removed ...
         }
 
         private static void Keyboard_KeyEvent(object sender, WindowsInput.Events.Sources.EventSourceEventArgs<WindowsInput.Events.Sources.KeyboardEvent> e) {
-            if (e.Data.KeyDown != null) {
-                string res_val = Config.Value("reset_mouse");
-                if (res_val.StartsWith("key_"))
-                    if ((int)e.Data.KeyDown.Key == Int32.Parse(res_val.Substring(4)))
-                        WindowsInput.Simulate.Events().MoveTo(Screen.PrimaryScreen.Bounds.Width / 2, Screen.PrimaryScreen.Bounds.Height / 2).Invoke();
-
-                res_val = Config.Value("active_gyro");
-                if (res_val.StartsWith("key_"))
-                    if ((int)e.Data.KeyDown.Key == Int32.Parse(res_val.Substring(4)))
-                        // Use ToList() to avoid collection modification during enumeration
-                        foreach (var i in mgr.j.ToList())
-                            i.active_gyro = true;
-            }
-
-            if (e.Data.KeyUp != null) {
-                string res_val = Config.Value("active_gyro");
-                if (res_val.StartsWith("key_"))
-                    if ((int)e.Data.KeyUp.Key == Int32.Parse(res_val.Substring(4)))
-                        // Use ToList() to avoid collection modification during enumeration
-                        foreach (var i in mgr.j.ToList())
-                            i.active_gyro = false;
-            }
+            // ... removed ...
         }
+        */
 
         public static void Stop() {
             // Cleanup HidHide
@@ -183,7 +152,9 @@ namespace BetterJoyForCemu {
                 }
             }
 
-            keyboard.Dispose(); mouse.Dispose();
+            // REMOVED: keyboard/mouse cleanup (no longer used)
+            // keyboard.Dispose(); mouse.Dispose();
+            
             server.Stop();
             mgr.OnApplicationQuit();
         }
